@@ -7,67 +7,90 @@
 
 Интерес к двухатомным решеткам возник много лет назад и отражен во многих книгах и обзорах \cite{bound_Born,bound_askar,bound_andr,bound_bril}. Такой интерес связан как с твердыми решетками, гранулированными средами, так и с фотонными решетками \cite{bound_Born,bound_askar,bound_andr, bound_kevr}. Обычно континуальный предел используется для получения основных уравнений \cite{bound_Born,bound_askar,bound_bril,bound_yajima, bound_pnevm, Pnevmatikos1986,bound_collins}. Рассмотрены как линейные \cite{bound_Born,bound_andr}, так и слабонелинейные \cite{bound_askar, bound_yajima, bound_pnevm, Pnevmatikos1986} модели. Слабая нелинейность аппроксимируется степенным рядом смещений или деформаций, и обычно изучается одномерная задача. Сильно нелинейная континуальная теория двухатомных решеток развита в \cite{bound_aero, bound_aerobul, bound_aeroplane, bound_pam09} в основном в одномерном случае.
 
-Определяющие нелинейные уравнения континуума, полученные для сильно нелинейных волн, обладают точными уединенными волновыми решениями \cite{bound_pam09}. Однако их устойчивое распространение зависит от многих факторов, в первую очередь от начальных условий \cite{Porubov2011}. Недавно был разработан подход к использованию методов управления \cite{bound_fradkov} для обеспечения устойчивого распространения нелинейных волн \cite{bound_fradkov, porant16, porant17, Porubov2016}. Согласно методу в уравнение добавляется управляющая функция. Однако эта функция введена в \cite{porant16, porant17, Porubov2016} формально без какого-либо физического смысла. В данной статье предпринята попытка описать управляющую функцию как следствие внешней нагрузки на боковые поверхности слоя из материала, имеющего двухатомную кристаллическую структуру. Двумерная задача формулируется в разделе 1 с использованием энергии деформации, полученной в \cite{bound_porsp17}. В разделе 2 разработана асимптотическая процедура для получения связанных управляющих одномерных уравнений для макроперемещений и изменений внутренней структуры (микроструктуры). Раздел 3 посвящен развитию алгоритма управления для сильно нелинейного случая в результате воздействия внешних напряжений на боковые поверхности слоя. В следующем разделе рассматривается слабонелинейный случай, когда уравнения разделяются по принципу подчинения. Получен алгоритм управления с распределенной обратной связью, в котором целевая функция управления моделируется внешним касательным напряжением. 
+Определяющие нелинейные уравнения, полученные для сильно нелинейных волн, имеют точные решения в виде уединенных волн\cite{bound_pam09}. Однако их устойчивое распространение зависит от многих факторов, в первую очередь от начальных условий \cite{Porubov2011}. Недавно был разработан подход к использованию методов управления \cite{bound_fradkov} для обеспечения устойчивого распространения нелинейных волн \cite{bound_fradkov, porant16, porant17, Porubov2016}. Согласно методу в уравнение добавляется управляющая функция. Однако эта функция была введена в \cite{porant16, porant17, Porubov2016} формально без какого-либо физического смысла. \fixme{В данной статье} предпринята попытка описать управляющую функцию как следствие внешней нагрузки на боковые поверхности слоя из материала, имеющего двухатомную кристаллическую структуру. Двумерная задача формулируется в разделе 1 с использованием энергии деформации, полученной в \cite{bound_porsp17}. В разделе 2 разработана асимптотическая процедура для получения связанных управляющих одномерных уравнений для макроперемещений и изменений внутренней структуры (микроструктуры). Раздел 3 посвящен развитию алгоритма управления для сильно нелинейного случая в результате воздействия внешних напряжений на боковые поверхности слоя. В следующем разделе рассматривается слабонелинейный случай, когда уравнения разделяются по принципу подчинения. Получен алгоритм управления с распределенной обратной связью, в котором целевая функция управления моделируется внешним касательным напряжением. 
 
-\section{Statement of problem}
+\section{Постановка задачи}
 
-Let us consider isotropic elastic layer infinitely long  in the horizontal,  $x$,  direction and  with the width $2 H$ in the vertical,  $y$,  direction. The axis $x$ lies on the middle line of the layer. Then the lower surface of the layer corresponds to $y=-H$. 
+%Let us consider isotropic elastic layer infinitely long  in the horizontal,  $x$,  direction and  with the width $2 H$ in the vertical,  $y$,  direction. The axis $x$ lies on the middle line of the layer. Then the lower surface of the layer corresponds to $y=-H$.
 
-Equations of motions for the displacements in the layer are obtained using the Hamilton- Ostrogradsky variational principle,
+Рассмотрим изотропный упругий слой двухатомной кристаллической структуры неограниченной длины в горизонтальном направлении $x$ и шириной $2 H$ в вертикальном направлении $y$. Нижняя поверхность слоя соответствует $y = -H$, верхняя --- $y = H$.
+
+\todo{Добавить рисунок к модели}
+
+%Equations of motions for the displacements in the layer are obtained using the Hamilton- Ostrogradsky variational principle,
+
+Уравнения движения для перемещений в слое выводятся на основе вариационного принципа Гамильтона-Остроградского:
 
 \begin{equation}
 	\delta \left( \int_{t_0}^{t_1}dt \int_{-H}^{H} dy \int_{-\infty}^{\infty}\left( K - \Pi \right)  \:   dx \right)+ \delta A_1 + \delta A_2=0, \label{var}
 \end{equation}
-where $ \delta A_1$ and $\delta A_2$ are elementary works at the upper and lower surfaces respectively,
+%where $ \delta A_1$ and $\delta A_2$ are elementary works at the upper and lower surfaces respectively,
+где $\delta A_1$ и $\delta A_2$ --- элементарные работы на верхней и нижней поверхностях соответственно, $K$ --- плотность кинетической энергии, $\Pi = \Pi_{l} + \Pi_{nl}$ --- плотность потенциальной энергии с линейной и нелинейной составляющей.
 
+%The density of the potential energy for material having di-atomic crystalline structure  has been obtained in \cite{porsp17} using the continuum limit of the dicrete di-atomic model. For the linearized problem, it has the form
 
-The density of the potential energy for material having di-atomic crystalline structure  has been obtained in \cite{porsp17} using the continuum limit of the dicrete di-atomic model. For the linearized problem, it has the form
+Плотность потенциальной энергии для материала, имеющего двухатомную кристаллическую структуру, была получена в \ \cite{bound_porsp17} с использованием континуального предела дискретной двухатомной модели. Для линеаризованной задачи он имеет вид
 \begin{equation}
+\begin{small} 
 	\begin{aligned}
-		\Pi = & \frac{C_1}{h} \left(u^2 + v^2\right) + \frac{C_1+C_2}{h}\left(U_x^2+V_y^2\right) +\frac{C_2}{h}\left(U_y^2 + V_x^2 + 2U_x V_y + 2 U_y V_x\right) + \\ 
+		\Pi_l = & \frac{C_1}{h} \left(u^2 + v^2\right) + \frac{C_1+C_2}{h}\left(U_x^2+V_y^2\right) +\frac{C_2}{h}\left(U_y^2 + V_x^2 + 2U_x V_y + 2 U_y V_x\right) + \\ 
 		& + \frac{h\left(C_2\left(m_1^2 + m_2^2\right) - 2C_1 m_1 m_2\right)}{2\left(m_1^2 + m_2^2\right)}\left(u_x^2 + v_y^2\right) + \frac{\left(m_2-m_1\right)\left(C_1+C_2\right)}{m_1+m_2}\left(u_x U_x + v_y V_y\right) + \\ 
 		& + \frac{C_2 h\left(m_1^2+m_2^2\right)}{2\left(m_1+m_2\right)^2}\left(u_y^2+v_x^2+2u_y v_x + 2u_x v_y\right) + \frac{C_2\left(m_2 - m_1\right)}{m_1 + m_2}\left(u_y U_y+v_x V_x + u_y V_x + \right. \\
 		& + \left. u_x V_y + v_y U_x + v_x U_y\right)
 	\end{aligned}
+\end{small}
 \end{equation}
+%where $U$,  $u$, $V$, $v$ are related to the horizontal and vertical directions displacements of the elements of di-atomic lattice with masses $m_1$, $u_1, v_1$, and $u_2, v_2$ with $m_2$, as
+%% from the real article
+%where h is a distance between the elements, C1 accounts for a stiffness of the spring connecting the elements in the horizontal and vertical directions, while C2 describes the diagonal spring stiffness. The functions U, u, V, v are related to the horizontal and vertical displacements u1, v1 of the elements of the di-atomic lattice with mass m1 and the displacements u2, v2 of the elements with mass m2,
+где $h$ --- расстояние между элементами, $C_1$ учитывает жесткость пружины, соединяющей элементы в горизонтальном и вертикальном направлениях, а $C_2$ описывает жесткость диагональной пружины. Функции $U$, $u$, $V$, $v$ связаны с горизонтальными и вертикальными смещениями $u_1$, $v_1$ элементов двухатомной решетки с массой $m_1$ и смещениями $u_2$, $v_2$ элементов с массой $m2$,
 
-where $U$,  $u$, $V$, $v$ are related to the horizontal and vertical directions displacements of the elements of di-atomic lattice with masses $m_1$, $u_1, v_1$, and $u_2, v_2$ with $m_2$, as
 \begin{equation}
 	U~=~\frac{m_1~u_1+m_2~u_2}{m_1+m_2},~V=\frac{m_1~v_1+m_2~v_2}{m_1+m_2}, \label{macro}
 \end{equation}
 \begin{equation}
 	u=\frac{u_1-u_2}{h},~v=\frac{v_1-v_2}{h}. \label{micro}
 \end{equation}
-The variables (\ref{macro}) account for the movement of the center of masses, while the variables (\ref{micro}) describe relative displacements of the neighboring masses, they are responsible for a microstructure.
-Here  $h$ is a distance between the elements, $C_1$ accounts for a stiffness of the spring connecting the elemnts in ahorizonatal and vertical directions, while $C_2$ describes the diagonal spring stiffness.
+%The variables (\ref{macro}) account for the movement of the center of masses, while the variables (\ref{micro}) describe relative displacements of the neighboring masses, they are responsible for a microstructure.
+Переменные (\ref{macro}) учитывают движение центра масс, а переменные (\ref{micro}) описывают относительные перемещения соседних масс, они отвечают за микроструктуру.
 
-The density of a nonlinear part of the potential energy has been suggested in \cite{aeroplane, porsp17} in the form
+%% not from the real article
+%Here  $h$ is a distance between the elements, $C_1$ accounts for a stiffness of the spring connecting the elemnts in ahorizonatal and vertical directions, while $C_2$ describes the diagonal spring stiffness.
+
+%The density of a nonlinear part of the potential energy has been suggested in \cite{aeroplane, porsp17} in the form
+В качестве функции плотности нелинейной части потенциальной энергии предлагается взять следующее выражение, предложенное в \cite{bound_aeroplane, bound_porsp17}:
 \begin{equation}
 	\Pi_{nl} = \left( p - s_{xx} U_x - s_{yx} \left( U_y + V_x\right) - s_{yy} V_y\right) \left( 1- \cos{(u+v)}\right) \label{pot}
 \end{equation}
 
-The density of the kinetic energy is \cite{porsp17}:
+%The density of the kinetic energy is \cite{bound_porsp17}:
+Плотность кинетической энергии равна \cite{bound_porsp17}:
 \begin{equation}
 	K = \frac{1}{2} \rho (U_t^2 + V_t^2) + \frac{1}{2} \eta (u_t^2 + v_t^2), \label{kin}
 \end{equation}
-where
+%where
+где
 \begin{equation}
 	\begin{aligned}
 		& \rho = \frac{m_1+m_2}{h^3} \\ 
 		& \eta = \frac{m_1 m_2}{(m_1 + m_2)h} \\
 	\end{aligned}
 \end{equation}
-Assume that the layer lies on the foundation that interacts with the layer via normal, $\sigma_y$, and tangential, $\tau_{xy}$, stresses,
+
+%Assume that the layer lies on the foundation that interacts with the layer via normal, $\sigma_y$, and tangential, $\tau_{xy}$, stresses,
+Предположим, что слой лежит на основании, которое взаимодействует со слоем посредством нормальных $\sigma_y$ и касательных $\tau_{xy}$ напряжений,
 \begin{equation}
 	\sigma_{y}=q_1 V + q_2 V_t , ~
 	\tau_{xy}= k_d (q_1 V + q_2 V_t), \label{friction}
 \end{equation}
 
-The normal stresses  interaction corresponds to the model developed recently to account for a description of vicso - elastic  foundation  \cite{Kerr}, $q_1$, $q_2$ are constants,   while the tangetntial contact accounts for a  friction according to the Coulomb - Amonoton law  when $k_d~>~0$ is a friction coefficient \cite{Hahner}. The upper surface of the layer, $y=h$,  is subjected to the normal, $f_N(x,t)$, and tangential, $f_\tau(x,t)$, loadings,
+%The normal stresses  interaction corresponds to the model developed recently to account for a description of vicso - elastic  foundation  \cite{Kerr}, $q_1$, $q_2$ are constants,   while the tangetntial contact accounts for a  friction according to the Coulomb - Amonoton law when $k_d~>~0$ is a friction coefficient \cite{Hahner}. The upper surface of the layer, $y=h$,  is subjected to the normal, $f_N(x,t)$, and tangential, $f_\tau(x,t)$, loadings,
+Выражение для нормальных напряжений соответствует модели, разработанной для описания вязкоупругого основания \cite{bound_Kerr}, $q_1$, $q_2$ --- константы, а выражение для $\tau_{xy}$ учитывает трение согласно закону Кулона-Амонотона в случае коэффициента трения $k_d ~> ~0$ \cite{bound_Hahner}. На верхнюю поверхность слоя $y = h$ действуют нормальные $f_N (x, t)$ и тангенциальные $f_\tau (x, t)$ нагрузки,
 \begin{equation}
 	\sigma_{y}=f_{N}, ~\tau_{xy}=f_{\tau}. \label{upper}
 \end{equation}
-Using Eqs. (\ref{fricrion}), (\ref{upper}) one obtains the elementary works at the upper and lower surfaces,
+%Using Eqs. (\ref{friction}), (\ref{upper}) one obtains the elementary works at the upper and lower surfaces,
+Используя уравнения (\ref{friction}), (\ref{upper}), можно получить элементарные работы на верхней и нижней поверхностях,
 \begin{equation}
 	\delta A_1 =  \int_{t_0}^{t_1} dt\int_{-\infty}^{\infty}f_{N}\delta V \:  dx +\int_{t_0}^{t_1} dt  
 	\int_{-\infty}^{\infty} f_{\tau}\delta U \: dx , \label{workup}
@@ -78,11 +101,11 @@ Using Eqs. (\ref{fricrion}), (\ref{upper}) one obtains the elementary works at t
 	\int_{-\infty}^{\infty}k_d(q_1 V + q_2 V_t)\delta U \:  dx.  \label{worklow}
 \end{equation}
 
-Using Eqs. (\ref{pot}), (\ref{kin}), (\ref{workup}), (\ref{worklow}), mone obtaind the following statement of the problrm.  The equations of motions are 
+%Using Eqs. (\ref{pot}), (\ref{kin}), (\ref{workup}), (\ref{worklow}), one obtains the following statement of the problrm.  The equations of motions are
+Объединяя уравнения (\ref{pot}), (\ref{kin}), (\ref{workup}), (\ref{worklow}), можно получить следующую систему, описывающую постановленную задачу. Уравнения движения:
 \[
 \rho U_{tt} -2 \alpha_2 U_{xx} -2 \alpha_3 \left( U_{yy} + 2 V_{xy}\right) - \alpha_5 h u_{xx} - \alpha_7 h (u_{yy} + 2 v_{xy}) +
 \]
-
 \begin{equation}
 	\sin{(u+v)}(s_{xx}(u_x + v_x)+ s_{yx}(u_y + v_y)) = 0, \label{beq1}
 \end{equation}
@@ -93,19 +116,22 @@ Using Eqs. (\ref{pot}), (\ref{kin}), (\ref{workup}), (\ref{worklow}), mone obtai
 \begin{equation}
 	\sin{(u+v)}(s_{xx}U_x + s_{yy}V_y + s_{yx}(U_y + V_x)-p) = 0, \label{beq2}
 \end{equation}
+
 \[
 \rho V_{tt} -2 \alpha_2 V_{yy} -2 \alpha_3 \left( V_{xx} + 2 U_{xy}\right) - \alpha_5 h v_{yy} - \alpha_7 h (v_{xx} + 2 u_{xy}) +
 \]
 \[
 \sin{(u+v)}(s_{yy}(u_y + v_y)+ s_{yx}(u_x + v_x)) = 0,
 \]
+
 \[
 \eta v_{tt} + 2 \alpha_1 v - 2 \alpha_4 h^2 v_{yy} - \alpha_5 h V_{yy} - 2 \alpha_6 h^2 (v_{xx} + 2 u_{xy}) - 2 \alpha_7 h (V_{xx} + 2 U_{xy}) - 
 \]
 \[
 -\sin{(u+v)}(s_{xx}U_x + s_{yy}V_y + s_{yx}(U_y + V_x)-p) = 0,
 \]
-where
+%where
+где
 \[ \alpha_1 = \frac{C_1}{h},  \alpha_2 = \frac{C_1+C_2}{h} , 
 \alpha_3 = \frac{C_2}{h}
 \]
@@ -119,8 +145,8 @@ where
 \] 
 
 
-The boundary conditions at the upper surface, $y=H$,  are 
-
+%The boundary conditions at the upper surface, $y=H$,  are 
+Граничные условия на верхней поверхности $y = H$:
 \begin{equation}
 	2 \alpha_3 (U_y + V_x) + 2 \alpha_7 h (u_y + v_x) + s_{yx}( \cos{(u + v)-1)} = f_{\tau}, \label{bc11}
 \end{equation}
@@ -134,7 +160,8 @@ The boundary conditions at the upper surface, $y=H$,  are
 	2 \alpha_4 h^2 v_y + 2 \alpha_5 h V_y + 2 \alpha_6 h^2 u_x + 2 \alpha_7 h U_x = 0. \label{bc14}
 \end{equation}
 
-At the lower surface of the layer, $y= - H$, we have 
+%At the lower surface of the layer, $y= - H$, we have 
+На нижней поверхности слоя $y = -H $ соответственно,
 \begin{equation}
 	2 \alpha_3 (U_y + V_x) + 2 \alpha_7 h (u_y + v_x) + s_{yx} (\cos{(u + v)-1)} = k_d( q_1 V + q_2 V_t) ,\label{bc21}
 \end{equation}
@@ -148,26 +175,36 @@ At the lower surface of the layer, $y= - H$, we have
 	2 \alpha_4 h^2 v_y + 2 \alpha_5 h V_y + 2 \alpha_6 h^2 u_x + 2 \alpha_7 h U_x = 0 . \label{bc24}
 \end{equation}
 
-The whole two-dimensional problem is too complicated for an anlysis, and some reasonable simplifications are needed.
+%The whole two-dimensional problem is too complicated for an anlysis, and some reasonable simplifications are needed.
+Полученная двумерная модель в общем случае представляется слишком сложной для прямого теоретического анализа, необходимо применить некоторые упрощения.
 
-\section{Model one-dimensional equations for longitudinal waves}
+%\section{Model one-dimensional equations for longitudinal waves}
+\section{Уравнения одномерной модели для длинных волн}
 
-Approximate reduction of the 2D equations of motion is achieved when predominantly longitudinal waves are studied, then the horizontal and vertical macro- and micro- displacements are assumed to be 
+%Approximate reduction of the 2D equations of motion is achieved when predominantly longitudinal waves are studied, then the horizontal and vertical macro- and micro- displacements are assumed to be
+% from the article
+%The conventional procedure of simplification is based on formal asymptotic expansions when the scales for the variables and small parameters are introduced. However, this procedure has some disadvantages in nonlinear elasticity, especially for further comparisons of asymptotic solution with the experimental data, see [23–25]. Indeed the horizontal scale associated with the wave length is not strongly defined when the solitary waves are considered. The coefficients at nonlinear terms may contain combinations of elastic constants which may be also small. That is why a popular approach is to obtain approximate solution in the dimension form, see [23–25] for details.
+%In particular, when predominantly longitudinal waves are studied, then the horizontal and vertical macro- and micro-displacements are assumed to be in the form of the power series in y
+
+Обычно процедура понижения размерности задачи основана на формальных асимптотических разложениях, вводятся малые параметры и масштабы для переменных. Однако эта процедура имеет некоторые недостатки в отношении нелинейной упругости, особенно для дальнейшего сравнения асимптотического решения с экспериментальными данными, см. \cite{bound_por14, bound_porpas, Porubov2003}. \fixme{Действительно, горизонтальный масштаб, связанный с длиной волны сложно точно определить при рассмотрении уединенных волн}. Коэффициенты при нелинейных членах могут содержать комбинации упругих постоянных, которые также могут быть небольшими. Поэтому популярным подходом является получение приближенного решения в размерной форме, подробности см. в \cite{bound_por14, bound_porpas, Porubov2003}.
+
+В частности, при исследовании преимущественно продольных волн предполагается, что горизонтальные и вертикальные макро- и микроперемещения представлены в виде степенного ряда по $y$,
+
 \begin{equation}
 	U=U_0(x,t)+B_1(x,t)~y+B_2(x,t)~y^2,~u=u_0(x,t)+b_1(x,t)~y+b_2(x,t)~y^2, \label{Usol}
 \end{equation}
 \begin{equation}
-	V=y ~A(x,t), v=y~a(x,t). \label{Vsol}
+	V=y~A(x,t), v=y~a(x,t). \label{Vsol}
 \end{equation}
-The functions $A$,$a$, $B_1$,$B_2$,$b_1$, $b_2$ are defined from the boundary conditions. When consider small width of the layer $2H$  are considered,  the boundary conditions are simplified neglecting terms at some order of $H$.  Thus, leaving  the  terms of order $H^0$ in boundary condition (\ref{bc22}), (\ref{bc24}), one obtains  the algebraic equations  for $A$ and $a$ whose solution is
+%The functions $A$,$a$, $B_1$,$B_2$,$b_1$, $b_2$ are defined from the boundary conditions. When consider small width of the layer $2H$  are considered,  the boundary conditions are simplified neglecting terms at some order of $H$.  Thus, leaving  the  terms of order $H^0$ in boundary condition (\ref{bc22}), (\ref{bc24}), one obtains  the algebraic equations  for $A$ and $a$ whose solution is
+Функции $A$, $a$, $B_1$, $B_2$, $b_1$, $b_2$ определяются из граничных условий. Если учесть малую ширину слоя $2H$, граничные условия можно упростить за счет исключения членов порядка $H$. Таким образом, оставляя члены порядка $H^0 $ в граничном условии (\ref{bc22}), (\ref {bc24}), получаем алгебраические уравнения для $A$ и $a$, решение которых имеет вид
 \[
 a=\beta_{21} u_{0,x}+\beta_{31} \sin^2(u_0/2),
 \]
 \[
 A=\beta_{1} U_{0,x}+\beta_{22} u_{0,x}+\beta_{32}\sin^2(u_0/2),
 \]
-
-where
+где
 \[ 
 \beta_{21}=-\frac{C_2 (m_1^2 - 4 m_1 m_2 + m_2^2)}{(2 C_1 + C_2) m_1^2 - 
 	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2},
@@ -177,7 +214,9 @@ where
 	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
 \]
 \[
-\beta_{21}=-\frac{C_2}{C_1+C_2}, 
+\beta_{21}=-\frac{C_2}{C_1+C_2}
+\]
+\[ 
 \beta_{22}=\frac{C_1 C_2 h (m_1 - m_2) (m_1 + m_2)}{(C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
 	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}, 
 \]
@@ -186,16 +225,18 @@ where
 	C_2) ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_)2 + (2 C_1 + C_2) m_2^2)},
 \]
 
-Let us consider the sum of boundary conditions, Eq(\ref{bc11})+Eq.(\ref{bc21}), and Eq.(\ref{bc13}) +Eq.(\ref{bc23}).  The coefficients $b_2$, $B_2$ are obtained when the terms only up to order $H$ are retained in these two resulting equations. 
+%Let us consider the sum of boundary conditions, Eq(\ref{bc11})+Eq.(\ref{bc21}), and Eq.(\ref{bc13}) +Eq.(\ref{bc23}).  The coefficients $b_2$, $B_2$ are obtained when the terms only up to order $H$ are retained in these two resulting equations.
 
-
+Рассмотрим две суммы уравнений граничных условий: (\ref{bc11}) $+$ (\ref{bc21}) и (\ref{bc13}) $+$ (\ref{bc23}). Коэффициенты можно $b_2$, $B_2$ получить, когда в этих двух результирующих уравнениях сохранены члены только до порядка $H$.
 \[
-b_2=\gamma_1 U_x+ \gamma_2 u_x+ \gamma_3 U_{xt}+\gamma_4 u_{xt}+\gamma_5 \sin[u_0] +\gamma_6 \sin(u_0/2)^2+ \gamma_7 f_\tau,
+b_2=\gamma_1 U_x+ \gamma_2 u_x+ \gamma_3 U_{xt}+\gamma_4 u_{xt}+\gamma_5 \sin(u_0) +\gamma_6 \sin(u_0/2)^2+ \gamma_7 f_\tau,
 \]
 \[
 B_2=\Gamma_1 U_x+ \Gamma_2 u_x+ \Gamma_{3} U_{xt}+\Gamma_{4} u_{xt}+\Gamma_{5} \sin(u_0) +\Gamma_{6} \sin(u_0/2)^2+ \Gamma_{7} f_\tau,
 \]
-where
+%where
+где
+\begin{small}
 \[
 \gamma_1=-\frac{ k_1 q_1 H (m_1 - m_2) (m_1 + m_2) }{2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2))}
 \]
@@ -266,7 +307,10 @@ k_1q_1 s_{yy} h~ H (-2 C_1 m_1 m_2 + C_2 (m_1^2 + m_2^2))\frac{}{} \right)
 \[
 \Gamma_{7}=-\frac{h (m_1^2 + m_2^2)}{4 C_2 (m_1^2 - 4 m_1 m_2 + m_2^2)}
 \]
-Let us consider the difference of boundary conditions, Eq(\ref{bc11})-Eq.(\ref{bc21}), and Eq.(\ref{bc13}) -Eq.(\ref{bc23}).  The coefficients  $B_1$,$ b_1$ are defined from the resulting two equations by taking into account only terms up to order $H$,
+\end{small}
+
+%Let us consider the difference of boundary conditions, Eq(\ref{bc11})-Eq.(\ref{bc21}), and Eq.(\ref{bc13}) -Eq.(\ref{bc23}).  The coefficients  $B_1$,$ b_1$ are defined from the resulting two equations by taking into account only terms up to order $H$,
+Аналогично рассмотрим две разности уравнений граничных условий: (\ref{bc11}) $-$ (\ref{bc21}) и (\ref{bc13}) $-$ (\ref{bc23}). Коэффициенты можно $B_1$, $b_1$ получить, когда в этих двух результирующих уравнениях сохранены члены только до порядка $H$.
 \[
 b_1=\delta_1 U_{0,xx}+\delta_2 u_{0,xx}+\delta_3 U_{0,x}+\delta_4 u_{0,x}+\delta_5 U_{0,x} \sin (u_0)+\delta_6 u_{0,x} \sin (u_0)+\delta_7 u_{0,t}\sin (u_0)+\delta_8  U_{0,xt}+\delta_9 u_{0,xt}+
 \]
@@ -287,7 +331,9 @@ B_1=\Delta_1 U_{0,xx}+\Delta_2 u_{0,xx}+\Delta_3 U_{0,x}+\Delta_4 u_{0,x}+\Delta
 \Delta_{14} \sin ^3(u_0/2)\cos (u_0/2)+\Delta_{15} f_\tau + 
 \Delta_{16} f_\tau \sin (u_0)
 \]
-where
+%where
+где
+\begin{small}
 \[
 \delta_1=0
 ,
@@ -454,10 +500,13 @@ C_2 (m_1^2 + m_2^2)) ) s_{yy})\frac{}{}\right) ,
 \Delta_{15}=-\frac{h (m_1^2 + m_2^2)}{8 C_2 H (m_1^2 - 4 m_1 m_2 + m_2^2))},
 \Delta_{16}=\frac{s_{yx} h (m1^4 - m2^4)}{8 C_2^2 (m_1^2 - 4 m_1 m_2 + m_2^2)^2}.
 \]
-Approximate equations are obtained by equating to zero terms at each order of $y$ in the equations of motion after substituting in them Eqs. (\ref{Usol}), (\ref{Vsol}). 
+\end{small}
 
-Thus, equating to zero the leading order terms at $y^0$ in Eq. (\ref{beq1}) results in  equation
+%Approximate equations are obtained by equating to zero terms at each order of $y$ in the equations of motion after substituting in them Eqs. (\ref{Usol}), (\ref{Vsol}). 
+Редуцированные одномерные уравнения движения получаются путем приравнивания к нулю членов в каждом порядке $y$ подстановки в них (\ref{Usol}), (\ref{Vsol}).
 
+%Thus, equating to zero the leading order terms at $y^0$ in Eq. (\ref{beq1}) results in equation
+Таким образом, приравнивая к нулю члены старшего порядка при $y^0$ в уравнении (\ref {beq1}), оно преобразуется к виду
 \[
 \rho U_{0,tt}-F_1 U_{0,xx}-F_2 u_{0,xx}+F_{31} ( \cos(u_0))_x= F_5 f_\tau+k_1 q_1 (F_7 U_{0,x}+F_8 u_{0,x})+
 \]
@@ -473,15 +522,20 @@ s_{yy}\left(\frac{}{} (F_{34} u_{0,x}+ k_1 q_2 F_{10} u{0,t})\sin(u_0)+k_1 q_1 F
 \begin{equation}
 	s_{yy} s_{yx} (F_9 k_1 q_2 u_t \sin^2(u_0)+f_{17} \sin^3(u_0/2)\cos(u_0/2))+s_{yx}^2 F_{16}  \sin^3(u_0/2)\cos(u_0/2) , \label{goveq1}
 \end{equation}
-where
+%where
+где
+\begin{small}
 \[
 F_1=\frac{2 C_1 (C_1 + 2 C_2)}{(C_1 + C_2) h},
 \]
 \[
-F_2=-\frac{C_1 (m_1 - m_2) ((2 C_1^2 + 5 C_1 C_2 + C2^2) m_1^2 - 
-	2 (C_1^2 + 4 C_1 C_2 + 5 C_2^2) m_1 m_2 + (2 C_1^2 + 5 C_1 C_2 + 
-	C_2^2) m_2^2)}{(C_1 + C_2) (m_1 + m_2) ((2 C_1 + C_2) m_1^2 - 
+F_2=-\frac{1}{(C_1 + C_2) (m_1 + m_2) ((2 C_1 + C_2) m_1^2 - 
 	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\left(C_1 (m_1 - m_2) ((2 C_1^2 + 5 C_1 C_2 + C2^2) m_1^2 - 
+2 (C_1^2 + 4 C_1 C_2 + 5 C_2^2) m_1 m_2 + (2 C_1^2 + 5 C_1 C_2 + 
+C_2^2) m_2^2)\right),
 \]
 \[
 F_{31}=-\frac{(2 C_2^2 (m_1^2-4m_1 m_2+ m_2^2)+ 6 C_1 C_2 (m_1 - m_2)^2+   4 C_1^2 (m_1^2 - m_1 m_2 + m_2^2))s_{xx}
@@ -561,14 +615,18 @@ F_{17}=\frac{1}    {C_2 (C_1 +
 \left(\frac{}{} (m_1 - m_2)^3 (m_1 + m_2) (4 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) + 
 k_1 q_1 h H (-2 C_1 m_1 m_2 + C_2 (m_1^2 + m_2^2)) \frac{}{} \right)
 \]
-Equating to zero the leading order terms in Eq. (\ref{beq2}) gives rise to  equation
+\end{small}
+%Equating to zero the leading order terms in Eq. (\ref{beq2}) gives rise to  equation
+Аналогичным образом, приравнивая к нулю члены старшего порядка в уравнении (\ref {beq2}), оно преобразуется к виду
 \[
 \eta u_{0,tt}+f_1 u_0+f_2 u_{0,xx}+f_3 U_{0,xx}+(f_4+f_5 U_{0,x})\sin(u_0)=
 \]
 \begin{equation}
 	s_{yy}^2 (f_6 \sin(u_0) \sin^2(u_0/2)+f_7 \sin(2 u_0)), \label{goveq2}
 \end{equation}
-where
+%where
+где
+\begin{small}
 \[
 f_1=\frac{2 C_1}{h},
 \]
@@ -596,8 +654,15 @@ f_6=-\frac{C_2 h (m_1^2 + m_2^2)}{(C_1 + C_2) ((2 C_1 + C_2) m_1^2 -
 f_7=-\frac{C_1 h m_1 m_2 }{2(C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
 	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}.
 \]
-\section{Control of strains}
-Equations (\ref{goveq1}), (\ref{goveq2}) for longitudinal waves $U_0$, $u_0$ can be further simplified if nonlinear features in the $y$ direction are small in comparison with those laong $x$ axis, $s_{xx}>>s_{yx}, s_{yy}$. Then the governing equations are 
+\end{small}
+Таким образом, получена упрощенная система одномерных уравнений для продольных волн.
+
+\section{Управление волнами}
+%Equations (\ref{goveq1}), (\ref{goveq2}) for longitudinal waves $U_0$, $u_0$ can be further simplified if nonlinear features in the $y$ direction are small in comparison with those laong $x$ axis, $s_{xx}>>s_{yx}, s_{yy}$. Then the governing equations are
+% from the article
+%Eqs. (23), (24) for longitudinal waves U0, u0 can be further simplified if nonlinear features in the y direction are supposed to be small in comparison with those along x axis, sxx ≫ syx, syy. If we drop the nonlinear terms with the coefficients syx, syy in (23), (24) we obtain
+
+Уравнения (\ref{goveq1}), (\ref{goveq2}) для продольных волн $U_0$, $u_0$ могут быть дополнительно упрощены, если предположить, что нелинейные коэффициенты модели, отвечающие направлениям $y$ будут небольшими по сравнению с коэффициентами, отвечающим направлению $x$, $s_{xx} >> syx, syy$. Если отбросить нелинейные члены с коэффициентами $s_{yx}$, $s_{yy}$ в (\ref{goveq1}), (\ref{goveq2}), получим
 \[
 \rho U_{0,tt}-F_1 U_{0,xx}-F_2 u_{0,xx}+F_{31} ( \cos(u_0))_x= F_5 f_\tau+k_1 q_1 (F_7 U_{0,x}+F_8 u_{0,x})+
 \]
@@ -607,25 +672,29 @@ Equations (\ref{goveq1}), (\ref{goveq2}) for longitudinal waves $U_0$, $u_0$ can
 \begin{equation}
 	\eta u_{0,tt}+f_1 u_0+f_2 u_{0,xx}+f_3 U_{0,xx}+(p-s_{xx} U_{0,x})\sin(u_0)=0.  \label{simeq2}
 \end{equation}
-In the absence of external loading, $f_\tau=0$, $q_1=0$, $q_2=0$, these equation correspond to those obtained in \cite{por14}. Traveling wave solutions can be studied when $U_0=U_0(\theta)$, $u_0=u_0(\theta)$, $\theta=x- c t$, $c$ is a constant phase velocity. In this case, Eq. (\ref{simeq1}) is integarted ones with respect to the phase variable giving rise to the expression for $U_\theta$,
+%In the absence of external loading, $f_\tau=0$, $q_1=0$, $q_2=0$, these equation correspond to those obtained in \cite{por14}. Traveling wave solutions can be studied when $U_0=U_0(\theta)$, $u_0=u_0(\theta)$, $\theta=x- c t$, $c$ is a constant phase velocity. In this case, Eq. (\ref{simeq1}) is integarted ones with respect to the phase variable giving rise to the expression for $U_\theta$,
+При отсутствии внешней нагрузки, $f_\tau=0 $, $q_1 = 0$, $q_2 = 0$, эти уравнения соответствуют полученным ранее в \cite{bound_por14}. Решения в виде бегущей волны могут имеют место, когда $U_0 = U_0(\theta)$, $u_0 = u_0 (\theta)$, $\theta = x - c t$, где $c$ --- постоянная фазовая скорость. \fixme{В таком случае уравнение (\ref{simeq1}), проинтегрированное один раз по фазовой переменной, дает выражение для $ U_\theta $},
 \begin{equation}
 	U_{0,\theta}=\frac{1}{c^2-F_1}\left(F_2 u_{0,\theta}-F_{31} \cos (u_0)\right)+\sigma. \label{Uth}
 \end{equation}
-Substitution of Eq. (\ref{Uth}) into Eq. (\ref{simeq2}) results in
+%Substitution of Eq. (\ref{Uth}) into Eq. (\ref{simeq2}) results in
+где $\sigma$ --- константа интегрирования. Подстановка уравнения (\ref{Uth}) в (\ref{simeq2}) дает
 \[
 f_1 u_0+\left(\frac{}{}\eta c^2+ f_2+\frac{f_3 F_2}{c^2-F_1}\right) u_{0,\theta \theta}+ 
 \]
 \begin{equation}
 	(p-s_{xx} \sigma)\sin(u_0)+\frac{s_{xx} F_{31}}{2(c^2-F_1)}\sin (2 u_0)=0. \label{simeq3}
 \end{equation}
-This equation can be integrated once after multiplication by $u_{0,\theta}$. Consider the case of localized solution when the function $u_0$ and its first derivative decays at inifinities. Then the integarted equation (\ref{simeq3}) is
+%This equation can be integrated once after multiplication by $u_{0,\theta}$. Consider the case of localized solution when the function $u_0$ and its first derivative decays at inifinities. Then the integarted equation (\ref{simeq3}) is
+Это уравнение можно проинтегрировать один раз после умножения на $u_{0, \theta}$. Рассмотрим случай локализованного решения, когда функция $u_0$ и ее первая производная убывают в бесконечностях. Тогда проинтегрированное уравнение (\ref{simeq3}) имеет вид
 \[
 f_1 u_0^2+\left(\frac{}{}\eta c^2+ f_2+\frac{f_3 F_2}{c^2-F_1}\right) u_{0,\theta}^2+ 
 \]
 \begin{equation}
 	4 (p-s_{xx} \sigma+\frac{s_{xx} F_{31}}{(c^2-F_1)}) \sin(u_0/2)^2-\frac{4s_{xx} F_{31}}{(c^2-F_1)}\sin(u_0/2)^4=0.  \label{simeq4}
 \end{equation}
-If we additionally want to have the solution for $U_0$ decaying at inifinities, the constant $\sigma$ is defined from Eq. (\ref{Uth}) as
+%If we additionally want to have the solution for $U_0$ decaying at inifinities, the constant $\sigma$ is defined from Eq. (\ref{Uth}) as
+Поскольку мы также хотим иметь решение для $U_0$, убывающее на бесконечностях, константу $\sigma$ необходимо определить из уравнения (\ref{Uth}) следующим образом
 \[
 \sigma=\frac{F_{31}}{c^2-F_1}
 \]
