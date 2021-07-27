@@ -1,3 +1,679 @@
 \chapter{Элементарное управляющее воздействие}\label{ch:ch1}
 
+\section{Введение}
+%Interest to diatomic lattices arose many years ago and is reflected in many books and reviews [1–4]. Such an interest is related both to solid lattices, granular media and photonic lattices [1–3,5]. Usually, the continuum limit is employed to obtain governing equations [1,2,4,6–9]. Both linear [1,4] and weakly nonlinear [2,6,7,9] models are considered. Weak nonlinearity is approximated by the power series in displacements or strains, and usually the one-dimensional problem is studied. Strongly nonlinear continuum theory of di-atomic lattices has been developed in [10–13] mainly in the one-dimensional case.
 
+%The nonlinear continuum governing equations obtained for strongly nonlinear waves possess exact solitary wave solutions [13]. However, their stable propagation depends on many factors, first of all, the initial conditions [14]. Recently, an approach has been developed to use control methods [15] for providing stable propagation of nonlinear waves [16–19]. According to the method, a control function is added into an equation. However, this function has been introduced in [16–19] formally without any physical meaning. In this paper, an attempt is done to describe the control function as a consequence of an external loading of the lateral surfaces of the layer made of material having a di-atomic crystalline structure. The two-dimensional problem is formulated in Section 1 using the strain energy obtained in [20]. An asymptotic procedure is developed in Section 2 to obtain the coupled governing one-dimensional equations for the macro-displacements and variations in an internal structure (microstructure). Section 3 is devoted to a development of the control algorithm for a strongly nonlinear case as a result of the action of the external stresses on the lateral surfaces of the layer. Next Section considers the weakly nonlinear case where the equations are decoupled using the slaving principle. The distributed feedback control algorithm is obtained where the target function of the control is modeled by the external tangential stress.
+
+Интерес к двухатомным решеткам возник много лет назад и отражен во многих книгах и обзорах [1–4]. Такой интерес связан как с твердыми решетками, гранулированными средами, так и с фотонными решетками [1–3,5]. Обычно континуальный предел используется для получения основных уравнений [1,2,4,6–9]. Рассмотрены как линейные [1,4], так и слабонелинейные [2,6,7,9] модели. Слабая нелинейность аппроксимируется степенным рядом смещений или деформаций, и обычно изучается одномерная задача. Сильно нелинейная континуальная теория двухатомных решеток развита в [10–13] в основном в одномерном случае.
+
+Определяющие нелинейные уравнения континуума, полученные для сильно нелинейных волн, обладают точными уединенными волновыми решениями [13]. Однако их устойчивое распространение зависит от многих факторов, в первую очередь от начальных условий [14]. Недавно был разработан подход к использованию методов управления [15] для обеспечения устойчивого распространения нелинейных волн [16–19]. Согласно методу в уравнение добавляется управляющая функция. Однако эта функция введена в [16–19] формально без какого-либо физического смысла. В данной статье предпринята попытка описать управляющую функцию как следствие внешней нагрузки на боковые поверхности слоя из материала, имеющего двухатомную кристаллическую структуру. Двумерная задача формулируется в разделе 1 с использованием энергии деформации, полученной в [20]. В разделе 2 разработана асимптотическая процедура для получения связанных управляющих одномерных уравнений для макроперемещений и изменений внутренней структуры (микроструктуры). Раздел 3 посвящен развитию алгоритма управления для сильно нелинейного случая в результате воздействия внешних напряжений на боковые поверхности слоя. В следующем разделе рассматривается слабонелинейный случай, когда уравнения разделяются по принципу подчинения. Получен алгоритм управления с распределенной обратной связью, в котором целевая функция управления моделируется внешним касательным напряжением. 
+
+\section{Statement of problem}
+
+Let us consider isotropic elastic layer infinitely long  in the horizontal,  $x$,  direction and  with the width $2 H$ in the vertical,  $y$,  direction. The axis $x$ lies on the middle line of the layer. Then the lower surface of the layer corresponds to $y=-H$. 
+
+Equations of motions for the displacements in the layer are obtained using the Hamilton- Ostrogradsky variational principle,
+
+\begin{equation}
+	\delta \left( \int_{t_0}^{t_1}dt \int_{-H}^{H} dy \int_{-\infty}^{\infty}\left( K - \Pi \right)  \:   dx \right)+ \delta A_1 + \delta A_2=0, \label{var}
+\end{equation}
+where $ \delta A_1$ and $\delta A_2$ are elementary works at the upper and lower surfaces respectively,
+
+
+The density of the potential energy for material having di-atomic crystalline structure  has been obtained in \cite{porsp17} using the continuum limit of the dicrete di-atomic model. For the linearized problem, it has the form
+\begin{equation}
+	\begin{aligned}
+		\Pi = & \frac{C_1}{h} \left(u^2 + v^2\right) + \frac{C_1+C_2}{h}\left(U_x^2+V_y^2\right) +\frac{C_2}{h}\left(U_y^2 + V_x^2 + 2U_x V_y + 2 U_y V_x\right) + \\ 
+		& + \frac{h\left(C_2\left(m_1^2 + m_2^2\right) - 2C_1 m_1 m_2\right)}{2\left(m_1^2 + m_2^2\right)}\left(u_x^2 + v_y^2\right) + \frac{\left(m_2-m_1\right)\left(C_1+C_2\right)}{m_1+m_2}\left(u_x U_x + v_y V_y\right) + \\ 
+		& + \frac{C_2 h\left(m_1^2+m_2^2\right)}{2\left(m_1+m_2\right)^2}\left(u_y^2+v_x^2+2u_y v_x + 2u_x v_y\right) + \frac{C_2\left(m_2 - m_1\right)}{m_1 + m_2}\left(u_y U_y+v_x V_x + u_y V_x + \right. \\
+		& + \left. u_x V_y + v_y U_x + v_x U_y\right)
+	\end{aligned}
+\end{equation}
+
+where $U$,  $u$, $V$, $v$ are related to the horizontal and vertical directions displacements of the elements of di-atomic lattice with masses $m_1$, $u_1, v_1$, and $u_2, v_2$ with $m_2$, as
+\begin{equation}
+	U~=~\frac{m_1~u_1+m_2~u_2}{m_1+m_2},~V=\frac{m_1~v_1+m_2~v_2}{m_1+m_2}, \label{macro}
+\end{equation}
+\begin{equation}
+	u=\frac{u_1-u_2}{h},~v=\frac{v_1-v_2}{h}. \label{micro}
+\end{equation}
+The variables (\ref{macro}) account for the movement of the center of masses, while the variables (\ref{micro}) describe relative displacements of the neighboring masses, they are responsible for a microstructure.
+Here  $h$ is a distance between the elements, $C_1$ accounts for a stiffness of the spring connecting the elemnts in ahorizonatal and vertical directions, while $C_2$ describes the diagonal spring stiffness.
+
+The density of a nonlinear part of the potential energy has been suggested in \cite{aeroplane, porsp17} in the form
+\begin{equation}
+	\Pi_{nl} = \left( p - s_{xx} U_x - s_{yx} \left( U_y + V_x\right) - s_{yy} V_y\right) \left( 1- \cos{(u+v)}\right) \label{pot}
+\end{equation}
+
+The density of the kinetic energy is \cite{porsp17}:
+\begin{equation}
+	K = \frac{1}{2} \rho (U_t^2 + V_t^2) + \frac{1}{2} \eta (u_t^2 + v_t^2), \label{kin}
+\end{equation}
+where
+\begin{equation}
+	\begin{aligned}
+		& \rho = \frac{m_1+m_2}{h^3} \\ 
+		& \eta = \frac{m_1 m_2}{(m_1 + m_2)h} \\
+	\end{aligned}
+\end{equation}
+Assume that the layer lies on the foundation that interacts with the layer via normal, $\sigma_y$, and tangential, $\tau_{xy}$, stresses,
+\begin{equation}
+	\sigma_{y}=q_1 V + q_2 V_t , ~
+	\tau_{xy}= k_d (q_1 V + q_2 V_t), \label{friction}
+\end{equation}
+
+The normal stresses  interaction corresponds to the model developed recently to account for a description of vicso - elastic  foundation  \cite{Kerr}, $q_1$, $q_2$ are constants,   while the tangetntial contact accounts for a  friction according to the Coulomb - Amonoton law  when $k_d~>~0$ is a friction coefficient \cite{Hahner}. The upper surface of the layer, $y=h$,  is subjected to the normal, $f_N(x,t)$, and tangential, $f_\tau(x,t)$, loadings,
+\begin{equation}
+	\sigma_{y}=f_{N}, ~\tau_{xy}=f_{\tau}. \label{upper}
+\end{equation}
+Using Eqs. (\ref{fricrion}), (\ref{upper}) one obtains the elementary works at the upper and lower surfaces,
+\begin{equation}
+	\delta A_1 =  \int_{t_0}^{t_1} dt\int_{-\infty}^{\infty}f_{N}\delta V \:  dx +\int_{t_0}^{t_1} dt  
+	\int_{-\infty}^{\infty} f_{\tau}\delta U \: dx , \label{workup}
+\end{equation}
+
+\begin{equation}
+	\delta A_2 =  \int_{t_0}^{t_1} dt \int_{-\infty}^{\infty}(q1_1 V + q_2 V_t)\delta V \:  dx + \int_{t_0}^{t_1} dt
+	\int_{-\infty}^{\infty}k_d(q_1 V + q_2 V_t)\delta U \:  dx.  \label{worklow}
+\end{equation}
+
+Using Eqs. (\ref{pot}), (\ref{kin}), (\ref{workup}), (\ref{worklow}), mone obtaind the following statement of the problrm.  The equations of motions are 
+\[
+\rho U_{tt} -2 \alpha_2 U_{xx} -2 \alpha_3 \left( U_{yy} + 2 V_{xy}\right) - \alpha_5 h u_{xx} - \alpha_7 h (u_{yy} + 2 v_{xy}) +
+\]
+
+\begin{equation}
+	\sin{(u+v)}(s_{xx}(u_x + v_x)+ s_{yx}(u_y + v_y)) = 0, \label{beq1}
+\end{equation}
+
+\[
+\eta u_{tt} + 2 \alpha_1 u - 2 \alpha_4 h^2 u_{xx} - \alpha_5 h  U_{xx} - 2 \alpha_6 h^2 (u_{yy} + 2 v_{xy}) - 2 \alpha_7 h (U_{yy} + 2 V_{xy}) - 
+\]
+\begin{equation}
+	\sin{(u+v)}(s_{xx}U_x + s_{yy}V_y + s_{yx}(U_y + V_x)-p) = 0, \label{beq2}
+\end{equation}
+\[
+\rho V_{tt} -2 \alpha_2 V_{yy} -2 \alpha_3 \left( V_{xx} + 2 U_{xy}\right) - \alpha_5 h v_{yy} - \alpha_7 h (v_{xx} + 2 u_{xy}) +
+\]
+\[
+\sin{(u+v)}(s_{yy}(u_y + v_y)+ s_{yx}(u_x + v_x)) = 0,
+\]
+\[
+\eta v_{tt} + 2 \alpha_1 v - 2 \alpha_4 h^2 v_{yy} - \alpha_5 h V_{yy} - 2 \alpha_6 h^2 (v_{xx} + 2 u_{xy}) - 2 \alpha_7 h (V_{xx} + 2 U_{xy}) - 
+\]
+\[
+-\sin{(u+v)}(s_{xx}U_x + s_{yy}V_y + s_{yx}(U_y + V_x)-p) = 0,
+\]
+where
+\[ \alpha_1 = \frac{C_1}{h},  \alpha_2 = \frac{C_1+C_2}{h} , 
+\alpha_3 = \frac{C_2}{h}
+\]
+\[ 
+\alpha_4 = \frac{\left(C_2\left(m_1^2 + m_2^2\right) - 2C_1 m_1 m_2\right)}{2\left(m_1^2 + m_2^2\right)h} , 
+\alpha_5 = \frac{\left(m_2-m_1\right)\left(C_1+C_2\right)}{(m_1+m_2)h} 
+\]
+\[
+\alpha_6 = \frac{C_2 \left(m_1^2+m_2^2\right)}{2\left(m_1+m_2\right)^2h} ,
+\alpha_7 = \frac{C_2\left(m_2 - m_1\right)}{(m_1 + m_2)h} \
+\] 
+
+
+The boundary conditions at the upper surface, $y=H$,  are 
+
+\begin{equation}
+	2 \alpha_3 (U_y + V_x) + 2 \alpha_7 h (u_y + v_x) + s_{yx}( \cos{(u + v)-1)} = f_{\tau}, \label{bc11}
+\end{equation}
+\begin{equation}
+	2 \alpha_2 V_y + 2 \alpha_3 U_x + 2 \alpha_5 h v_y + 2 \alpha_7 h u_x + s_{yy} (\cos{(u + v)-1)}= f_N,\label{bc12}
+\end{equation}
+\begin{equation}
+	2 \alpha_6 h^2 (u_y + v_x) + 2 \alpha_7 h (U_y + V_x) = 0,\label{bc13}
+\end{equation}
+\begin{equation}
+	2 \alpha_4 h^2 v_y + 2 \alpha_5 h V_y + 2 \alpha_6 h^2 u_x + 2 \alpha_7 h U_x = 0. \label{bc14}
+\end{equation}
+
+At the lower surface of the layer, $y= - H$, we have 
+\begin{equation}
+	2 \alpha_3 (U_y + V_x) + 2 \alpha_7 h (u_y + v_x) + s_{yx} (\cos{(u + v)-1)} = k_d( q_1 V + q_2 V_t) ,\label{bc21}
+\end{equation}
+\begin{equation}
+	2 \alpha_2 V_y + 2 \alpha_3 U_x + 2 \alpha_5 h v_y + 2 \alpha_7 h u_x + s_{yy} (\cos{(u + v)-1)}= q_1 V +q_2 V_t,\label{bc22}
+\end{equation}
+\begin{equation}
+	2 \alpha_6 h^2 (u_y + v_x) + 2 \alpha_7 h (U_y + V_x) = 0, \label{bc23}
+\end{equation}
+\begin{equation}
+	2 \alpha_4 h^2 v_y + 2 \alpha_5 h V_y + 2 \alpha_6 h^2 u_x + 2 \alpha_7 h U_x = 0 . \label{bc24}
+\end{equation}
+
+The whole two-dimensional problem is too complicated for an anlysis, and some reasonable simplifications are needed.
+
+\section{Model one-dimensional equations for longitudinal waves}
+
+Approximate reduction of the 2D equations of motion is achieved when predominantly longitudinal waves are studied, then the horizontal and vertical macro- and micro- displacements are assumed to be 
+\begin{equation}
+	U=U_0(x,t)+B_1(x,t)~y+B_2(x,t)~y^2,~u=u_0(x,t)+b_1(x,t)~y+b_2(x,t)~y^2, \label{Usol}
+\end{equation}
+\begin{equation}
+	V=y ~A(x,t), v=y~a(x,t). \label{Vsol}
+\end{equation}
+The functions $A$,$a$, $B_1$,$B_2$,$b_1$, $b_2$ are defined from the boundary conditions. When consider small width of the layer $2H$  are considered,  the boundary conditions are simplified neglecting terms at some order of $H$.  Thus, leaving  the  terms of order $H^0$ in boundary condition (\ref{bc22}), (\ref{bc24}), one obtains  the algebraic equations  for $A$ and $a$ whose solution is
+\[
+a=\beta_{21} u_{0,x}+\beta_{31} \sin^2(u_0/2),
+\]
+\[
+A=\beta_{1} U_{0,x}+\beta_{22} u_{0,x}+\beta_{32}\sin^2(u_0/2),
+\]
+
+where
+\[ 
+\beta_{21}=-\frac{C_2 (m_1^2 - 4 m_1 m_2 + m_2^2)}{(2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2},
+\]
+\[
+\beta_{31}=-\frac{(2 (m_1 - m_2) (m_1 + m_2) s_{yy}}{(2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\beta_{21}=-\frac{C_2}{C_1+C_2}, 
+\beta_{22}=\frac{C_1 C_2 h (m_1 - m_2) (m_1 + m_2)}{(C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}, 
+\]
+\[
+\beta_{32}=-\frac{h (-2 C_1 m_1 m_2 + C_2 (m_1^2 + m_2^2)) s_{yy}}{(C_1 + 
+	C_2) ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_)2 + (2 C_1 + C_2) m_2^2)},
+\]
+
+Let us consider the sum of boundary conditions, Eq(\ref{bc11})+Eq.(\ref{bc21}), and Eq.(\ref{bc13}) +Eq.(\ref{bc23}).  The coefficients $b_2$, $B_2$ are obtained when the terms only up to order $H$ are retained in these two resulting equations. 
+
+
+\[
+b_2=\gamma_1 U_x+ \gamma_2 u_x+ \gamma_3 U_{xt}+\gamma_4 u_{xt}+\gamma_5 \sin[u_0] +\gamma_6 \sin(u_0/2)^2+ \gamma_7 f_\tau,
+\]
+\[
+B_2=\Gamma_1 U_x+ \Gamma_2 u_x+ \Gamma_{3} U_{xt}+\Gamma_{4} u_{xt}+\Gamma_{5} \sin(u_0) +\Gamma_{6} \sin(u_0/2)^2+ \Gamma_{7} f_\tau,
+\]
+where
+\[
+\gamma_1=-\frac{ k_1 q_1 H (m_1 - m_2) (m_1 + m_2) }{2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2))}
+\]
+\[
+\gamma_2=\frac{C_1  k_1 q_1  h ~H(m_1^2 - m_2^2)^2}{2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2) ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\gamma_3=   -\frac{(k_1  q_2 H(m_1 - m_2) (m_1 + m_2)}{2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)}
+\]
+\[
+\gamma_4=\frac{ k_1 q_2 C_1 h ~H(m_1^2 - m_2^2)^2 }{2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2) ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\gamma_5=-\frac{( k1  q_2 s_{yy} h ~H (m_1 - m_2) (m_1 + m_2) ( C_2 (m_1^2 + m_2^2)-2 C_1 m_1 m_2  
+	)}{ 4 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2))}
+\]
+\[
+\gamma_6=\frac{1} {2 C_2 (C_1 + 
+	C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\left(\frac{}{} (m_1^2 - m_2^2)  (-4 (C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2) s_{yx} - \right.
+\]
+\[
+\left.
+k_1q_1 s_{yy} h~ H (-2 C_1 m_1 m_2 + C_2 (m_1^2 + m_2^2))\frac{}{} \right)
+\]
+\[
+\gamma_7=-\frac{m_1^2 - m_2^2}{2 C_2 (m_1^2 - 4 m_1 m_2 + m_2^2)}
+\]
+\[
+\Gamma_1=-\frac{ k_1 q_1 h~ H (m_1^2 + m_2^2) }{4 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)}
+\]
+\[
+\Gamma_2=\frac{(C_1  k_1 q_1 h^2 H (m_1^4 - m_2^4) }{
+	4 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2))}
+\]
+\[
+\Gamma_{3}=-\frac{(k_1 q_2 h ~H (m_1^2 + m_2^2) }{4 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)}
+\]
+\[
+\Gamma_{4}=\frac{C_1  k_1 q_2 h^2 H (m_1^4 - m_2^4) }{
+	4 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2))}
+\]
+\[
+\Gamma_{5}=-\frac{ k_1 q_2 s_{yy} h^2 H (m_1^2 + m_2^2) (-2 C_1 m_1 m_2 + C_2 (m_1^2 + m_2^2)) }{
+	8 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)))}
+\]
+\[
+\Gamma_{6}=\frac{1}{4 C_2 (C_1 + 
+	C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\left(\frac{}{}  h (m_1^2 + m_2^2) (-4 (C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2) s_{yx} - \right.
+\]
+\[
+\left.    k_1 q_1 s_{yy} h ~H(-2 C_1 m_1 m_2 + C_2 (m_1^2 + m_2^2))\frac{}{} \right)
+\]
+\[
+\Gamma_{7}=-\frac{h (m_1^2 + m_2^2)}{4 C_2 (m_1^2 - 4 m_1 m_2 + m_2^2)}
+\]
+Let us consider the difference of boundary conditions, Eq(\ref{bc11})-Eq.(\ref{bc21}), and Eq.(\ref{bc13}) -Eq.(\ref{bc23}).  The coefficients  $B_1$,$ b_1$ are defined from the resulting two equations by taking into account only terms up to order $H$,
+\[
+b_1=\delta_1 U_{0,xx}+\delta_2 u_{0,xx}+\delta_3 U_{0,x}+\delta_4 u_{0,x}+\delta_5 U_{0,x} \sin (u_0)+\delta_6 u_{0,x} \sin (u_0)+\delta_7 u_{0,t}\sin (u_0)+\delta_8  U_{0,xt}+\delta_9 u_{0,xt}+
+\]
+\[
+\delta_{10} U_{0,xt} \sin (u_0) +\delta_{11} u_{0,xt} \sin (u_0)+\delta_{12} \sin ^2(u_0/2)+\delta_{13} u_{0,t} \sin ^2(u_0)+\delta_{14} \sin ^3(u_0/2)\cos (u_0/2)+\delta_{15} f_tau + 
+\]
+\[
+\delta_{16} f_tau \sin (u_0),
+\]
+\[
+B_1=\Delta_1 U_{0,xx}+\Delta_2 u_{0,xx}+\Delta_3 U_{0,x}+\Delta_4 u_{0,x}+\Delta_5 U_{0,x} \sin (u_0)+\Delta_6 u_{0,x} \sin (u_0)+\Delta_7 u_{0,t}\sin (u_0)+
+\]
+\[
+\Delta_8  U_{0,xt}+\Delta_9 u_{0,xt}+
+\Delta_{10} U_{0,xt} \sin (u_0) +\Delta_{11} u_{0,xt} \sin (u_0)+\Delta_{12} \sin ^2(u_0/2)+\Delta_{13} u_{0,t} \sin ^2(u_0)+
+\]
+\[
+\Delta_{14} \sin ^3(u_0/2)\cos (u_0/2)+\Delta_{15} f_\tau + 
+\Delta_{16} f_\tau \sin (u_0)
+\]
+where
+\[
+\delta_1=0
+,
+\delta_2=\frac{C_2 (m_1^2 - 4 m_1 m_2 + m_2^2)}{
+	2 C_2 (m_1^2 - 4 m_1 m_2 + m_2^2) + 4 C_1 (m_1^2 - m_1 m_2 + m_2^2)}
+,
+\delta_3=\frac{k_1 q_1(m_1^2 - m_2^2)}{4 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)}
+\]
+\[
+\delta_4=-\frac{C_1  k_1 q_1 h(m_1^2 - m_2^2)^2 }{
+	4 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2)(m_1^2+m_2^2) - 
+	2 (C_1 + 2 C_2) m_1 m_2 )}
+\]
+\[
+\delta_5=\frac{k_1 q_1 s_{yx} H(m_1^2 - m_2^2)^2}{4 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2)^2}
+\]
+\[
+\delta_6=\frac{1}{(4 C_2 (C_1 + 
+	C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)^2 ((2 C_1 + C_2) (m_1^2+ m_2^2)- 
+	2 (C_1 + 2 C_2) m_1 m_2  )}
+\]
+\[
+\left(\frac{}{}
+(m_1^2 - m_2^2) (-C_1  k_1 q_1 s_{yx} h~ H(m_1^2 - m_2^2)^2  + 
+2 C_1 C_2 (m_1^2 - 4 m_1 m_2 + m_2^2)^2 (s_{yx} + s_{yy}) +\right.
+\]
+\[
+\left. 
+2 C_2^2 (m_1^2 - 4 m_1 m_2 + m_2^2)^2 (s_{yx} + s_{yy}))\frac{}{}\right)
+\]
+\[
+\delta_7=\frac{k_1 q_2 s_{yy} h (m_1^2 - m_2^2)  (-2 C_1 m_1 m_2 + 
+	C_2 (m_1^2 + m_2^2))}{8 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2) ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\delta_8=\frac{k_1 q_2 (m_1^2 - m_2^2) }{4 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)}
+\]
+\[
+\delta_9=-\frac{C_1  k_1  q_2 h(m1^2 - m2^2)^2}{
+	4 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2))}
+\]
+\[
+\delta_{10}=\frac{ k_1 q_2 s_{yx} H (m_1^2 - m_2^2)^2}{2 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2)^2}
+\]
+\[
+\delta_{11}=-\frac{C_1  k_1 q_2 s_{yx} h H(m_1^2 - m_2^2)^3 }{
+	2 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)^2 ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\delta_{12}=\frac{k_1 q_1 s_{yy} h  (m_1^2 - m_2^2) (-2 C_1 m_1 m_2 + 
+	C_2 (m_1^2 + m_2^2)) }{4 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2) ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\delta_{13}=\frac{ k_1 q_2 s_{yx} s_{yy} h~ H(m1^2 - m2^2)^2  (-2 C_1 m_1 m_2 + 
+	C_2 (m_1^2 + m_2^2)) }{8 C_2^2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2)^2 ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\delta_{14}=\frac{1}{2 C_2^2 (C_1 + C_2) (m_1^2 - 
+	4 m_1 m_2 + m_2^2)^2 ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\left( \frac{}{} (m_1^2 - m_2^2)^2  s_{yx} (4 (C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2) s_{yx} + \right.
+\]
+\[
+\left. (4 C_2 (C_1 + 
+C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) +
+k_1 q_1 h~ H(-2 C_1 m_1 m_2 + C_2 (m_1^2 + m_2^2)) ) s_{yy}))\frac{}{}\right)
+\]
+\[
+\delta_{15}=-\frac{m_1^2 - m_2^2}{4 C_2 H (m_1^2 - 4 m_1 m_2 + m_2^2)}
+,
+\delta_{16}=\frac{(m_1^2 - m_2^2)^2 s_{yx}}{4 C_2^2 (m_1^2 - 4 m_1 m_2 + m_2^2)^2}
+\]
+\[
+\Delta_1=\frac{C_2}{2 (C_1 + C_2)}
+\]
+\[
+\Delta_2=\frac{C_1 C_2 h (-m_1^2 + m_2^2)}{
+	2 (C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)))},
+\]
+\[
+\Delta_3=\frac{k_1 q_1 h (m_1^2 + m_2^2) }{8 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)},
+\]
+\[
+\Delta_4=-\frac{(C_1 k_1  q_1  h^2(m_1^4 - m_2^4) }{
+	8 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2))},
+\]
+\[
+\Delta_5=\frac{ k_1 q_1 s_{yx} h H (m1^4 - m2^4) }{
+	8 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)^2)},
+\]
+\[
+\Delta_6=-\frac{1}{8 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2)^2 ((2 C_1 + C_2) (m_1^2+ m_2^2) - 
+	2 (C_1 + 2 C_2) m_1 m_2 ))}
+\]
+\[
+\left(\frac{}{}h (C_1  k_1  q_1 s_{yx} h H (m_1^2 - m_2^2)^2 (m_1^2 + m_2^2) - 
+2 C_2^2 (m_1^2 + m_2^2) (m_1^2 - 4 m_1 m_2 + m_2^2)^2 (s_{yx} + s_{yy}) -\right.
+\]
+\[ 
+\left.  2 C_1 C_2 (m_1^2 - 4 m_1 m_2 + m_2^2)^2 ((m_1^2 + m_2^2) s_{yx} - 
+2 m_1 m_2 s_{yy})\frac{}{}\right)          ,
+\]
+\[
+\Delta_7=\frac{ k_1 q_2 s_{yy} h^2 (m_1^2 + m_2^2) (-2 C_1 m_1 m_2 + 
+	C_2 (m_1^2 + m_2^2)) }{16 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2) ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+\Delta_8=\frac{k_1 q_2 h (m_1^2 + m_2^2) }{8 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)},
+\]
+\[
+\Delta_9=-\frac{C_1  k_1 q_2 h^2 (m1^4 - m2^4) }{
+	8 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+\Delta_{10}=\frac{k_1 q_2 s_{yx}h H  (m1^4 - m2^4) }{
+	8 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)^2)},
+\]
+\[
+\Delta_{11}=-\frac{(C_1 H k_1  q_2 s_{yx}  h^2 (m_1^2 - m_2^2)^2 (m_1^2 + m_2^2)}{
+	8 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)^2 ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+\Delta_{12}=\frac{k_1 q_1 s_{yy} h^2  (m_1^2 + m_2^2) (-2 C_1 m_1 m_2 + 
+	C_2 (m_1^2 + m_2^2))}{8 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2) ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+\Delta_{13}=\frac{ k_1 q_2 s_{yx} s_{yy} h^2 H (m_1^4 - m_2^4) (-2 C_1 m_1 m_2 + 
+	C_2 (m_1^2 + m_2^2))}{16 C_2^2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2)^2 ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2},
+\]
+\[
+\Delta_{14}=\frac{1} {4 C_2^2 (C_1 + C_2) (m_1^2 - 
+	4 m_1 m_2 + m_2^2)^2 ((2 C_1 + C_2) (m_1^2+m_2^2) - 
+	2 (C_1 + 2 C_2) m_1 m_2 )}
+\]
+\[ \left(\frac{}{} h (m_1^4 - 
+m_2^4) s_{yx} (4 (C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2) s_{yx} + \right.
+\]
+\[
+\left.(4 C_2 (C_1 + 
+C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) + 
+k_1 q_1  h H (-2 C_1 m_1 m_2 + 
+C_2 (m_1^2 + m_2^2)) ) s_{yy})\frac{}{}\right) ,
+\]
+\[
+\Delta_{15}=-\frac{h (m_1^2 + m_2^2)}{8 C_2 H (m_1^2 - 4 m_1 m_2 + m_2^2))},
+\Delta_{16}=\frac{s_{yx} h (m1^4 - m2^4)}{8 C_2^2 (m_1^2 - 4 m_1 m_2 + m_2^2)^2}.
+\]
+Approximate equations are obtained by equating to zero terms at each order of $y$ in the equations of motion after substituting in them Eqs. (\ref{Usol}), (\ref{Vsol}). 
+
+Thus, equating to zero the leading order terms at $y^0$ in Eq. (\ref{beq1}) results in  equation
+
+\[
+\rho U_{0,tt}-F_1 U_{0,xx}-F_2 u_{0,xx}+F_{31} ( \cos(u_0))_x= F_5 f_\tau+k_1 q_1 (F_7 U_{0,x}+F_8 u_{0,x})+
+\]
+\[
+k_1 q_2 (F_{11} u_{0,xt}+ F_{13} U_{0,xt})+s_{yx}\left(\frac{}{} F_6 f_\tau \sin (u_0)+F_{32} u_{0,x} \sin (u_0)+F_{16} \sin^2(u_0/2)+\right.
+\]
+\[
+\left. k_1 q_1 (F_{33} u_{0,x}+F_4 U_{0,x})\sin(u_0)+k_2 q_2(F_{12} u_{0,xt}+F_{14} U_{0,xt})\sin(u_0) \frac{}{}\right)+
+\]
+\[
+s_{yy}\left(\frac{}{} (F_{34} u_{0,x}+ k_1 q_2 F_{10} u{0,t})\sin(u_0)+k_1 q_1 F_{15}\sin^2(u_0/2)\frac{}{}\right)+
+\]
+\begin{equation}
+	s_{yy} s_{yx} (F_9 k_1 q_2 u_t \sin^2(u_0)+f_{17} \sin^3(u_0/2)\cos(u_0/2))+s_{yx}^2 F_{16}  \sin^3(u_0/2)\cos(u_0/2) , \label{goveq1}
+\end{equation}
+where
+\[
+F_1=\frac{2 C_1 (C_1 + 2 C_2)}{(C_1 + C_2) h},
+\]
+\[
+F_2=-\frac{C_1 (m_1 - m_2) ((2 C_1^2 + 5 C_1 C_2 + C2^2) m_1^2 - 
+	2 (C_1^2 + 4 C_1 C_2 + 5 C_2^2) m_1 m_2 + (2 C_1^2 + 5 C_1 C_2 + 
+	C_2^2) m_2^2)}{(C_1 + C_2) (m_1 + m_2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+F_{31}=-\frac{(2 C_2^2 (m_1^2-4m_1 m_2+ m_2^2)+ 6 C_1 C_2 (m_1 - m_2)^2+   4 C_1^2 (m_1^2 - m_1 m_2 + m_2^2))s_{xx}
+}{(C_1 + C_2) ((2 C_1 + C_2) m_1^2 -  2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)} , 
+\]
+\[
+F_{32}=\frac{ 2( C_1+C_2) C_2 (m_1 - m_2)^2
+}{(C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2))},
+\]
+\[
+F_{33}=-\frac{C_1 h H  (m_1 - m_2)^4 (m_1 + m_2)^2}{(C_1 + C_2) (m_1^2 - 
+	4 m_1 m_2 + m_2^2)^2 ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+F_{34}=-\frac{4 C_2^2 m_1 m_2}{(C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)} +
+\]
+\[\frac{
+	2 C_1 C_2 (m_1^2 + m_2^2)}{(C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+F_4=-\frac{H  (m_1 - m_2)^3 (m_1 + m_2)}{2(C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2)^2},
+F_5=-\frac{m_1 m_2}{H (m_1^2 - 4 m_1 m_2 + m_2^2)},
+\]
+\[
+F_6=-\frac{(m_1 - m_2)^3 (m_1 + m_2) }{2 C_2 (m_1^2 - 4 m_1 m_2 + m_2^2)^2},
+F_7=\frac{C_2  m_1 m_2 }{(C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)},
+\]
+\[
+F_8=-\frac{C_1 C_2 h  m_1 m_2 (m_1^2 - m_2^2)}{(C_1 + C_2) (m_1^2 - 4 m_1 m_2 +
+	m_2^2) ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+F_9=\frac{h H  (m_1 - m_2)^3 (m_1 + m_2) (-2 C_1 m_1 m_2 + 
+	C_2 (m_1^2 + m_2^2))}{C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2)^2 ((2 C_1 + C_2) m_1^2 - 2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)
+},
+\]
+\[
+F_{10}=\frac{h  m_1 m_2 (-2 C_1 m_1 m_2 + C_2 (m_1^2 + m_2^2))}{(C_1 + 
+	C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+F_{11}=\frac{C_1 C_2 h  m_1 m_2 (m_2^2-m_1^2) }{(C_1 + C_2) (m_1^2 - 
+	4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+F_{12}=-\frac{C_1 h H  (m_1 - m_2)^4 (m_1 + m_2)^2 }{2(C_1 + C_2) (m_1^2 - 
+	4 m_1 m_2 + m_2^2)^2 ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+F_{13}=\frac{C_2  m_1 m_2 }{(C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2)},
+F_{14}=\frac{H  (m_1 - m_2)^3 (m_1 + m_2) }{2(C_1 + C_2) (m_1^2 - 4 m_1 m_2 + 
+	m_2^2)^2},
+\]
+\[
+F_{15}=\frac{h  m_1 m_2 (-2 C_1 m_1 m_2 + C_2 (m_1^2 + m_2^2)) }{(C_1 + 
+	C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+F_{16}=\frac{4 (m_1 - m_2)^3 (m_1 + m_2)}{C_2 (m_1^2 - 4 m_1 m_2 + m_2^2)^2},
+\]
+\[
+F_{17}=\frac{1}    {C_2 (C_1 + 
+	C_2) (m_1^2 - 4 m+1 m_2 + m_2^2)^2 ((2 C_1 + C_2) (m_1^2+m_2^2) - 
+	2 (C_1 + 2 C_2) m_1 m_2 )}
+\]
+\[
+\left(\frac{}{} (m_1 - m_2)^3 (m_1 + m_2) (4 C_2 (C_1 + C_2) (m_1^2 - 4 m_1 m_2 + m_2^2) + 
+k_1 q_1 h H (-2 C_1 m_1 m_2 + C_2 (m_1^2 + m_2^2)) \frac{}{} \right)
+\]
+Equating to zero the leading order terms in Eq. (\ref{beq2}) gives rise to  equation
+\[
+\eta u_{0,tt}+f_1 u_0+f_2 u_{0,xx}+f_3 U_{0,xx}+(f_4+f_5 U_{0,x})\sin(u_0)=
+\]
+\begin{equation}
+	s_{yy}^2 (f_6 \sin(u_0) \sin^2(u_0/2)+f_7 \sin(2 u_0)), \label{goveq2}
+\end{equation}
+where
+\[
+f_1=\frac{2 C_1}{h},
+\]
+\[
+f_2=\frac{2 C_1 h (-C_1 C_2 m_1^4 + 2 (C_1 + C_2)^2 m_1^3 m_2 - 
+	2 (C_1 + 2 C_2)^2 m_1^2 m_2^2 + 2 (C_1 + C_2)^2 m_1 m_2^3 - 
+	C_1 C_2 m_2^4)}{(C_1 + C_2) (m_1 + m_2)^2 ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}
+\]
+\[
+f_3=\frac{(C_1^2 + 2 C_1 C_2 - C_2^2) (m_1 - m_2)}{(C_1 + C_2) (m_1 + m_2)},
+\]
+\[
+f_4=p - \frac{C_1 h m_1 m_2 s_{yy}^2}{(C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+f_5=- s_{xx} - \frac{C_2 s_{yy}}{C_1 + C_2},
+\]
+\[
+f_6=-\frac{C_2 h (m_1^2 + m_2^2)}{(C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)},
+\]
+\[
+f_7=-\frac{C_1 h m_1 m_2 }{2(C_1 + C_2) ((2 C_1 + C_2) m_1^2 - 
+	2 (C_1 + 2 C_2) m_1 m_2 + (2 C_1 + C_2) m_2^2)}.
+\]
+\section{Control of strains}
+Equations (\ref{goveq1}), (\ref{goveq2}) for longitudinal waves $U_0$, $u_0$ can be further simplified if nonlinear features in the $y$ direction are small in comparison with those laong $x$ axis, $s_{xx}>>s_{yx}, s_{yy}$. Then the governing equations are 
+\[
+\rho U_{0,tt}-F_1 U_{0,xx}-F_2 u_{0,xx}+F_{31} ( \cos(u_0))_x= F_5 f_\tau+k_1 q_1 (F_7 U_{0,x}+F_8 u_{0,x})+
+\]
+\begin{equation}
+	k_1 q_2 (F_{11} u_{0,xt}+ F_{13} U_{0,xt}) \label{simeq1}
+\end{equation}
+\begin{equation}
+	\eta u_{0,tt}+f_1 u_0+f_2 u_{0,xx}+f_3 U_{0,xx}+(p-s_{xx} U_{0,x})\sin(u_0)=0.  \label{simeq2}
+\end{equation}
+In the absence of external loading, $f_\tau=0$, $q_1=0$, $q_2=0$, these equation correspond to those obtained in \cite{por14}. Traveling wave solutions can be studied when $U_0=U_0(\theta)$, $u_0=u_0(\theta)$, $\theta=x- c t$, $c$ is a constant phase velocity. In this case, Eq. (\ref{simeq1}) is integarted ones with respect to the phase variable giving rise to the expression for $U_\theta$,
+\begin{equation}
+	U_{0,\theta}=\frac{1}{c^2-F_1}\left(F_2 u_{0,\theta}-F_{31} \cos (u_0)\right)+\sigma. \label{Uth}
+\end{equation}
+Substitution of Eq. (\ref{Uth}) into Eq. (\ref{simeq2}) results in
+\[
+f_1 u_0+\left(\frac{}{}\eta c^2+ f_2+\frac{f_3 F_2}{c^2-F_1}\right) u_{0,\theta \theta}+ 
+\]
+\begin{equation}
+	(p-s_{xx} \sigma)\sin(u_0)+\frac{s_{xx} F_{31}}{2(c^2-F_1)}\sin (2 u_0)=0. \label{simeq3}
+\end{equation}
+This equation can be integrated once after multiplication by $u_{0,\theta}$. Consider the case of localized solution when the function $u_0$ and its first derivative decays at inifinities. Then the integarted equation (\ref{simeq3}) is
+\[
+f_1 u_0^2+\left(\frac{}{}\eta c^2+ f_2+\frac{f_3 F_2}{c^2-F_1}\right) u_{0,\theta}^2+ 
+\]
+\begin{equation}
+	4 (p-s_{xx} \sigma+\frac{s_{xx} F_{31}}{(c^2-F_1)}) \sin(u_0/2)^2-\frac{4s_{xx} F_{31}}{(c^2-F_1)}\sin(u_0/2)^4=0.  \label{simeq4}
+\end{equation}
+If we additionally want to have the solution for $U_0$ decaying at inifinities, the constant $\sigma$ is defined from Eq. (\ref{Uth}) as
+\[
+\sigma=\frac{F_{31}}{c^2-F_1}
+\]
+\begin{figure}
+	\begin{center}
+		\
+		\includegraphics[scale=0.8]{images/boundary_fig1.eps}
+		\caption{Homoclinic tarjectory of the solution to Eq. (\ref{simeq4}) (solid liane) and the trajectory of target function (\ref{target}) (dashed line).}
+	\end{center}
+\end{figure}
+Typical profile of the phase portrait of Eq.(\ref{simeq4}) is shown by solid line in Fig.1. However, traveling wave solutions exist under specific initial conditions. Recently the method of control of the wave localization has been developed in \cite{fradkov, porant16,  porandr17}. It was found that additional control terms in the equation can support stable propagation of nonlinear localized waves. In our case the control terms may be modeled by an external loading. Indeed,  assume that  the tangential external force in Eq. (\ref{simeq1}) is
+\begin{equation}
+	f_\tau=-\frac{k_1}{F_5}\left(q_1 F_7 U^*_x+q_2 F_{13} U^*_{xt}+q_1 F_8 u^*_x+q_2 F_{11} u^*_{xt}\right) \label{control}
+\end{equation}
+where $U^*(x,t)$, $u^*(x,t)$ are the target functions. Then the r.h.s. of the first equation of motion has the form of the  control function according to the speed-gradient feedback control method \cite{fradkov, porant16,  porandr17, porant17}. Numerical sumulations reveal the stable propagation of localized waves for a particular case  Eqs. (\ref{simeq1}),  (\ref{simeq2}) \cite{porant17}. The problem is that the algorithm of control requires analytical expression for the target functions while Eqs. (\ref{simeq1}),  (\ref{simeq2}) don't have it in the general case. Then one can suggest to find the suitable expression by coinciding its homoclininv orbit with that of Eq. (\ref{simeq4}). 
+In particular, the target functions inthe form of a bell-shaped solitary wave may be suggested as
+\begin{equation}
+	u^*=\kappa_1 {\text{sech}}^4 (\kappa_2(x- c t- x_0)), \label{target}
+\end{equation}
+Choosing the values of its parameters, $\kappa_i, x_0$, one can achieve the close trajectories shown  in Fig.1  by solid and dashed lines. equation (\ref{Uth}) is used to develop the target functions $U^*_x$ and $U^*_{xt}$. Obtained functions can be substituted into the control algorithm (\ref{control}) to study a tendence of an initial perturbation to a stable traveling wave defined by the target function (\ref{target}).
+
+
+\section{Weakly nonlinear case}
+
+Comsider  small internal variations, $u_0<<1$. In this case trigomometric nonlinearities in Eqs. (regf{simeq1}), (\ref{simeq2}) can be expanded in power series. Only  the leading order nonlinear terms are left. Also  consideration of the  long waves means that each order of derivation lowers the order of the term.   The assumptions applied to  Eq. (\ref{simeq1}) give rise to the governing equations  from
+\[
+\rho U_{0,tt}- F_1 U_{0,xx}- F_2 u_{0,xx}-F_{31} u_0 u_{0,x}=F_5 f_\tau+k_1 q_1 (F_7 U_{0,x}+F_8 u_{0,x})+
+\]
+\begin{equation}
+	k_1 q_2 (F_{11} u_{0,xt}+ F_{13} U_{0,xt}) , \label{weakeq1}
+\end{equation}
+The higher order terms are neglected in (\ref{simeq2}),
+\begin{equation}
+	(f_1+p)u_0+f_3 U_{0,xx}+f_5 u_0 U_{0,x}=0. \label{weakeq2}
+\end{equation}
+Even the exact traveling wave solution to Eqs. (\ref{weakeq1}), (\ref{weakeq2}) is unknown. Then an approximate solution can be elaborated using the slaving principle \cite{porpas}. According to it, Eq.(\ref{weakeq2}) can be resolved for $u_0$ using the above mentioned assumptions,
+\begin{equation}
+	u_0=-\frac{f_3 U_{0,xx}}{f_1+p}+\frac{f_3 s_{xx} U_{0,x} U_{0,xx}}{(f_1+p)^2}\label{weakeq3}
+\end{equation}
+Substitution of Eq. (\ref{weakeq3}) into Eq. (\ref{weakeq1}) results in equation for $U_0$,
+\[
+\rho U_{0,tt}- F_1 U_{0,xx}+ \frac{f_3 F_2}{f_1+p}U_{0,xxxx}+\frac{f_3 s_{xx} F_{31}}{2(f_1+p)^2} (U_{0,x}^2)_{xxx}=
+\]
+\begin{equation}
+	F_5 f_\tau+k_1 q_1\left (\frac{}{}F_7 U_{0,x} -\frac{f_3 F_8 U_{0,xxx}}{f_1+p}\right)+ k_1 q_2 \left(\frac{}{}F_{11} u_{0,xt}-\frac{f_3 F_{13} U_{0,xxxt}}{f_1+p}\right) \label{weakeq4}
+\end{equation}
+The last equation doesn't have even exact traveling wave solution in the absence of external loading. Numerical simulations show splitting of initial localized wave intotwo localized waves moving in the opposite directions. 
+
+\section{Conclusions}
+The control can  be modeled by an external loading acting on a lateral surface of a layer. The control algorithm is developed when nonlinearity is weal in a trnasverse direction. Of course other target functions may be used since it was  obtained in our previous works 
+\cite{porant16,  porandr17, porant17} that they should not relate to any solutions to the equation.
