@@ -520,7 +520,7 @@ This is not the case of Eq. (\ref{kpsh}) for shear waves. onsider its plane trav
 \]
 The solution is
 \begin{equation}
-	q=\frac{A}{Q+{\text{cosh}( \beta \xi)},\label{solshear}
+	q=\frac{A}{Q+{\text{cosh}( \beta \xi)}},\label{solshear}
 \end{equation}
 where
 \begin{equation}
@@ -531,7 +531,7 @@ We consider only bounded solutions when $Q<1$. It always happens when $B_1 B_2>0
 
 For the wave propagating along $x$ axis, $m=0$ and $Q=0$. Then the familiar solitary wave solution to the modified Korteweg-de Vries equation appears from (\ref{solshear}),
 \begin{equation}
-	q_m=\pm \frac{6B_2 \beta}{\sqrt{6 B_1 B_2}}{\text{cosh}^{-1}(\beta \xi) \label{qp}
+	q_m=\pm \frac{6B_2 \beta}{\sqrt{6 B_1 B_2}}{\text{cosh}}^{-1}(\beta \xi) \label{qp}
 \end{equation}
 that exists only when $B_1 B_2>0$. 
 
@@ -568,24 +568,24 @@ The model equations (\ref{kp}), (\ref{kpsh})  can be rewritten in the following 
 	\label{kp3gen}
 	\partial_x\left(\partial_t u+c_1 \partial_{xxx} u+\frac{c_2 }{p+1}\partial_x u^{p+1}\right)+f \partial_{yy} u+\gamma \partial_x\left(\partial_x u \int_{-\infty}^x \partial_y u \, \mathrm{d} x'\right)=0,
 \end{equation}
-%where $c_1, c_2, f, p, \gamma$ are the coefficients related  to those of either Eq.  equation (Eq.~(\ref{kp})) or Eq. (\ref{kpsh}) for $u_x = F$.
+where $c_1, c_2, f, p, \gamma$ are the coefficients related  to those of either Eq.  equation (Eq.~(\ref{kp})) or Eq. (\ref{kpsh}) for $u_x = F$.
 where $c_1, c_2, f, \gamma$ are the coefficients related to those of either Eq.~(\ref{kp}) or Eq. (\ref{kpsh}), $p=1,2$ correspondingly. For the last equation $u = F_{0,\theta}$.
 
-%A wide range of methods~\cite{porrogue,Lu2003,klein2007,Infeld1995,Kao2012,Kodama2009} was developed for the  Kadomtsev--Petviashvili equation to numerically solve this equation and its generalizations studying solitons interactions, solutions stability, asymptotic regimes and other aspects. 
+A wide range of methods~\cite{porrogue,Lu2003,klein2007,Infeld1995,Kao2012,Kodama2009} was developed for the  Kadomtsev--Petviashvili equation to numerically solve this equation and its generalizations studying solitons interactions, solutions stability, asymptotic regimes and other aspects. 
 For $p=1$ Eq.~(\ref{kp3gen}) is the Kadomtsev--Petviashvili equation, a wide range of methods~\cite{porrogue,Lu2003,klein2007,Infeld1995,Kao2012,Kodama2009} was developed to numerically solve this equation and its generalizations studying solitons interactions, solutions stability, asymptotic regimes and other aspects. 
 The Fourier spectral method is used here   to numerically solve Eq.~(\ref{kp3gen}) in the domain $\left[-L_x, L_x\right] \times \left[-L_y, L_y\right]$ with the periodic boundary conditions. Applying the antiderivative $\partial_x^{-1}$ and Fourier transform to Eq. (\ref{kp3gen}) gives rise to 
 \begin{equation}
 	\label{KP3F}
-	\partial_t \hat{u} - \imath\left( c_1 k_x^3 - f \frac{k_y^2}{k_x} \right) \hat{u} + \imath \frac{k_x}{p+1} \mathscr{F} \left(u^{p+1}\right)+\gamma \mathscr{F} \left[\partial_x u \int_{-\infty}^x \partial_y u \, \mathrm{d}x'\right]=0, 
+	\partial_t \hat{u} - \imath\left( c_1 k_x^3 - f \frac{k_y^2}{k_x} \right) \hat{u} + \imath \frac{k_x}{p+1} \hat{F} \left(u^{p+1}\right)+\gamma \hat{F} \left[\partial_x u \int_{-\infty}^x \partial_y u \, \mathrm{d}x'\right]=0, 
 \end{equation}
-where $u(x,y,t) \xrightarrow{\mathscr{F}} \hat{u}(k,l,t)$, $k_x = \frac{2\pi k}{L_x}$ and $k_y = \frac{2\pi l}{L_y}$. This equation is solved using the Sanz-Serna discretization scheme and the fast Fourier transform for the nonlinear terms based on the method proposed in~\cite{Chebab2016}. The numerical scheme is 
+where $u(x,y,t) \xrightarrow{\hat{F}} \hat{u}(k,l,t)$, $k_x = \frac{2\pi k}{L_x}$ and $k_y = \frac{2\pi l}{L_y}$. This equation is solved using the Sanz-Serna discretization scheme and the fast Fourier transform for the nonlinear terms based on the method proposed in~\cite{Chebab2016}. The numerical scheme is 
 \vtop{
 	\begin{equation}
 		\label{fkpscheme}
 		\frac{\hat{U}_{n+1} - \hat{U}_{n}}{\Delta t} - \imath \left(c_1 I_y \otimes K_x^3 - f K_y^2 \otimes \bar{K_x}^{-1} \right) \frac{\hat{U}_{n+1} + \hat{U}_{n}}{2} +
 	\end{equation}
 	$$
-	+\imath \frac{c_2}{p+1}\left( I_y \otimes K_x \right) \mathscr{F} \left[ \left( \frac{U_{n+1} + U_{n}}{2}  \right)^{p+1}\right] + \gamma \mathscr{F} \left[ \left(I_y \otimes D_x \frac{U_{n+1} + U_{n}}{2} \right) \circ R \right] = 0,
+	+\imath \frac{c_2}{p+1}\left( I_y \otimes K_x \right) \hat{F} \left[ \left( \frac{U_{n+1} + U_{n}}{2}  \right)^{p+1}\right] + \gamma \hat{F} \left[ \left(I_y \otimes D_x \frac{U_{n+1} + U_{n}}{2} \right) \circ R \right] = 0,
 	$$
 }
 $U_n$ denotes the approximation of $u$ at time $n\Delta t$, $I_x, I_y$ are identity matrices with the size $N_x$ and $N_y$ respectively, $R$ is the approximation of the last term of Eq.~(\ref{KP3F}), $D_*$ is the second order central finite difference matrix of $\partial / \partial *$ operator with periodic boundary conditions and $K_x$, $K_y$, $\bar{K_x}^{-1}$ are diagonal matrices
@@ -625,7 +625,7 @@ The numerical solution shown in  Fig.~\ref{figex2} demonstrates stable propagati
 Perturbed plane solitary wave soliton is studied using the initial condition developed on the basis of the asymptotic analysis (\ref{stlong}),  
 \begin{equation}
 	\label{kp1ex2}
-	u(x,y,0)=12{\text{sech}^2(x-4t) - 2.4 {\text{cos} (y) {\text{tanh} (x) ~{\text{sech}^2(x),
+	u(x,y,0)=12{\text{sech}}^2(x-4t) - 2.4 {\text{cos}} (y) {\text{tanh}} (x) ~{\text{sech}}^2(x),
 \end{equation}
 where $f = \pm 3$ is used in Eq. (\ref{kp3gen}).  According to the analytical solution $f=3$ corresponds to the stable case, while $f=-3$ relates to a transverse instability.
 \begin{figure}
@@ -674,7 +674,7 @@ The initial condition is
 \end{equation}
 where
 \begin{equation}
-	u_{\text{exact}}~(\xi ) = \frac{A}{\left(Q+{\text{cosh} (\xi )\right)},
+	u_{\text{exact}}~(\xi ) = \frac{A}{\left(Q+{\text{cosh}} (\xi )\right)},
 \end{equation}
 \[
 A=\frac{6 c_1}{\sqrt{6 c_1 c_2+\gamma ^2 m^2}},~Q=\pm \frac{\gamma  m}{\sqrt{6 c_1 c_2+\gamma ^2 m^2}},
@@ -691,7 +691,7 @@ The  results of stable propagation of the inclined plane waves are shown in Fig.
 
 To study the transverse instability we consider propagation of a single solitary wave along the $x$ axis. The perturbed initial condition is chosen according to the instability analysis of shear waves,
 \begin{equation}
-	u(x,y,0) = \sqrt{6} ~{\text{sech}(x)-\sqrt{6}{\text{tanh} (x) ~{\text{sech}(x) {\text{cos} (y),
+	u(x,y,0) = \sqrt{6} ~{\text{sech}}(x)-\sqrt{6}{\text{tanh}} (x) ~{\text{sech}}(x) {\text{cos}} (y),
 \end{equation}
 The results are shown in Figs.~\ref{fig_good1},~\ref{fig_good3},~\ref{fig_good2}. 
 %The stable case is shown in Fig.~\ref{fig_good1} corresponds to stable case. 
