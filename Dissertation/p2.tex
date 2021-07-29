@@ -212,6 +212,8 @@ A_1=\frac{h \left(2 P+ Q + 130 S\right)}{ \sqrt{M} \sqrt{5 C_1 + 5 C_2 + 34 C_3}
 A_3 = \frac{(5 C_2 + 16 C_3) (5 C_1 + 20 C_2+ 82 C_3)}{2  \sqrt{5M} (5 C_1+18 C_3 ) \sqrt{5 C_1 + 5 C_2 + 34 C_3}}.
 \]
 
+\fixme{Уравнение 1}
+
 Equation (\ref{nonkp}) may be re-written in the form of is the familiar Kadomtsev - Petviashvili equation, see \cite{Ablowitz} and references therein,  for the strain function, $w=G_{0,\theta}$,
 \begin{equation}
 	\left(\frac{}{} w_{ T}+ A_1~ w~ w_{ \theta} +A_2 ~w_{\theta \theta \theta} \frac{}{}\right)_\theta+ A_3~ w_{Y Y}~=~0, \label{kp}
@@ -529,7 +531,7 @@ Equation ( \ref{aseq4}) results in the solution for $V_{1,x}$,
 V_{1,x}=\frac{4 C_1 U_{1,yy}}{\sqrt{3} (3 C_1+C_2)}
 \]
 
-\fxime{Уравнение 2}
+\fixme{Уравнение 2}
 
 Substitution of all obtained solutions into Eq. (\ref{aseq1}) yields a single governing equation for the function $U_1$,
 \begin{equation}
@@ -568,64 +570,84 @@ The last equation is similar to Eq (\ref{kp}) obtained for the extended square l
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{Two-dimensional dynamical strain processes}
+%\section{Two-dimensional dynamical strain processes}
+\section{Двумерные динамические процессы деформации}
 
-\subsection{Exact solutions}
+%\subsection{Exact solutions}
+\subsection{Точные решения}
 
-The Kadomtsev-Petviashvili equation is integrable, and many analytical solutions are known, see, e.g. \cite{Ablowitz}. Of our interest is a particular  exact plane travelling solitary wave solution to Eq.  (\ref{kp}),
+%The Kadomtsev-Petviashvili equation is integrable, and many analytical solutions are known, see, e.g. \cite{Ablowitz}. Of our interest is a particular  exact plane travelling solitary wave solution to Eq.  (\ref{kp}),
+Уравнение Кадомцева-Петвиашвили интегрируемо, и известно множество аналитических решений, см., Например, \cite{Ablowitz}. Наш интерес представляет конкретное точное решение плоской бегущей уединенной волны уравнения (\ref {kp}),
 \begin{equation}
 	w=\frac{12A_2 \beta^2}{A_1}~{\text{sech}}^2\left(\beta( \theta+m Y - V T)\right), \label{solkp}
 \end{equation}
-where $V=4\beta^2 A_2+m^2 A_3 $. 
-The sign of the amplitude is defined by the sign of $A_2$ or  by nonlinear stiffness of the spring of the lattices. The shape of the wave is described by one and the same expression for zero and nonzero $m$. 
+%where $V=4\beta^2 A_2+m^2 A_3 $. 
+где $V=4\beta^2 A_2+m^2 A_3 $. 
+%The sign of the amplitude is defined by the sign of $A_2$ or  by nonlinear stiffness of the spring of the lattices. The shape of the wave is described by one and the same expression for zero and nonzero $m$.
+Знак амплитуды определяется знаком $A_2$ или нелинейной жесткостью пружины решеток. Форма волны описывается одним и тем же выражением для нулевого и ненулевого $m$.
 
-This is not the case of Eq. (\ref{kpsh}) for shear waves. onsider its plane traveling wave solution depending only on the phase variable $\xi=\theta+ m Y -V T$ and assume that $q=F_\xi$. Then Eq.  (\ref{kpsh}) is transformed to the ordinary differential equation,
+%This is not the case of Eq. (\ref{kpsh}) for shear waves. onsider its plane traveling wave solution depending only on the phase variable $\xi=\theta+ m Y -V T$ and assume that $q=F_\xi$. Then Eq.  (\ref{kpsh}) is transformed to the ordinary differential equation,
+Это не случай уравнения. (\ref{kpsh}) для поперечных волн. Рассмотрим его решение с плоской бегущей волной, зависящее только от фазовой переменной $\xi = \theta + m Y - V T$, и предположим, что $ q = F_\xi $. Тогда уравнение (\ref {kpsh}) преобразуется в обыкновенное дифференциальное уравнение,
 \[
 (-V q_\xi+\frac{B_1}{3} (q^3)_\xi+B_2 q_{\xi\xi\xi})_\xi+B_3m^2  q_{\xi\xi} +\frac{B_4 k}{2} (q^2)_{\xi\xi}=0.
 \]
-The solution is
+%The solution is
+Его решение суть,
 \begin{equation}
 	q=\frac{A}{Q+{\text{cosh}( \beta \xi)}},\label{solshear}
 \end{equation}
-where
+%where
+где
 \begin{equation}
 	A=\pm \frac{6B_2 \beta^2}{\sqrt{B_4^2 m^2+6 B_1 B_2 \beta^2}}, 
 	Q=\pm\frac{B_4 m }{\sqrt{B_4^2 m^2+6 B_1 B_2 \beta^2}},  V=\beta^2 B_2+m^2 B_3 . \label{solshearpar}
 \end{equation}
-We consider only bounded solutions when $Q<1$. It always happens when $B_1 B_2>0$. Otherwise only one set of parameters (\ref{solshearpar}) corresponds to the bounded solution.  The sign of $Q$ depends on the sign of the parameter $m$ responsible for the angle of the wave front propagation relative to the $x$- axis. However, the sign $\pm$ discards an influence of this dependence on the solution. Also the sign of the amplitude $A/(Q+1)$ is not sensitive to the sign of $m$ or the direction of the wave propagation.
+%We consider only bounded solutions when $Q<1$. It always happens when $B_1 B_2>0$. Otherwise only one set of parameters (\ref{solshearpar}) corresponds to the bounded solution.  The sign of $Q$ depends on the sign of the parameter $m$ responsible for the angle of the wave front propagation relative to the $x$- axis. However, the sign $\pm$ discards an influence of this dependence on the solution. Also the sign of the amplitude $A/(Q+1)$ is not sensitive to the sign of $m$ or the direction of the wave propagation.
+Мы рассматриваем только ограниченные решения, когда $Q<1$. Это всегда происходит, когда $B_1 B_2> 0$. В противном случае ограниченному решению соответствует только один набор параметров (\ref{solshearpar}). Знак $Q$ зависит от знака параметра $ m $, отвечающего за угол распространения фронта волны относительно оси $x$. Однако знак $\pm$ снимает влияние этой зависимости на решение. Также знак амплитуды $A / (Q + 1)$ не чувствителен к знаку $m$ или направлению распространения волны.
 
-For the wave propagating along $x$ axis, $m=0$ and $Q=0$. Then the familiar solitary wave solution to the modified Korteweg-de Vries equation appears from (\ref{solshear}),
+%For the wave propagating along $x$ axis, $m=0$ and $Q=0$. Then the familiar solitary wave solution to the modified Korteweg-de Vries equation appears from (\ref{solshear}),
+Для волны, распространяющейся вдоль оси $ x $, $ m = 0 $ и $ Q = 0 $. Тогда известное решение уединенной волны модифицированного уравнения Кортевега-де Фриза появляется из (\ref {solshear}),
 \begin{equation}
 	q_m=\pm \frac{6B_2 \beta}{\sqrt{6 B_1 B_2}}{\text{cosh}}^{-1}(\beta \xi) \label{qp}
 \end{equation}
-that exists only when $B_1 B_2>0$. 
+%that exists only when $B_1 B_2>0$. 
+которое существует только тогда при $ B_1 B_2 > 0 $.
 
+%\subsection{Transverse instability of longitudinal and shear waves}
+\subsection{Поперечная неустойчивость продольных и поперечных волн}
 
-\subsection{Transverse instability of longitudinal and shear waves}
-
-Transverse instability of the longitudinal plane solitary wave to Eq. (\ref{kp}) is studied by an analysis of the solution \cite{Ablowitz}:
+%Transverse instability of the longitudinal plane solitary wave to Eq. (\ref{kp}) is studied by an analysis of the solution \cite{Ablowitz}:
+Поперечная неустойчивость продольной плоской уединенной волны (\ref {kp}) изучается путем анализа решения \cite{Ablowitz}:
 \begin{equation}
 	w~=~w_p+\delta w_i (\theta,T)\exp (\lambda T +\imath~p~ Y),~\label{stlong}
 \end{equation}
-where $\delta \ll 1$, $w_p$ is  plane solitary wave solution (\ref{solkp})  to Eq. (\ref{kp}). An analysis performed in \cite{porkros}, gives rise to the solution for $\lambda$,
+%where $\delta \ll 1$, $w_p$ is  plane solitary wave solution (\ref{solkp})  to Eq. (\ref{kp}). An analysis performed in \cite{porkros}, gives rise to the solution for $\lambda$,
+где $ \delta \ll 1 $, $ w_p $ --- решение (\ref {solkp}) в виде плоской уединенной волны уравнения (\ref{kp}).Анализ, выполненный в \cite{porkros}, дает решение для $\lambda$,
 \begin{equation}
 	\lambda^2~=~-\frac{16~A_2~ A_3~\beta^2}{3}.
 \end{equation}
-At $A_2~>~0$, $A_3~>~0$, $\lambda^2~<~0$, $\lambda$ is imagine that corresponds to the  stability which happens for a square lattice. For the graphene lattice $A_2$ may be negative that gives rise to possible real values of  $\lambda$ and to the transverse instability.
+%At $A_2~>~0$, $A_3~>~0$, $\lambda^2~<~0$, $\lambda$ is imagine that corresponds to the  stability which happens for a square lattice. For the graphene lattice $A_2$ may be negative that gives rise to possible real values of  $\lambda$ and to the transverse instability.
+При $ A_2 ~> ~ 0 $, $ A_3 ~> ~ 0 $, $ \lambda ^ 2 ~ <~ 0 $, $ \lambda $ --- мнимая, что соответствует устойчивости, которая имеет место для квадратной решетки. Для решетки графена $ A_2 $ может быть отрицательным, что приводит к возможным действительным значениям $ \lambda $ и поперечной неустойчивости.
 
-Similarly an instability of shear wave solutions to Eq. (\ref{kpsh}) can be studied \cite{porkros}.,
+%Similarly an instability of shear wave solutions to Eq. (\ref{kpsh}) can be studied \cite{porkros}.,
+Аналогичным образом можно изучить неустойчивость решений уравнения (\ref {kpsh}) для поперечных волн \cite{porkros},
 \begin{equation}
 	q~=~q_p+\delta q_i (\theta,T)\exp (\lambda T +\imath~p~ Y),~\label{stshear}
 \end{equation}
-The localized bell-shaped solution $q_p$ is  exact solution  (\ref{qp}) propagating along the $x$ axis.
-The condition of the absence of secular terms in the next order solution gives rise to the solution of $\lambda$ of the form  \cite{porkros},
+%The localized bell-shaped solution $q_p$ is  exact solution  (\ref{qp}) propagating along the $x$ axis.
+Локализованное колоколообразное решение $q_p$ --- это точное решение (\ref {qp}), распространяющееся вдоль оси $ x $.
+%The condition of the absence of secular terms in the next order solution gives rise to the solution of $\lambda$ of the form  \cite{porkros},
+Из условия отсутствия секулярных членов в решении следующего порядка следует решение $ \lambda $ вида \cite {porkros},
 \[
 \lambda^2~=~-4 B_2~\beta^2\left(B_3 +\frac{B_4^2}{108~B_1}\right).
 \]
-Therefore, stability occurs for $B_3>0$, while positive value of $\lambda$ may be achieved at negative $B_3$ that results in the transverse instability of plane shear waves in the lattice. Here the linear rigidity coefficients $C_2$, $C_3$ of the long- range interactions may be responsible for instability.
+%Therefore, stability occurs for $B_3>0$, while positive value of $\lambda$ may be achieved at negative $B_3$ that results in the transverse instability of plane shear waves in the lattice. Here the linear rigidity coefficients $C_2$, $C_3$ of the long- range interactions may be responsible for instability.
+Следовательно, устойчивость возникает при $ B_3> 0 $, а положительное значение $ \lambda $ может быть достигнуто при отрицательном $ B_3 $, что приводит к поперечной неустойчивости плоских поперечных волн в решетке. Здесь коэффициенты линейной жесткости $ C_2 $, $ C_3 $ дальнодействующих взаимодействий могут быть ответственны за неустойчивость.
 
-\subsection{Numerical solutions}
-The analytical solutions presented in the previous section are the particular solutions which exist under specific initial conditions. More general solutions can be obtained numerically. The main aim is to reveal the difference between the dynamics of two-dimensional longitudinal and shear waves.
+%\subsection{Numerical solutions}
+\subsection{Численный анализ}
+%The analytical solutions presented in the previous section are the particular solutions which exist under specific initial conditions. More general solutions can be obtained numerically. The main aim is to reveal the difference between the dynamics of two-dimensional longitudinal and shear waves.
+Аналитические решения, представленные в предыдущем разделе, являются частными решениями, которые существуют при определенных начальных условиях. Более общие решения могут быть получены численно. Основная цель --- выявить разницу между динамикой двумерных продольных и поперечных волн.
 
 \subsubsection{Simulation technique}
 The model equations (\ref{kp}), (\ref{kpsh})  can be rewritten in the following form,
