@@ -649,23 +649,31 @@ The last equation is similar to Eq (\ref{kp}) obtained for the extended square l
 %The analytical solutions presented in the previous section are the particular solutions which exist under specific initial conditions. More general solutions can be obtained numerically. The main aim is to reveal the difference between the dynamics of two-dimensional longitudinal and shear waves.
 Аналитические решения, представленные в предыдущем разделе, являются частными решениями, которые существуют при определенных начальных условиях. Более общие решения могут быть получены численно. Основная цель --- выявить разницу между динамикой двумерных продольных и поперечных волн.
 
-\subsubsection{Simulation technique}
-The model equations (\ref{kp}), (\ref{kpsh})  can be rewritten in the following form,
+%\subsubsection{Simulation technique}
+\subsubsection{Метод исследования}
+%The model equations (\ref{kp}), (\ref{kpsh})  can be rewritten in the following form,
+Уравнения модели (\ref {kp}), (\ref {kpsh}) можно переписать в следующем виде:
 \begin{equation}
 	\label{kp3gen}
 	\partial_x\left(\partial_t u+c_1 \partial_{xxx} u+\frac{c_2 }{p+1}\partial_x u^{p+1}\right)+f \partial_{yy} u+\gamma \partial_x\left(\partial_x u \int_{-\infty}^x \partial_y u \, \mathrm{d} x'\right)=0,
 \end{equation}
-where $c_1, c_2, f, p, \gamma$ are the coefficients related  to those of either Eq.  equation (Eq.~(\ref{kp})) or Eq. (\ref{kpsh}) for $u_x = F$.
-where $c_1, c_2, f, \gamma$ are the coefficients related to those of either Eq.~(\ref{kp}) or Eq. (\ref{kpsh}), $p=1,2$ correspondingly. For the last equation $u = F_{0,\theta}$.
+%%where $c_1, c_2, f, p, \gamma$ are the coefficients related  to those of either Eq.  equation (Eq.~(\ref{kp})) or Eq. (\ref{kpsh}) for $u_x = F$.
+%where $c_1, c_2, f, \gamma$ are the coefficients related to those of either Eq.~(\ref{kp}) or Eq. (\ref{kpsh}), $p=1,2$ correspondingly. For the last equation $u = F_{0,\theta}$.
+где $ c_1, c_2, f, \gamma $ --- коэффициенты, определяемые константами уравнения (\ref{kp}), либо уравнения (\ref{kpsh}); $ p = 1,2 $ соответственно. Для последнего уравнения $u = F_{0, \theta} $.
 
-A wide range of methods~\cite{porrogue,Lu2003,klein2007,Infeld1995,Kao2012,Kodama2009} was developed for the  Kadomtsev--Petviashvili equation to numerically solve this equation and its generalizations studying solitons interactions, solutions stability, asymptotic regimes and other aspects. 
-For $p=1$ Eq.~(\ref{kp3gen}) is the Kadomtsev--Petviashvili equation, a wide range of methods~\cite{porrogue,Lu2003,klein2007,Infeld1995,Kao2012,Kodama2009} was developed to numerically solve this equation and its generalizations studying solitons interactions, solutions stability, asymptotic regimes and other aspects. 
-The Fourier spectral method is used here   to numerically solve Eq.~(\ref{kp3gen}) in the domain $\left[-L_x, L_x\right] \times \left[-L_y, L_y\right]$ with the periodic boundary conditions. Applying the antiderivative $\partial_x^{-1}$ and Fourier transform to Eq. (\ref{kp3gen}) gives rise to 
+%%A wide range of methods~\cite{porrogue,Lu2003,klein2007,Infeld1995,Kao2012,Kodama2009} was developed for the  Kadomtsev--Petviashvili equation to numerically solve this equation and its generalizations studying solitons interactions, solutions stability, asymptotic regimes and other aspects.
+%%Для уравнения Кадомцева-Петвиашвили был разработан широкий спектр методов \cite {porrogue, Lu2003, klein2007, Infeld1995, Kao2012, Kodama2009} для численного решения этого уравнения и его обобщений, изучающих взаимодействие солитонов, устойчивость решений, асимптотические режимы и другие аспекты.
+%For $p=1$ Eq.~(\ref{kp3gen}) is the Kadomtsev--Petviashvili equation, a wide range of methods~\cite{porrogue,Lu2003,klein2007,Infeld1995,Kao2012,Kodama2009} was developed to numerically solve this equation and its generalizations studying solitons interactions, solutions stability, asymptotic regimes and other aspects.
+Для $ p = 1 $ уравнение ~ (\ref {kp3gen}) представляет собой уравнение Кадомцева-Петвиашвили, широкий спектр методов \cite{porrogue, Lu2003, klein2007, Infeld1995, Kao2012, Kodama2009} был разработан для численного решения этого уравнения и его обобщений, изучающих взаимодействия солитонов, устойчивость решений, асимптотические режимы и другие аспекты. 
+%The Fourier spectral method is used here to numerically solve Eq.~(\ref{kp3gen}) in the domain $\left[-L_x, L_x\right] \times \left[-L_y, L_y\right]$ with the periodic boundary conditions. Applying the antiderivative $\partial_x^{-1}$ and Fourier transform to Eq. (\ref{kp3gen}) gives rise to
+\fixme{Обосновать использование спектрального метода.}
+Спектральный метод Фурье используется здесь для численного решения уравнения ~ (\ref {kp3gen}) в области $\left[-L_x, L_x\right] \times \left[-L_y, L_y\right]$ с периодическими граничными условиями. \fixme{Пояснить за <<антипроизводную>>: }Применяя антипроизводную $\partial_x^{-1}$ и преобразование Фурье к уравнению (\ref {kp3gen}), получаем
 \begin{equation}
 	\label{KP3F}
 	\partial_t \hat{u} - \imath\left( c_1 k_x^3 - f \frac{k_y^2}{k_x} \right) \hat{u} + \imath \frac{k_x}{p+1} \hat{F} \left(u^{p+1}\right)+\gamma \hat{F} \left[\partial_x u \int_{-\infty}^x \partial_y u \, \mathrm{d}x'\right]=0, 
 \end{equation}
-where $u(x,y,t) \xrightarrow{\hat{F}} \hat{u}(k,l,t)$, $k_x = \frac{2\pi k}{L_x}$ and $k_y = \frac{2\pi l}{L_y}$. This equation is solved using the Sanz-Serna discretization scheme and the fast Fourier transform for the nonlinear terms based on the method proposed in~\cite{Chebab2016}. The numerical scheme is 
+%where $u(x,y,t) \xrightarrow{\hat{F}} \hat{u}(k,l,t)$, $k_x = \frac{2\pi k}{L_x}$ and $k_y = \frac{2\pi l}{L_y}$. This equation is solved using the Sanz-Serna discretization scheme and the fast Fourier transform for the nonlinear terms based on the method proposed in~\cite{Chebab2016}. The numerical scheme is
+где $u (x, y, t) \xrightarrow {\hat{F}} \hat{u} (k, l, t)$, $k_x = \frac{2 \ pi k}{L_x}$ и $ k_y = \frac{2 \ pi l}{L_y}$. Это уравнение решается с использованием схемы дискретизации Санца-Серны и быстрого преобразования Фурье для нелинейных членов на основе метода, предложенного в ~\cite {Chebab2016}. Тогда численная схема,
 \vtop{
 	\begin{equation}
 		\label{fkpscheme}
@@ -675,91 +683,112 @@ where $u(x,y,t) \xrightarrow{\hat{F}} \hat{u}(k,l,t)$, $k_x = \frac{2\pi k}{L_x}
 	+\imath \frac{c_2}{p+1}\left( I_y \otimes K_x \right) \hat{F} \left[ \left( \frac{U_{n+1} + U_{n}}{2}  \right)^{p+1}\right] + \gamma \hat{F} \left[ \left(I_y \otimes D_x \frac{U_{n+1} + U_{n}}{2} \right) \circ R \right] = 0,
 	$$
 }
-$U_n$ denotes the approximation of $u$ at time $n\Delta t$, $I_x, I_y$ are identity matrices with the size $N_x$ and $N_y$ respectively, $R$ is the approximation of the last term of Eq.~(\ref{KP3F}), $D_*$ is the second order central finite difference matrix of $\partial / \partial *$ operator with periodic boundary conditions and $K_x$, $K_y$, $\bar{K_x}^{-1}$ are diagonal matrices
+%$U_n$ denotes the approximation of $u$ at time $n\Delta t$, $I_x, I_y$ are identity matrices with the size $N_x$ and $N_y$ respectively, $R$ is the approximation of the last term of Eq.~(\ref{KP3F}), $D_*$ is the second order central finite difference matrix of $\partial / \partial *$ operator with periodic boundary conditions and $K_x$, $K_y$, $\bar{K_x}^{-1}$ are diagonal matrices
+$ U_n $ обозначает приближение $ u $ в момент времени $ n \Delta t $, $ I_x, I_y $ --- единичные матрицы с размером $ N_x $ и $ N_y $ соответственно, $ R $ --- \fixme{приближение интеграла из последнего члена уравнения} ~ (\ref{KP3F}), $ D_* $ --- центральная конечно-разностная матрица второго порядка оператора $ \partial / \partial *$ с периодическими граничными условиями и $ K_x $, $ K_y $, $ \bar {K_x}^{-1} $ --- диагональные матрицы,
 $$
 K_{x,y} = \frac{2 \pi}{L_{x,y}} \text{diag} \left( ~0, ~1, ~\dots, ~\frac{N_{x,y}}{2}-1, ~-\frac{N_{x,y}}{2}, ~\dots, ~-1 \right),
 $$
 $$
 \bar{K_x}^{-1}= \frac{2 \pi}{L_x} \text{diag} \left( ~0, ~1, ~\dots, ~\frac{1}{N_{x}/2-1}, ~-\frac{2}{N_x}, ~\dots, ~-1 \right).
 $$
-The  $R$ is approximated as follows, 
+%The $R$ is approximated as follows, 
+$R$ выражается следующим образом,
 \begin{equation}
 	R(y) = \beta(y) + \sum_{x' \in \left[ -L_x, x\right]} \left(D_y \otimes I_x \frac{U_{n+1} + U_{n}}{2}\right) \Delta x'.
 	\label{termRY}
 \end{equation}
 
-When an influence of the borders of the numerical interval  is being neglected then we obtain $u(-L_x,y,0)=u(L_x,y,0)=0$. In this case $\beta = 0$. Otherwise we obtain $u(-L_x,y,t)=u(L_x,y,t)$, $u(x,-L_y,t)=u(x,L_y,t)$, $\int_{-L_x}^{L_x} \partial_y u \,\mathrm{d}x = 0$. Then the following condition is used to define $\beta$,
+%When an influence of the borders of the numerical interval  is being neglected then we obtain $u(-L_x,y,0)=u(L_x,y,0)=0$. In this case $\beta = 0$. Otherwise we obtain $u(-L_x,y,t)=u(L_x,y,t)$, $u(x,-L_y,t)=u(x,L_y,t)$, $\int_{-L_x}^{L_x} \partial_y u \,\mathrm{d}x = 0$. Then the following condition is used to define $\beta$,
+В некоторых случаях для расчетов, будем пренебрегать влиянием границ численного интервала в одном из направлений, используя фиксируя периодическое условие $u (-L_x, y, 0) = u (L_x, y, 0) = 0$. В таких случаях, $\beta = 0$. В иных случаях, будем использовать условия $ u (-L_x, y, t) = u (L_x, y, t) $, $ u (x, -L_y, t) = u (x, L_y, t) $, $\int_{-L_x}^{L_x} \partial_y u \,\mathrm{d}x = 0$. Для них следующее условие используется для определения $ \beta $,
 \begin{equation}
 	\label{condperidoic}
 	%\int_{-L_x}^{L_x} \partial_y u \,dx = \sum_{x' \in \left[ -L_x, L_x\right]} \left(D_y \otimes I_x \frac{U_{n+1} + U_{n}}{2}\right) \Delta x' = 0.
 	\int_{-L_x}^{L_x} R(y)\, \mathrm{d}x = \text{const}. 
 \end{equation}
 
-Using the fixed point iteration method, Eq.~(\ref{fkpscheme}) can be solved iteratively to find a solution at the next time step $\hat{U}_{n+1}$. Application of the  inverse fast Fourier transform gives  the solution $u$ of Eq.~(\ref{kp3gen}).
+%Using the fixed point iteration method, Eq.~(\ref{fkpscheme}) can be solved iteratively to find a solution at the next time step $\hat{U}_{n+1}$. Application of the  inverse fast Fourier transform gives  the solution $u$ of Eq.~(\ref{kp3gen}).
+Используя метод простой итерации, уравнение ~ (\ref{fkpscheme}) может быть решено с использованием \fixme{быстрого (дискретного?) преобразования Фурье}, чтобы найти решение на следующем временном шаге $ \hat {U}_{n + 1} $. Применение \fixme{обратного быстрого преобразования Фурье} дает решение $ u $ уравнения ~(\ref{kp3gen}).
 
-\subsubsection{Numerical results for longitudinal waves}
+%\subsubsection{Numerical results for longitudinal waves}
+\subsubsection{Численные результаты для продольных волн}
 
-In order to check the numerical scheme given by Eq.~(\ref{fkpscheme}) for $c_1=1$, $c_2=1$, $p=1$, $f=3$ and $\gamma=0$ the values of the parameters are $N_x = N_y = 129$, time step $\Delta t = 0.005$ with 2 iterations per step.
+%In order to check the numerical scheme given by Eq.~(\ref{fkpscheme}) for $c_1=1$, $c_2=1$, $p=1$, $f=3$ and $\gamma=0$ the values of the parameters are $N_x = N_y = 129$, time step $\Delta t = 0.005$ with 2 iterations per step.
+Чтобы проверить численную схему, заданную уравнением ~ (\ref {fkpscheme}) для $c_1 = 1$, $c_2 = 1$, $p = 1$, $f = 3$ и $\gamma = 0$ значения параметров равны $N_x = N_y = 129$, временной шаг $\ Delta t = 0.005$ с 2 итерациями на шаг.
 
-The numerical solution shown in  Fig.~\ref{figex2} demonstrates stable propagation of the exact plane wave solution to the KP equation (\ref{kp}) when an initial condition is chosen in the form of (\ref{solkp}) at $t=0$. This is a test simulation for checking the scheme.
+%The numerical solution shown in  Fig.~\ref{figex2} demonstrates stable propagation of the exact plane wave solution to the KP equation (\ref{kp}) when an initial condition is chosen in the form of (\ref{solkp}) at $t=0$. This is a test simulation for checking the scheme.
+Численное решение, показанное на рис. ~\ref{figex2}, демонстрирует устойчивое распространение точного решения в виде плоской волны уравнения КП (\ref {kp}) при выборе начального условия в виде (\ref{solkp}) при $t = 0$. Это тестовая симуляция для проверки схемы.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{figex2}
-	\caption{Stable plane wave propagation. The shape and position of the plane wave  solution at $t=4.5$ do correspond for the numerical solution (orange colored) and the analytical one (green colored).}\label{figex2}
+	%\caption{Stable plane wave propagation. The shape and position of the plane wave  solution at $t=4.5$ do correspond for the numerical solution (orange colored) and the analytical one (green colored).}\label{figex2}
+	\caption{Устойчивое распространение плоской волны. Форма и положение решения плоской волны при $ t = 4.5 $ действительно соответствуют численному решению (оранжевый цвет) и аналитическому решению (зеленый цвет).}\label{figex2}	
 \end{figure}
 
-Perturbed plane solitary wave soliton is studied using the initial condition developed on the basis of the asymptotic analysis (\ref{stlong}),  
+%Perturbed plane solitary wave soliton is studied using the initial condition developed on the basis of the asymptotic analysis (\ref{stlong}),
+Устойчивость солитона в виде плоской уединенной волны исследуется с использованием начального условия, разработанного на основе асимптотического анализа (\ref {stlong}),
 \begin{equation}
 	\label{kp1ex2}
 	u(x,y,0)=12{\text{sech}}^2(x-4t) - 2.4 {\text{cos}} (y) {\text{tanh}} (x) ~{\text{sech}}^2(x),
 \end{equation}
-where $f = \pm 3$ is used in Eq. (\ref{kp3gen}).  According to the analytical solution $f=3$ corresponds to the stable case, while $f=-3$ relates to a transverse instability.
+%where $f = \pm 3$ is used in Eq. (\ref{kp3gen}).  According to the analytical solution $f=3$ corresponds to the stable case, while $f=-3$ relates to a transverse instability.
+где $ f = \pm 3 $ используется в уравнении (\ref {kp3gen}). Согласно аналитическому решению, $ f = 3 $ соответствует устойчивому случаю, а $ f = -3 $ --- поперечной неустойчивости.
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{fig_kp1_stable}
-	\caption{Numerical solution for the initial condition $u(x,y,0)$ for $f=3$.}\label{figex3}
+	%\caption{Numerical solution for the initial condition $u(x,y,0)$ for $f=3$.}\label{figex3}
+	\caption{Численное решение в случае начального условия $u(x,y,0)$ при $f=3$.}\label{figex3}	
 \end{figure}
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{fig_kp1_frw}
-	\caption{Numerical solution for the initial condition $u(x,y,0)$ for $f=-3$. The interpolation surface of the solution is cut off at $z=15$ in order to save the scale.}\label{figex4}
+	%\caption{Numerical solution for the initial condition $u(x,y,0)$ for $f=-3$. The interpolation surface of the solution is cut off at $z=15$ in order to save the scale.}\label{figex4}
+	\caption{Численное решение в случае начального условия $u(x,y,0)$ при $f=-3$. Поверхность интерполяции решения обрезается на $ z = 15 $ для сохранения масштаба.}\label{figex4}	
 \end{figure}
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{fig_kp1_inverse}
-	\caption{Numerical solution for the initial condition $-u(x,y,0)$ for $f=3, c_1=-1$. The interpolation surface of the solution is cutted off at $z=-15$ in order to save the scale.}\label{figex44}
+	%\caption{Numerical solution for the initial condition $-u(x,y,0)$ for $f=3, c_1=-1$. The interpolation surface of the solution is cutted off at $z=-15$ in order to save the scale.}\label{figex44}
+	\caption{Численное решение в случае начального условия $-u(x,y,0)$ при $f=-3, c_1=-1$. Поверхность интерполяции решения обрезается на $ z = -15 $ для сохранения масштаба.}\label{figex44}	
 \end{figure}
 
-Comparing Figs.~\ref{figex2},~\ref{figex3} one can see the stable propagation of the plane wave in Fig.~\ref{figex3}  at the initially transversely perturbed plane wave. The wave in both figures propagates keeping its shape and velocity while initial perturbation at the wave in Fig.~\ref{figex3}  dispapear in time.
+%Comparing Figs.~\ref{figex2},~\ref{figex3} one can see the stable propagation of the plane wave in Fig.~\ref{figex3}  at the initially transversely perturbed plane wave. The wave in both figures propagates keeping its shape and velocity while initial perturbation at the wave in Fig.~\ref{figex3}  dispapear in time.
+Сравнивая рис. ~ \ref{figex2}, ~\ref{figex3}, можно увидеть, что в первом случае наблюдается устойчивое распространение плоской волны на рис. ~\ref{figex3}, как и предсказывает теория. В обоих случаях волна распространяется сохраняя свою форму и скорость, при этом в первом случае возмущения исчезают со временем, а во втором --- растут.
 
-On the contrary, one can see in  Fig.~\ref{figex4} that the initial condition with negative $f$ provides serious transverse variations on the plane wave front. Initial small periodic perturbations suffer an increase in the amplitude and initially almost plane wave evolves into a transversely modulated wave. This happens in an agreement with an analysis. It was noted before that $c_1$ may be negative rather than $f$. However, transformation of variables, $t=-\tau$, $u=-v$, at negative $c_1$ and positive $f$ results in the obtaining equation for $v$ with positive $c_1$ and negative $f$ corresponding to an unstable propagation of negative amplitude wave $u$  (see Fig. ~\ref{figex44}). . 
+%On the contrary, one can see in  Fig.~\ref{figex4} that the initial condition with negative $f$ provides serious transverse variations on the plane wave front. Initial small periodic perturbations suffer an increase in the amplitude and initially almost plane wave evolves into a transversely modulated wave. This happens in an agreement with an analysis. It was noted before that $c_1$ may be negative rather than $f$. However, transformation of variables, $t=-\tau$, $u=-v$, at negative $c_1$ and positive $f$ results in the obtaining equation for $v$ with positive $c_1$ and negative $f$ corresponding to an unstable propagation of negative amplitude wave $u$  (see Fig. ~\ref{figex44}).
+Напротив, на рис. ~ \ref{figex4} видно, что начальное условие с отрицательным значением $ f $ приводит к серьезным поперечным изменениям на фронте плоской волны. Начальные малые периодические возмущения претерпевают увеличение амплитуды, и первоначально почти плоская волна превращается в поперечно-модулированную волну. Этот факт находится в соответствии с результатами теоретического анализа. Ранее отмечалось, что $ c_1 $ может быть отрицательным, а $ f $ --- нет. Однако преобразование переменных $ t = - \tau $, $ u = -v $ при отрицательном $ c_1 $ и положительном $ f $ приводит к получению уравнения для $ v $ с положительным $ c_1 $ и отрицательным $ f $, что соответствует неустойчивому распространению волны отрицательной амплитуды $ u $ (см. рис. ~ \ref{figex44}).
 
-\subsubsection{Numerical results for shear waves equation}
+%\subsubsection{Numerical results for shear waves equation}
+\subsubsection{Численные результаты для уравнения поперечных волн}
 
-Consider Eq.~(\ref{fkpscheme}) for $p=2$ and $\gamma \ne 0$.   
-For all simulations $N_x = 1025, N_y = 129$, time step $\Delta t = 0.003$ with 2 iterations per step. $N_x$ is chosen to be higher than it was for previous simulations in order to increase the accuracy of evaluation of the term given by Eq.~(\ref{termRY}). 
+%Consider Eq.~(\ref{fkpscheme}) for $p=2$ and $\gamma \ne 0$.   
+%For all simulations $N_x = 1025, N_y = 129$, time step $\Delta t = 0.003$ with 2 iterations per step. $N_x$ is chosen to be higher than it was for previous simulations in order to increase the accuracy of evaluation of the term given by Eq.~(\ref{termRY}).
+Рассмотрим уравнение ~ (\ref{fkpscheme}) в случае $ p = 2 $ и $ \ gamma \ ne 0 $.
+Для всех расчетов $ N_x = 1025, N_y = 129 $, временной шаг выбран равным $ \ Delta t = 0,003 $ с 2 итерациями на шаг. $ N_x $ выбрано больше, чем было для предыдущих симуляций, чтобы повысить точность оценки члена, задаваемого уравнением ~ (\ref{termRY}).
 
-The parameters  (\ref{solshearpar}) of exact solution (\ref{solshear}) depend on $m$ responsible for propagation inclined to the $x$ axis and two sets of parameters are possible. Therefore it is of interest to study inclined propagation of shear waves. For this purpose 
-the initial condition is constructed as the sums of three plane wave solitons (\ref{solshear}) (at $t=0$). The distance between them is chosen  larger than their effective length, so the interaction between these solitons is very small. Also the choice of the distance provides periodic conditions for $y$ as it is seen in  Fig.~\ref{figex1025l}. 
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{figex1025l}
-	\caption{Stable inclined plane shear wave propagation. The numerical solution corresponds to the sum of three analytical plane wave  soliton solutions of Eq.~(\ref{kp3gen}) at $t = 15$.} \label{figex1025l}
-\end{figure}
-
-The calculation domain in $x$ is increased in order to avoid the boundary influence. 
+%The parameters  (\ref{solshearpar}) of exact solution (\ref{solshear}) depend on $m$ responsible for propagation inclined to the $x$ axis and two sets of parameters are possible. Therefore it is of interest to study inclined propagation of shear waves. For this purpose the initial condition is constructed as the sums of three plane wave solitons (\ref{solshear}) (at $t=0$). The distance between them is chosen  larger than their effective length, so the interaction between these solitons is very small. Also the choice of the distance provides periodic conditions for $y$ as it is seen in  Fig.~\ref{figex1025l}.
+Параметры (\ref{solshearpar}) точного решения (\ref{solshear}) зависят от $ m $, ответственного за направление распространения волны относительно оси $ x $. При $m \ne 0$ необходимо сохранить условие на периодичность по обеим осям в силу ограничений численной модели. Для этого начальное условие можно построить как сумму трех солитонов плоских волн (\ref{solshear}) (при $ t = 0 $) таким образом, что периодичность сохраняется в обоих направлениях. Очевидно, что такая суперпозиция не является точным решением уравнения. Однако расстояние между солитонами выбрано больше их эффективной длины, поэтому взаимодействие между этими солитонами очень мало, и какое-то достаточно большое время плоские уединенные волны должны продолжать устойчиво распространяться с постоянной скоростью. Также выбор этого расстояния фактически обязывает изменить границы области, чтобы обеспечить периодичность, как это видно на рис. ~ \ref{figex1025l},
+%The calculation domain in $x$ is increased in order to avoid the boundary influence. 
 $$
 L_x = 30 \pi.
 $$
 
-The initial condition is
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{figex1025l}
+	%\caption{Stable inclined plane shear wave propagation. The numerical solution corresponds to the sum of three analytical plane wave  soliton solutions of Eq.~(\ref{kp3gen}) at $t = 15$.} \label{figex1025l}
+	\caption{Распространение устойчивой наклонной плоской поперечной волны. Численное решение соответствует сумме трех аналитических солитонных решений плоской волны уравнения .~(\ref{kp3gen}) при $t = 15$.} \label{figex1025l}	
+\end{figure}
+
+%The initial condition is
+Соответствующее начальное условие,
 
 \begin{equation}
 	\label{kp3ex2}
 	u(x,y,0) = u_{\text{exact}}~(\xi ) + u_{\text{exact}}~(\xi - 2 L_y \tan \phi) + u_{\text{exact}}~(\xi + 2 L_y \tan \phi),
 \end{equation}
-where
+%where
+где
 \begin{equation}
 	u_{\text{exact}}~(\xi ) = \frac{A}{\left(Q+{\text{cosh}} (\xi )\right)},
 \end{equation}
@@ -773,52 +802,70 @@ A=\frac{6 c_1}{\sqrt{6 c_1 c_2+\gamma ^2 m^2}},~Q=\pm \frac{\gamma  m}{\sqrt{6 c
 c_1 = 1, \quad c_2 = 1, \quad f = 3, \quad \gamma = 2.
 \]
 
-The  results of stable propagation of the inclined plane waves are shown in Fig.~\ref{figex1025l}. One can check that each of inclined solitary wave corresponds to the single wave exact solitary wave solution.
+%The  results of stable propagation of the inclined plane waves are shown in Fig.~\ref{figex1025l}. One can check that each of inclined solitary wave corresponds to the single wave exact solitary wave solution.
+Результаты устойчивого распространения наклонных плоских волн показаны на рис. ~ \ref{figex1025l}. Качественная оценка полученных результатов соответствует ожиданиям. Таким образом, численная схема позволяет оценивать свойства распространения волн в обоих направлениях и может использоваться для изучения поперечной неустойчивости плоских волн, в том числе асимметричных свойств распространения возмущений.
 
-
-To study the transverse instability we consider propagation of a single solitary wave along the $x$ axis. The perturbed initial condition is chosen according to the instability analysis of shear waves,
+%To study the transverse instability we consider propagation of a single solitary wave along the $x$ axis. The perturbed initial condition is chosen according to the instability analysis of shear waves,
+Для исследования поперечной неустойчивости рассматривается распространение одиночной уединенной волны вдоль оси $ x $. Возмущенное начальное условие выбирается следующим образом,
 \begin{equation}
 	u(x,y,0) = \sqrt{6} ~{\text{sech}}(x)-\sqrt{6}{\text{tanh}} (x) ~{\text{sech}}(x) {\text{cos}} (y),
 \end{equation}
-The results are shown in Figs.~\ref{fig_good1},~\ref{fig_good3},~\ref{fig_good2}. 
+%The results are shown in Figs.~\ref{fig_good1},~\ref{fig_good3},~\ref{fig_good2}. 
+Результаты расчетов продемонстрированы на рисунках .~\ref{fig_good1},~\ref{fig_good3},~\ref{fig_good2}. 
 %The stable case is shown in Fig.~\ref{fig_good1} corresponds to stable case. 
-The stable case is shown in Fig.~\ref{fig_good1}.
-One can see that the initial perturbations on the front of the wave decrease while a two-dimensionally periodic tail develops behind the plane strain  solitary wave.
+%The stable case is shown in Fig.~\ref{fig_good1}.
+Стабильный случай соответствует рисунку .~\ref{fig_good1}.
+%One can see that the initial perturbations on the front of the wave decrease while a two-dimensionally periodic tail develops behind the plane strain  solitary wave.
+Видно, что начальные возмущения на фронте волны уменьшаются, а за уединенной волной плоской деформации возникает двухмерные периодические возмущения.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{fig_good1}
-	\caption{Propagation of $u(x,y,0)$ for $f = 3, \gamma = 2$} \label{fig_good1}
+	%\caption{Propagation of $u(x,y,0)$ for $f = 3, \gamma = 2$} \label{fig_good1}
+	\caption{Начальное условие $u(x,y,0)$ при $f = 3, \gamma = 2$} \label{fig_good1}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{fig_good3}
-	\caption{Propagation of $u(x,y,0)$ for $f = -3, \gamma = 1$} \label{fig_good3}
+	%\caption{Propagation of $u(x,y,0)$ for $f = -3, \gamma = 1$} \label{fig_good3}
+	\caption{Начальное условие $u(x,y,0)$ при $f = -3, \gamma = 1$} \label{fig_good3}	
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{fig_good2}
-	\caption{Propagation of $u(x,y,0)$ for $f = -3, \gamma = 2$} \label{fig_good2}
+	%\caption{Propagation of $u(x,y,0)$ for $f = -3, \gamma = 2$} \label{fig_good2}
+	\caption{Начальное условие $u(x,y,0)$ при $f = -3, \gamma = 2$} \label{fig_good2}
 \end{figure}
 
-The unstable plane shear wave propagation is shown in  Figs.~\ref{fig_good3}, \ref{fig_good2}. In the former Figure one can see an evolution similar to that found for longitudinal waves: increase in the amplitude and deep transverse modulation of the plane wave front. The latter Figure demonstrates an influence of the value of  $\gamma $ on the transverse instability. The oscillations on the front don't grow anymore while perturbations are developing both before and after the plane wave front.
+%The unstable plane shear wave propagation is shown in  Figs.~\ref{fig_good3}, \ref{fig_good2}. In the former Figure one can see an evolution similar to that found for longitudinal waves: increase in the amplitude and deep transverse modulation of the plane wave front. The latter Figure demonstrates an influence of the value of  $\gamma $ on the transverse instability. The oscillations on the front don't grow anymore while perturbations are developing both before and after the plane wave front.
+Распространение неустойчивой плоской поперечной волны показано на рис. ~ \ref {fig_good3}, \ref{fig_good2}. На первом рисунке можно увидеть эволюцию, аналогичную той, что наблюдается для продольных волн: увеличение амплитуды и глубокая поперечная модуляция фронта плоской волны. Последний рисунок демонстрирует влияние значения $ \gamma $ на поперечную неустойчивость. Колебания на фронте больше не нарастают, а возмущения развиваются как до, так и после фронта плоской волны.
 
+\fixme{Далее ожидается добавить более корректное обобщение численной схемы, так как текущая не является полноценной и была сделана лишь для получения результатов <<любым>> способом. В таком случае ее можно будет представить к защите.}
 
-\section{Conclusions}
+%\section{Conclusions}
+\section{Заключение}
 
+\fixme{Переделать}
 
-The asymptotic technique presented in this paper allows to reduce the coupled nonlinear continuum equations of 2D crystal lattices to a single nonlinear equation for strain waves, which allows to analyze only relevant terms in the new equations.
-Two types of lattices were considered: the generalized square lattice and the graphene lattice (the model is based on a consideration of two interacting sub-lattices with both translational and angular interactions being taken into account), and the governing two-dimenisonal equations for longitudinal and shear strain waves. Their exact plane wave solutions and their transverse stability have been revealed  in  numerical simulations.
+%The asymptotic technique presented in this paper allows to reduce the coupled nonlinear continuum equations of 2D crystal lattices to a single nonlinear equation for strain waves, which allows to analyze only relevant terms in the new equations.
+%Two types of lattices were considered: the generalized square lattice and the graphene lattice (the model is based on a consideration of two interacting sub-lattices with both translational and angular interactions being taken into account), and the governing two-dimenisonal equations for longitudinal and shear strain waves. Their exact plane wave solutions and their transverse stability have been revealed  in  numerical simulations.
 
-Numerical simulations confirm  that the angular stiffness in the original discrete model gives rise to various types of nonlinear waves localization depending on the coefficients values. Previous studies of the lattices of another structure revealed important variations in the governing equation from that of the longitudinal waves \cite{porkros}.
-Extended interactions in the square lattice firstly produce additional extrema in the dispersion curve for linear longitudinal plane waves. They have a significant influence on the auxetic behavior of the material. One can note that the one-dimensional limits of the equations for longitudinal and shear waves differ only by nonlinear terms (quadratic or cubic) while two-dimensional consideration results in different transverse variation terms which are nonlinear for shear waves contrary to the linear term for longitudinal waves. Moreover, the sign of the coefficients in the governing equations may vary more for shear waves descriptions. It results in different stability criteria for longitudinal and shear localized plane strain waves. 
+%Numerical simulations confirm  that the angular stiffness in the original discrete model gives rise to various types of nonlinear waves localization depending on the coefficients values. Previous studies of the lattices of another structure revealed important variations in the governing equation from that of the longitudinal waves \cite{porkros}.
+%Extended interactions in the square lattice firstly produce additional extrema in the dispersion curve for linear longitudinal plane waves. They have a significant influence on the auxetic behavior of the material. One can note that the one-dimensional limits of the equations for longitudinal and shear waves differ only by nonlinear terms (quadratic or cubic) while two-dimensional consideration results in different transverse variation terms which are nonlinear for shear waves contrary to the linear term for longitudinal waves. Moreover, the sign of the coefficients in the governing equations may vary more for shear waves descriptions. It results in different stability criteria for longitudinal and shear localized plane strain waves. 
 
-This, in turns it allows us to predict different scenario of the wave amplification and localization due toa  transverse instability caused by the values of the coefficients of rigidity. In the stable case of the Kadomtsev-Petviashvili equation (\ref{kp}) two-dimensional localized wave amplification happens due to instability, see Figs. \ref{figex4}, \ref{figex44}. An unstable case of Eq. (\ref{kp}) also results in the transverse periodic modulation of the plane wave. Figure  \ref{figex4} demonstrated classical result for the corresponding negative sign at the term with derivatives with respect to $y$. However, this case is not realized for description of our lattice while the negative sign at the dispersion term can be achieved. This results in the dynamics shown in Fig.  \ref{figex44}. The new results concern the transverse instability of nonlinear shear waves, see Figs. ~\ref{fig_good3}, \ref{fig_good2} which is different from that of longitudinal waves.
-The comparison of the numerical results for shear waves gives an explanation, how the coefficient at the quadratic nonlinearity influences the inclined plane solitary wave  propagation and the transverse instability.  
+%This, in turns it allows us to predict different scenario of the wave amplification and localization due toa  transverse instability caused by the values of the coefficients of rigidity. In the stable case of the Kadomtsev-Petviashvili equation (\ref{kp}) two-dimensional localized wave amplification happens due to instability, see Figs. \ref{figex4}, \ref{figex44}. An unstable case of Eq. (\ref{kp}) also results in the transverse periodic modulation of the plane wave. Figure  \ref{figex4} demonstrated classical result for the corresponding negative sign at the term with derivatives with respect to $y$. However, this case is not realized for description of our lattice while the negative sign at the dispersion term can be achieved. This results in the dynamics shown in Fig.  \ref{figex44}. The new results concern the transverse instability of nonlinear shear waves, see Figs. ~\ref{fig_good3}, \ref{fig_good2} which is different from that of longitudinal waves.
+%The comparison of the numerical results for shear waves gives an explanation, how the coefficient at the quadratic nonlinearity influences the inclined plane solitary wave  propagation and the transverse instability.  
 
-One of the potential extensions of this study is a  short-range wave continualization. Previously it was studied for a hexagonal lattice in Refs. \cite{PorBer, PorBer2} where new model modulation two-dimensional equations were obtained. Also, nonlocal interactions will be of interest, in particular, utilization of the method of using shift operators \cite{Mich} for obtaining two-dimensional model equations for dynamical processes in nonlocal square lattice will be considered in the nearest future.
-Another extension of the model concerns an inclusion of the geometrical nonlinearity in the discrete model like it was done, e.g., in (\cite{karima}).
-Furthermore, along with the geometrical nonlinearity and weakly transversely perturbed shear waves, the study can be extended to the case of nonlinear translational stiffnesses examination.
+%One of the potential extensions of this study is a  short-range wave continualization. Previously it was studied for a hexagonal lattice in Refs. \cite{PorBer, PorBer2} where new model modulation two-dimensional equations were obtained. Also, nonlocal interactions will be of interest, in particular, utilization of the method of using shift operators \cite{Mich} for obtaining two-dimensional model equations for dynamical processes in nonlocal square lattice will be considered in the nearest future.
+%Another extension of the model concerns an inclusion of the geometrical nonlinearity in the discrete model like it was done, e.g., in (\cite{karima}).
+%Furthermore, along with the geometrical nonlinearity and weakly transversely perturbed shear waves, the study can be extended to the case of nonlinear translational stiffnesses examination.
 
+%Асимптотическая техника, представленная в этой статье, позволяет свести связанные нелинейные уравнения континуума двумерных кристаллических решеток к одному нелинейному уравнению для волн деформации, что позволяет анализировать только соответствующие члены в новых уравнениях.
+\fixme{Были рассмотрены два типа решеток: обобщенная квадратная решетка и решетка графена (модель основана на рассмотрении двух взаимодействующих подрешеток с учетом как поступательного, так и углового взаимодействия) и определяющие двумерные уравнения для продольных и волны сдвига деформации}. Их точные решения в виде плоских волн и их поперечная устойчивость были выявлены в ходе численного моделирования.
+
+Численное моделирование подтверждает, что угловая жесткость в исходной дискретной модели приводит к различным типам локализации нелинейных волн в зависимости от значений коэффициентов. Предыдущие исследования решеток другой структуры выявили важные отличия основного уравнения от уравнения продольных волн \cite {porkros}.
+Расширенные взаимодействия в квадратной решетке сначала создают дополнительные экстремумы на дисперсионной кривой для линейных продольных плоских волн. Они оказывают значительное влияние на ауксетическое поведение материала. Можно отметить, что одномерные пределы уравнений для продольных и поперечных волн отличаются только нелинейными членами (квадратичными или кубическими), в то время как двумерное рассмотрение приводит к различным членам поперечной вариации, которые являются нелинейными для поперечных волн в отличие от линейного члена для продольные волны. Более того, знак коэффициентов в определяющих уравнениях может больше различаться для описания поперечных волн. Это приводит к различным критериям устойчивости продольных и сдвиговых локализованных волн плоской деформации.
+
+Это, в свою очередь, позволяет прогнозировать различные сценарии усиления и локализации волн из-за поперечной неустойчивости, вызванной значениями коэффициентов жесткости. В устойчивом случае уравнения Кадомцева-Петвиашвили (\ref {kp}) двумерное локализованное усиление волн происходит из-за неустойчивости, см. Рис. \ref {figex4}, \ref {figex44}. Неустойчивый случай уравнения (\ref {kp}) также приводит к поперечной периодической модуляции плоской волны. На рисунке \ref {figex4} показан классический результат для соответствующего отрицательного знака у члена с производными по $ y $. Однако этот случай не реализуется для описания нашей решетки, а отрицательный знак у дисперсионного члена может быть достигнут. Это приводит к динамике, показанной на рис. \ref{figex44}. Новые результаты касаются поперечной неустойчивости нелинейных поперечных волн, см. Рис. ~ \ref {fig_good3}, \ref{fig_good2}, который отличается от продольных волн. Сравнение численных результатов для поперечных волн дает объяснение, как коэффициент при квадратичной нелинейности влияет на распространение наклонной плоской уединенной волны и поперечную неустойчивость.
