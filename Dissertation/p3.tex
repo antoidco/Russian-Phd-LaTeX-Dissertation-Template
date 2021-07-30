@@ -73,11 +73,11 @@ $(\sqrt{\beta_1(1+\eta)}, \infty)$. Therefore, there is a band gap $\sqrt{\beta_
 \section{Generation of harmonic waves}
 The analysis in the previous Section is based on the particular traveling wave solution which requires specific initial and boundary conditions for its realization. However, experimental generation of the waves in a metamaterial uses the boundary excitation of the waves. In particular, the following  initial and boundary conditions for $u$ can be employed,
 \begin{equation}\label{bcu}
-u(0,t)=\frac{\beta_1-\omega^2}{\beta_1}~B~ {\rm sin} (\omega ~t),~u(x,0)=0, ~u(x,0)_t=0,
+u(0,t)=\frac{\beta_1-\omega^2}{\beta_1}~B~ {\text{sin}} (\omega ~t),~u(x,0)=0, ~u(x,0)_t=0,
 \end{equation}
 while for $v$ we assume that
 \begin{equation}\label{bcv}
-v(0,t)=B ~{\rm sin} (\omega ~t),~v(x,0)=0, ~v(x,0)_t=0,
+v(0,t)=B ~{\text{sin}} (\omega ~t),~v(x,0)=0, ~v(x,0)_t=0,
 \end{equation}
 This problem can be solved numerically. The Wolfram Mathematica NDSolve command is used to solve Eqs. (\ref{eq3}), (\ref{eq4} with the conditions (\ref{bcu}), (\ref{bcv}). 
 %The interval of calculations is $0<x<x_N$,
@@ -175,7 +175,7 @@ Also, the unit step function should be added in equation of motion  (\ref{eq4}) 
 
 Again the comparison with the exact solution will be given.  However, after switch-on the control, equation of motion for $u$ becomes the linear wave equation whose solution is 
 \begin{equation}\label{solwave}
- u_w=\frac{\beta_1-\omega^2}{\beta_1}~B~{\rm sin}  (\imath(\omega/a~ x - \omega~ t-\omega/a~ x_0))
+ u_w=\frac{\beta_1-\omega^2}{\beta_1}~B~{\text{sin}}  (\imath(\omega/a~ x - \omega~ t-\omega/a~ x_0))
  \end{equation}
  Then the comparison will be done with different solutions before and after switch-on the control.
  
