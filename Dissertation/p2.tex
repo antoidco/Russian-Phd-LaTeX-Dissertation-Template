@@ -56,7 +56,7 @@
 %The central particle with the number ${m,n}$ interacts with four horizontal and vertical neighbors by the springs with linear rigidity $C_1$ and non-linear rigidities $Q$ and $Q_3$. The relative distance in the unstrained state is assumed to be equal to $l$. 
 Центральная частица с номером ${m, n}$ взаимодействует с четырьмя горизонтальными и вертикальными соседями посредством пружин с линейной жесткостью $C_1$ и нелинейной жесткостью $Q$ и $Q_3$. Относительное расстояние в ненапряженном состоянии принимается равным $l$. \fixme{Добавить рисунок.}
 %Then the total potential energy is
-Тогда полная потенциальная энергия суть
+Тогда полная потенциальная энергия
 \[
 \Pi=~\Pi_1+\Pi_2+\Pi_3.
 \]
@@ -93,481 +93,499 @@ T~=~\frac{1}{2} M\left(\dot{x}_{m,n}^2+\dot{y}_{m,n}^2\right).
 \]
 
 %Then the Lagrangian, $L=T-\Pi$, may be composed, and the Hamilton-Ostrogradsky variational principle is applied to obtain the discrete governing equations of motion, see   \cite{porkros} for details.
-Таким образом, можно составить лагранжиан $L = T- \Pi$ и применить вариационный принцип Гамильтона-Остроградского для получения уравнений движения дискретной модели, подробности см. в \cite{porkros}.
+Таким образом, можно составить лагранжиан $L = T- \Pi$ и применить вариационный принцип Гамильтона-Остроградского для получения уравнений движения дискретной модели.%, подробности см. в \cite{porkros}.
 
-\fixme{При дальнейшем выводе лучше ссылаться сразу на две работы --- главу из книги и статью.}
+%\fixme{При дальнейшем выводе лучше ссылаться сразу на две работы --- главу из книги и статью.}
 
-\subsection{Auxetic behavior in the linearized model}
-For small wave numbers, one assumes that  the continuum displacements of the central particle $x_{m,n}$, $y_{m,n}$ are  $u(x, y, t)$, $v(x, y, t)$ thus introducing predominantly longitudinal waves propagation. Then the  Taylor series for the  neighboring particles are
-\[
-x_{m\pm1,n\pm1}~=~ ~u\pm l~ u_x\pm  l~ u_y+\frac{1}{2} l^2 u_{xx}+  l^2 u_{xy}+\frac{1}{2} l^2 u_{yy}+...
-\]
-Then the two-dimensional linearized continuum equations are
-\[
-M~u_{tt}-\frac{l^2}{5}\left(\frac{}{} 5(C1+C_2)+34 C_3 \frac{}{}\right)~u_{xx}-\frac{2l^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right) v_{xy}-
-\]
-\begin{equation}
-	\frac{l^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right) u_{yy}~=~0,
-	\label{aux1}
-\end{equation}
-
-\[
-M~v_{tt}-\frac{l^2}{5}\left(\frac{}{}5(C1+C_2)+34 C_3\frac{}{}\right)~v_{yy}-\frac{2l^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right)u_{xy}-
-\]
-\begin{equation}
-	\frac{l^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right) v_{xx}~=~0.
-	\label{aux2}
-\end{equation}
-
-Equations (\ref{aux1}), (\ref{aux2}) are related to the equations of motion of the cubic crystals provided that the elastic cubic constants $C_{11}$, $C_{12}$ and $C_{44}$ are connected with our constants $C_1$, $C_2$ and $C_3$ as
-
-\[
-C_{11}~=~\frac{1}{5l}\left(5(C_1+C_2)+34 C_3\right),~ C_{44}~=~\frac{1}{5l}\left(5C_2+16 C_3\right),
-\]
-\begin{equation}
-	C_{12}+C_{44}~=~\frac{2}{5 l}\left( 5 C_2+16 C_3\right). \label{relmod}
-\end{equation}
-These relationships hold only if $C_{12}=C_{44}$ or for the Cauchy condition  for materials with cubic symmetry when only central interactions are taken into account \cite{Born}. However, they fail, e.g., for cubic metals \cite{thomas_cauchy}.
-
-The relationships for the Poisson ratios for cubic crystals can be found in Ref. \cite{erof_pav}. For the case $C_{12}=C_{44}$ they are
-\[
-\nu_{<100,001>}~=~\frac{C_{12}}{C_{11}+C_{12}},~\nu_{<111,001>}~=~\frac{4 C_{12}^2}{2C_{12}(C_{11}-C_{12})+C_{11}(C_{11}+C_{12})},
-\]
-\[
-\nu_{<110,110>}~=~\frac{(C_{11}+C_{12})(C_{11}-2 C_{12})}{(C_{11}-C_{12})(C_{11}+2C_{12})+2C_{11} C_{12}},\nu_{<111,111>}~=~\frac{C_{11}}{2(C_{11}+3C_{12})}.
-\]
-Using Eqs. (\ref{relmod}) one obtains
-\[
-C_{11}-C_{12}=\frac{l^2}{5 M}\left( 5C_1+18 C_3\right), ~C_{11}-2C_{12}~=~\frac{l^2}{5M}\left(C_1 - C_2 + 2 C_3\right).
-\]
-Only the last expression can be negative giving rise to a negative value of $\nu_{<110,110>}$. One can see that the long- range interaction described by the coefficient $C_3$, adds positiveness in the relation $C_1 - C_2 + 2 C_3$.
-
-
-%\subsection{Continuum nonlinear equations}
-\subsection{Нелинейные уравнения континуальной модели}
-\fixme{Это по идее будет нужно}
+%\subsection{Auxetic behavior in the linearized model}
+%For small wave numbers, one assumes that  the continuum displacements of the central particle $x_{m,n}$, $y_{m,n}$ are  $u(x, y, t)$, $v(x, y, t)$ thus introducing predominantly longitudinal waves propagation. Then the  Taylor series for the  neighboring particles are
+%\[
+%x_{m\pm1,n\pm1}~=~ ~u\pm l~ u_x\pm  l~ u_y+\frac{1}{2} l^2 u_{xx}+  l^2 u_{xy}+\frac{1}{2} l^2 u_{yy}+...
+%\]
+%Then the two-dimensional linearized continuum equations are
+%\[
+%M~u_{tt}-\frac{l^2}{5}\left(\frac{}{} 5(C1+C_2)+34 C_3 \frac{}{}\right)~u_{xx}-\frac{2l^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right) v_{xy}-
+%\]
+%\begin{equation}
+%	\frac{l^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right) u_{yy}~=~0,
+%	\label{aux1}
+%\end{equation}
+%
+%\[
+%M~v_{tt}-\frac{l^2}{5}\left(\frac{}{}5(C1+C_2)+34 C_3\frac{}{}\right)~v_{yy}-\frac{2l^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right)u_{xy}-
+%\]
+%\begin{equation}
+%	\frac{l^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right) v_{xx}~=~0.
+%	\label{aux2}
+%\end{equation}
+%
+%Equations (\ref{aux1}), (\ref{aux2}) are related to the equations of motion of the cubic crystals provided that the elastic cubic constants $C_{11}$, $C_{12}$ and $C_{44}$ are connected with our constants $C_1$, $C_2$ and $C_3$ as
+%
+%\[
+%C_{11}~=~\frac{1}{5l}\left(5(C_1+C_2)+34 C_3\right),~ C_{44}~=~\frac{1}{5l}\left(5C_2+16 C_3\right),
+%\]
+%\begin{equation}
+%	C_{12}+C_{44}~=~\frac{2}{5 l}\left( 5 C_2+16 C_3\right). \label{relmod}
+%\end{equation}
+%These relationships hold only if $C_{12}=C_{44}$ or for the Cauchy condition  for materials with cubic symmetry when only central interactions are taken into account \cite{Born}. However, they fail, e.g., for cubic metals \cite{thomas_cauchy}.
+%
+%The relationships for the Poisson ratios for cubic crystals can be found in Ref. \cite{erof_pav}. For the case $C_{12}=C_{44}$ they are
+%\[
+%\nu_{<100,001>}~=~\frac{C_{12}}{C_{11}+C_{12}},~\nu_{<111,001>}~=~\frac{4 C_{12}^2}{2C_{12}(C_{11}-C_{12})+C_{11}(C_{11}+C_{12})},
+%\]
+%\[
+%\nu_{<110,110>}~=~\frac{(C_{11}+C_{12})(C_{11}-2 C_{12})}{(C_{11}-C_{12})(C_{11}+2C_{12})+2C_{11} C_{12}},\nu_{<111,111>}~=~\frac{C_{11}}{2(C_{11}+3C_{12})}.
+%\]
+%Using Eqs. (\ref{relmod}) one obtains
+%\[
+%C_{11}-C_{12}=\frac{l^2}{5 M}\left( 5C_1+18 C_3\right), ~C_{11}-2C_{12}~=~\frac{l^2}{5M}\left(C_1 - C_2 + 2 C_3\right).
+%\]
+%Only the last expression can be negative giving rise to a negative value of $\nu_{<110,110>}$. One can see that the long- range interaction described by the coefficient $C_3$, adds positiveness in the relation $C_1 - C_2 + 2 C_3$.
+%
+%
+%%\subsection{Continuum nonlinear equations}
+%\subsection{Нелинейные уравнения континуальной модели}
+%\fixme{Это по идее будет нужно}
 %The  equations of motion  obtained from the variational principle are further reduced when the plane waves propagating in horizontal direction are studied   \cite{porkros}. For simplicity let us consider  nonlinear  waves propagating in a horizontal direction along the  $x$ axis and weakly perturbed in the transverse direction along the  $y$ axis. The transverse weakness is characterized by the small parameter $\varepsilon~\ll~1$, the continuum displacements are assumed to be the functions of slow transverse variable $Y~=~\varepsilon y$. The same small parameter is used to account for the weakly nonlinear waves, however, its utilization depends on whether transverse variations of  longitudinal or shear waves are studied.
-Уравнения движения, полученные из вариационного принципа, дополнительно сокращаются при изучении плоских волн, распространяющихся в горизонтальном направлении \cite {porkros}. Для простоты рассмотрим нелинейные волны, распространяющиеся в горизонтальном направлении вдоль оси $ x $ и слабо возмущенные в поперечном направлении вдоль оси $y$. Поперечная слабость характеризуется малым параметром $\varepsilon ~ \ll ~ 1$, смещения континуума считаются функциями медленной поперечной переменной $Y ~=~ \varepsilon y$. Тот же самый малый параметр используется для учета слабонелинейных волн, однако его использование зависит от того, исследуются ли поперечные вариации продольных или поперечных волн. 
+Для дальнейшего анализа в работах, уравнения движения, полученные из вариационного принципа, дополнительно сокращаются ограничиваясь изучением плоских волн, распространяющихся в горизонтальном направлении \cite{porkros}. Для простоты рассматриваются нелинейные волны, распространяющиеся в горизонтальном направлении вдоль оси $ x $ и слабо возмущенные в поперечном направлении вдоль оси $y$. Поперечная слабость характеризуется малым параметром $\varepsilon ~ \ll ~ 1$, непрерывные смещения считаются функциями медленной переменной $Y ~=~ \varepsilon y$ в поперечном направлении. Тот же самый малый параметр используется для учета слабонелинейных волн, однако его использование зависит от того, исследуются ли поперечные вариации продольных или поперечных волн. 
 
 \subsubsection{Продольные волны}
-\fixme{Тоже нужно, но не в качестве subsection}
 
 %For small wave numbers, one assumes that  the continuum displacements of the central particle $x_{m,n}$, $y_{m,n}$ are  $u(x, Y, t)$, $v(x, Y, t)$. Of special interest are the localized waves keeping their shape and velocity on propagation. These waves exist under the balance between nonlinearity and dispersion. Dispersion terms are the higher-order linear derivative terms arising from the Taylor expansion. Their smallness may be provided by choosing $l~=~\varepsilon~ h$. Nonlinear terms turn out of the same order under an assumption about smallness of the continuum displacement of the form $\varepsilon^2~u(x, Y, t)$, $\varepsilon^3~v(x, Y, t)$, also the nonlinear rigidities should be $P=P/\varepsilon$, $Q=Q/\varepsilon$, $S=S/\varepsilon$,  and cubic nonlinear terms are negligibly small for longitudinal waves. Higher power of the small parameter for $v$ provides predominantly longitudinal waves propagation.
-Для малых волновых чисел предполагается, что смещения континуума центральной частицы $x_{m, n} $, $y_{m, n}$ равны $u(x, Y, t) $, $v(x, Y, t) $. Особый интерес представляют локализованные волны, сохраняющие форму и скорость при распространении. Эти волны существуют при балансе между нелинейностью и дисперсией. Члены дисперсии - это члены с линейной производной более высокого порядка, возникающие из разложения Тейлора. Их малость может быть обеспечена выбором $l ~ = ~ \varepsilon ~ h$. Нелинейные члены оказываются одного порядка при предположении о малости смещения континуума вида $\varepsilon^2 ~ u (x, Y, t) $, $\varepsilon ^ 3 ~ v (x, Y, t)$, также нелинейные жесткости должны быть $P = P / \varepsilon $, $ Q = Q / \varepsilon$, $ S = S / \varepsilon $, а кубические нелинейные члены пренебрежимо малы для продольных волн. Более высокая степень малого параметра при $v$ обеспечивает распространение преимущественно продольных волн.
+Для малых волновых чисел можно осуществить континуальный переход от дискретных смещений $x_{m, n} $, $y_{m, n}$ к континуальным функциям $u(x, Y, t) $, $v(x, Y, t)$ \cite{porkros}. Особый интерес представляют локализованные волны, сохраняющие форму и скорость при распространении, которые могут существовать при балансе между нелинейностью и дисперсией. Малость дисперсионных членов обеспечивается выбором $l ~ = ~ \varepsilon ~ h$. Нелинейные члены оказываются того же порядка при предположении о малости смещений вида $\varepsilon^2 ~ u (x, Y, t) $, $\varepsilon ^ 3 ~ v (x, Y, t)$, нелинейных жесткостей вида $P = P / \varepsilon $, $ Q = Q / \varepsilon$, $ S = S / \varepsilon $. Более высокая степень малого параметра при $v$ обеспечивает преимущественное распространение продольных волн.
 
 %Then the Taylor series for the neighboring particles are
-Тогда ряды Тейлора для соседних частиц равны
+Таким образом, ряды Тейлора для дискретных смещений имеют вид,
 \[
 x_{m\pm1,n\pm1}~=~ ~\varepsilon^2~u\pm~\varepsilon^3 h u_x\pm \varepsilon^4 h u_Y+\frac{1}{2} h^2 \varepsilon^4~u_{xx}+ \varepsilon^5~ h^2 u_{xY}+\frac{1}{2}\varepsilon^5 h^2 u_{YY}+...
 \]
 
 %Substitution of these Taylor series into the discrete equations of motion gives rise to the continuum coupled nonlinear partial differential equations of motion for the functions $u(x, Y, t)$, $v(x, Y, t)$,  \cite{porkros}, 
-Подстановка этих рядов Тейлора в дискретные уравнения движения приводит к непрерывным связанным нелинейным уравнениям движения в частных производных для функций $u(x, Y, t)$, $v(x, Y, t)$,  \cite{porkros},
-\[
-M~u_{tt}-\frac{h^2}{5}\left(\frac{}{} 5(C1+C_2)+34 C_3 \frac{}{}\right)~u_{xx}- \varepsilon \frac{h^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right)\left( 2v_{xY}+ u_{YY}\right)-
-\]
-\begin{equation}
-	-\frac{h^2}{12} \left( C_1+C_3+26 h^2 ~C_4\right) u_{xxxx}-2h(2 P + Q + 130  S) u_x~ u_{xx}~=~O(\varepsilon^3)
-	\label{nonlon1}
-\end{equation}
+Подстановка этих рядов Тейлора в дискретные уравнения движения приводит к континуальным связанным нелинейным уравнениям движения в частных производных для функций $u(x, Y, t)$, $v(x, Y, t)$ \cite{porkros}. 
+%\[
+%M~u_{tt}-\frac{h^2}{5}\left(\frac{}{} 5(C1+C_2)+34 C_3 \frac{}{}\right)~u_{xx}- \varepsilon \frac{h^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right)\left( 2v_{xY}+ u_{YY}\right)-
+%\]
+%\begin{equation}
+%	-\frac{h^2}{12} \left( C_1+C_3+26 h^2 ~C_4\right) u_{xxxx}-2h(2 P + Q + 130  S) u_x~ u_{xx}~=~O(\varepsilon^3)
+%	\label{nonlon1}
+%\end{equation}
+%
+%\begin{equation}
+%	M~v_{tt}-\frac{h^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right) (v_{xx}+2u_{xY})~=~O(\varepsilon)
+%	\label{nonlon2}
+%\end{equation}
 
-\begin{equation}
-	M~v_{tt}-\frac{h^2}{5}\left(\frac{}{}5C_2+16 C_3\frac{}{}\right) (v_{xx}+2u_{xY})~=~O(\varepsilon)
-	\label{nonlon2}
-\end{equation}
-
-One assumes
+%One assumes
+%\[
+%u= G\left(\theta, T ,Y\right); v= F\left(\theta, T, Y\right),
+%\]
+%where $\theta = x- V t$, $T= \epsilon ^2~t$ are the fast and the slow variables respectively. It allows us to obtain an asymptotic solution to Eqs. (\ref{nonlon1}), (\ref{nonlon2}) using expansions
+%\[
+%G = G_0 + \varepsilon^2 G_1+...,~F = F_0+\varepsilon^2 F_1+...
+%\]
+%Thus one obtains in the leading order from Eqs. (\ref{nonlon1}), (\ref{nonlon2}) respectively,
+%\begin{equation}
+%	G_{0,\theta \theta} \left(5 C_1+ 5 C_2 + 34 C_3-5 M~ V^2\right)=0,\label{leadlon1}
+%\end{equation}
+%\begin{equation}
+%	2 G_{0,\theta Y} (5 C_2 + 16 C_3) + F_{0,\theta \theta} (5 C_2 + 16 C_3 - 5 M~ V^2)~=~0. \label{leadlon2}
+%\end{equation}
+%Equation (\ref{leadlon1}) results in the solution for the phase velocity,
+%\begin{equation}
+%	V~=~ \frac{\sqrt{5 C_1 + 5 C_2 + 34 C_3}}{\sqrt{5M}}. \label{solvel}
+%\end{equation}
+%Substitution of Eq.(\ref{solvel}) into Eq. (\ref{leadlon2}) allows us to express $F_0$ through $G_0$,
+%\begin{equation}
+%	F_{0,\theta}~=~\frac{2 (5 C_2+16 C_3) G_{0,Y}}{5 C_1 +18 C_3}. \label{rel}
+%\end{equation}
+%Next order solution to Eq. (\ref{nonlon1}) results in the equation for the function $G_0$,
+%\begin{equation}
+%	G_{0,\theta T}+ A_1~ G_{0,\theta}~ G_{0,\theta \theta} +A_2 ~G_{0,\theta \theta \theta \theta}+ A_3~ G_{0,Y Y}~=~0, \label{nonkp}
+%\end{equation}
+%where
+%\[
+%A_1=\frac{h \left(2 P+ Q + 130 S\right)}{ \sqrt{M} \sqrt{5 C_1 + 5 C_2 + 34 C_3}}, ~A_2 = \frac{\sqrt{5} h^2 (C_1 + C_2+26 C_3)}{24 \sqrt{M} \sqrt{5 C_1+5 C_2 + 34 C_3}},
+%\]
+%\[
+%A_3 = \frac{(5 C_2 + 16 C_3) (5 C_1 + 20 C_2+ 82 C_3)}{2  \sqrt{5M} (5 C_1+18 C_3 ) \sqrt{5 C_1 + 5 C_2 + 34 C_3}}.
+%\]
+Далее, вводятся $\theta = x- V t$, $T= \epsilon ^2~t$ в качестве быстрых и медленных переменных, и уравнения движения для континуальных смещений переписываются относительно них в новых функциях $u= G\left(\theta, T ,Y\right); v= F\left(\theta, T, Y\right)$, что позволяет, используя асимптотические разложения,
 \[
-u= G\left(\theta, T ,Y\right); v= F\left(\theta, T, Y\right),
+G = G_0 + \varepsilon^2 G_1+\cdots,~F = F_0+\varepsilon^2 F_1+\cdots,
 \]
-where $\theta = x- V t$, $T= \epsilon ^2~t$ are the fast and the slow variables respectively. It allows us to obtain an asymptotic solution to Eqs. (\ref{nonlon1}), (\ref{nonlon2}) using expansions
-\[
-G = G_0 + \varepsilon^2 G_1+...,~F = F_0+\varepsilon^2 F_1+...
-\]
-Thus one obtains in the leading order from Eqs. (\ref{nonlon1}), (\ref{nonlon2}) respectively,
-\begin{equation}
-	G_{0,\theta \theta} \left(5 C_1+ 5 C_2 + 34 C_3-5 M~ V^2\right)=0,\label{leadlon1}
-\end{equation}
-\begin{equation}
-	2 G_{0,\theta Y} (5 C_2 + 16 C_3) + F_{0,\theta \theta} (5 C_2 + 16 C_3 - 5 M~ V^2)~=~0. \label{leadlon2}
-\end{equation}
-Equation (\ref{leadlon1}) results in the solution for the phase velocity,
+получить выражение для фазовой скорости в высшем порядке,
 \begin{equation}
 	V~=~ \frac{\sqrt{5 C_1 + 5 C_2 + 34 C_3}}{\sqrt{5M}}. \label{solvel}
 \end{equation}
-Substitution of Eq.(\ref{solvel}) into Eq. (\ref{leadlon2}) allows us to express $F_0$ through $G_0$,
-\begin{equation}
-	F_{0,\theta}~=~\frac{2 (5 C_2+16 C_3) G_{0,Y}}{5 C_1 +18 C_3}. \label{rel}
-\end{equation}
-
-Next order solution to Eq. (\ref{nonlon1}) results in the equation for the function $G_0$,
+а также уравнение относительно $G_0$ в следующем порядке \cite{PorOsAnt2020},
 \begin{equation}
 	G_{0,\theta T}+ A_1~ G_{0,\theta}~ G_{0,\theta \theta} +A_2 ~G_{0,\theta \theta \theta \theta}+ A_3~ G_{0,Y Y}~=~0, \label{nonkp}
 \end{equation}
-where
+где
 \[
 A_1=\frac{h \left(2 P+ Q + 130 S\right)}{ \sqrt{M} \sqrt{5 C_1 + 5 C_2 + 34 C_3}}, ~A_2 = \frac{\sqrt{5} h^2 (C_1 + C_2+26 C_3)}{24 \sqrt{M} \sqrt{5 C_1+5 C_2 + 34 C_3}},
 \]
 \[
 A_3 = \frac{(5 C_2 + 16 C_3) (5 C_1 + 20 C_2+ 82 C_3)}{2  \sqrt{5M} (5 C_1+18 C_3 ) \sqrt{5 C_1 + 5 C_2 + 34 C_3}}.
 \]
+%\fixme{Уравнение 1}
 
-\fixme{Уравнение 1}
-
-Equation (\ref{nonkp}) may be re-written in the form of is the familiar Kadomtsev - Petviashvili equation, see \cite{Ablowitz} and references therein,  for the strain function, $w=G_{0,\theta}$,
+%Equation (\ref{nonkp}) may be re-written in the form of is the familiar Kadomtsev - Petviashvili equation, see \cite{Ablowitz} and references therein,  for the strain function, $w=G_{0,\theta}$,
+%\begin{equation}
+%	\left(\frac{}{} w_{ T}+ A_1~ w~ w_{ \theta} +A_2 ~w_{\theta \theta \theta} \frac{}{}\right)_\theta+ A_3~ w_{Y Y}~=~0, \label{kp}
+%\end{equation}
+%The coefficients $A_2$ and $A_3$ are always positive.
+Уравнение (\ref{nonkp}) может быть переписано в виде уравнения Кадомцева-Петвиашвили \cite{Ablowitz} относительно функции деформации $w=G_{0,\theta}$,
 \begin{equation}
 	\left(\frac{}{} w_{ T}+ A_1~ w~ w_{ \theta} +A_2 ~w_{\theta \theta \theta} \frac{}{}\right)_\theta+ A_3~ w_{Y Y}~=~0, \label{kp}
 \end{equation}
-The coefficients $A_2$ and $A_3$ are always positive.
+Коэффициенты $A_2$ и $A_3$ всегда положительны согласно определению.
 
 \subsection{Сдвиговые волны}
-\fixme{Аналогично}
-%The small parameter $\varepsilon$ is introduced in a  different way but using the same reasons as for the longitudinal waves considered before. Now predominantly shear waves are considered, nonlinearity is weak and should balance dispersion, the waves are plane bur disturbed in the transverse direction. Then the continuum displacements of the central particle $x_{m,n}$, $y_{m,n}$ are $\varepsilon^2~u(x, Y, t)$, $\varepsilon~v(x, Y, t)$. Again $l~=~\varepsilon~ h$ while for quadratic non-linear rigidities one has  $P=\bar{P}/\varepsilon$, $Q=\bar{Q}/\varepsilon$, $S=\bar{S}/\varepsilon$, and for cubic non-linear rigidities one has $P_3=\bar{P_3}/\varepsilon^2$, $Q_3=\bar{Q_3}/\varepsilon^2$, $S_3=\bar{S_3}/\varepsilon^2$. Substitution of the corresponding Taylor series to the continuum coupled non-linear partial differential equations of motion for the functions  $u(x, Y, t)$, $v(x, Y, t)$ of the form
-Малый параметр $ \varepsilon $ вводится по-другому, но по тем же причинам, что и для продольных волн, рассмотренных ранее. Сейчас рассматриваются преимущественно поперечные волны, нелинейность слабая и должна уравновешивать дисперсию, волны плоские, возмущенные в поперечном направлении. Тогда смещения континуума центральной частицы $ x_{m, n} $, $ y_{m, n} $ равны $ \varepsilon^2 ~ u (x, Y, t)$, $\varepsilon ~ v (x, Y, t) $. Опять $l ~ = ~ \varepsilon ~ h $, а для квадратичных нелинейных жесткостей $P=\bar{P}/\varepsilon$, $Q=\bar{Q}/\varepsilon$, $S=\bar{S}/\varepsilon$,, а для кубической нелинейной жесткости $P_3=\bar{P_3}/\varepsilon^2$, $Q_3=\bar{Q_3}/\varepsilon^2$, $S_3=\bar{S_3}/\varepsilon^2$.. Подстановка соответствующего ряда Тейлора в сплошные связанные нелинейные уравнения движения в частных производных для функций $ u (x, Y, t) $, $ v (x, Y, t) $ вида
-\begin{equation}
-	M u_{tt}-\frac{1}{5} (5 C_1+5 C_2+34 C_3) u_{xx}-\frac{2}{5} (5 C_2+16 C_3) v_{x,Y}-4 h~ (\bar{P}+20 \bar{S}) v_x~ v_{xx}~=~O(\varepsilon),
-	\label{nonshear1}
-\end{equation}
-\[
-M v_{tt}-\frac{1}{5} (5 C_2+16 C_3) v_{xx}-
-\varepsilon^2 \left(\frac{}{}\frac{1}{5} (5 C_1+5 C_2+34 C_3) v_{YY}+\frac{h^2}{12}  (C_2+8 C_3) v_{xxxx}+\right.
-\]
-\begin{equation}
-	\left. \frac{2}{5} (5 C_2+16 C_3) u_{x,Y}+4 h~ (\bar{P}+20 \bar{S}) (v_x (u_{x}+2 v_{Y}))_x + 6 h^2 (\bar{P_3}+32 \bar{S_3}) v_x^2 v_{xx}\frac{}{}\right)~=~O(\varepsilon^3)
-	\label{nonshear2}
-\end{equation}
-The asymptotic solution to Eqs. (\ref{nonshear1}), (\ref{nonshear2}) is
-\[
-u=  G\left(\theta, T ,Y\right); v=  F\left(\theta, T, Y\right),
-\]
-where the fast and slow variables are introduced similar to the case of longitudinal waves,
-\[
-G = G_0 + \varepsilon^2 G_1+...,~F = F_0+\varepsilon^2 F_1+...
-\]
-The leading order solution is
 
-\[
-G_{0,\theta}~=~-\frac{2 \left((5 C_2+16 C_3) F_{0,Y}+5 h (\bar{P} +20 \bar{S}) F_{0,\theta}^2\right)}{5 C_1+18 C_3}
-\]
-\[
-V~=~\sqrt{\frac{5 C_2 + 16 C_3}{5 M}},
-\]
-Nest order solution, $O(\varepsilon^2$), gives rise to the model equation for $F_0$,
+%The small parameter $\varepsilon$ is introduced in a  different way but using the same reasons as for the longitudinal waves considered before. Now predominantly shear waves are considered, nonlinearity is weak and should balance dispersion, the waves are plane bur disturbed in the transverse direction. Then the continuum displacements of the central particle $x_{m,n}$, $y_{m,n}$ are $\varepsilon^2~u(x, Y, t)$, $\varepsilon~v(x, Y, t)$. Again $l~=~\varepsilon~ h$ while for quadratic non-linear rigidities one has  $P=\bar{P}/\varepsilon$, $Q=\bar{Q}/\varepsilon$, $S=\bar{S}/\varepsilon$, and for cubic non-linear rigidities one has $P_3=\bar{P_3}/\varepsilon^2$, $Q_3=\bar{Q_3}/\varepsilon^2$, $S_3=\bar{S_3}/\varepsilon^2$. Substitution of the corresponding Taylor series to the continuum coupled non-linear partial differential equations of motion for the functions  $u(x, Y, t)$, $v(x, Y, t)$ of the form
+Для сдвиговых волн малый параметр $ \varepsilon $ вводится по-другому, но по тем же причинам, что и для продольных волн. Рассматриваются преимущественно поперечные волны, нелинейность слабая и должна уравновешивать дисперсию, дискретные смещения $ x_{m, n} $, $ y_{m, n} $ выражаются как $ \varepsilon^2 ~ u (x, Y, t)$, $\varepsilon ~ v (x, Y, t) $ \cite{PorOsAnt2020}. Снова $l ~ = ~ \varepsilon ~ h $, квадратичные нелинейные жесткости $P=\bar{P}/\varepsilon$, $Q=\bar{Q}/\varepsilon$, $S=\bar{S}/\varepsilon$,  кубические ---  $P_3=\bar{P_3}/\varepsilon^2$, $Q_3=\bar{Q_3}/\varepsilon^2$, $S_3=\bar{S_3}/\varepsilon^2$. 
+%Подстановка соответствующего ряда Тейлора в сплошные связанные нелинейные уравнения движения в частных производных для функций $ u (x, Y, t) $, $ v (x, Y, t) $ вида
+%\begin{equation}
+%	M u_{tt}-\frac{1}{5} (5 C_1+5 C_2+34 C_3) u_{xx}-\frac{2}{5} (5 C_2+16 C_3) v_{x,Y}-4 h~ (\bar{P}+20 \bar{S}) v_x~ v_{xx}~=~O(\varepsilon),
+%	\label{nonshear1}
+%\end{equation}
+%\[
+%M v_{tt}-\frac{1}{5} (5 C_2+16 C_3) v_{xx}-
+%\varepsilon^2 \left(\frac{}{}\frac{1}{5} (5 C_1+5 C_2+34 C_3) v_{YY}+\frac{h^2}{12}  (C_2+8 C_3) v_{xxxx}+\right.
+%\]
+%\begin{equation}
+%	\left. \frac{2}{5} (5 C_2+16 C_3) u_{x,Y}+4 h~ (\bar{P}+20 \bar{S}) (v_x (u_{x}+2 v_{Y}))_x + 6 h^2 (\bar{P_3}+32 \bar{S_3}) v_x^2 v_{xx}\frac{}{}\right)~=~O(\varepsilon^3)
+%	\label{nonshear2}
+%\end{equation}
+Аналогичным образом ищется асимптотическое решение $u= G\left(\theta, T ,Y\right);~ v= F\left(\theta, T, Y\right)$ для тех же быстрых и медленных переменных, что и для продольных волн. Выражение для фазовой скорости в высшем порядке,
+\begin{equation}
+    V~=~\sqrt{\frac{5 C_2 + 16 C_3}{5 M}}
+\end{equation}
+уравнение относительно $F_0$ в следующем порядке \cite{PorOsAnt2020},
 \begin{equation}
 	F_{0,\theta T}+ B_1~ F_{0,\theta}^2~ F_{0,\theta \theta} +B_2 ~F_{0,\theta \theta \theta \theta}+ B_3~ F_{0,Y Y}+B_4~F_{0,Y}~ F_{0,\theta \theta}~=~0, \label{kpsh}
 \end{equation}
-where
+\[
+G = G_0 + \varepsilon^2 G_1+...,~F = F_0+\varepsilon^2 F_1+...
+\]
+где
 \[
 B_1~=~\frac{3 \sqrt{5} h^2 \left((5 C_1 +18 C_3)(\bar{P_3}+32 \bar{S_3})-20 (\bar{P}+20 \bar{S})^2 \right)}{2 (5 C_1+18 C_3) \sqrt{M (5 C_2+16 C_3)}},
 \]
 \[
-B_2~=~\frac{\sqrt{5} h^2 (C_2+8 C_3)}{24 \sqrt{M (5 C_2+16 C_3)}},~B_3~=~\frac{25 \left(C_1^2+C_1 C_2-4 C_2^2\right)+10 C_3 (26 C_1-55 C_2)-412 C_3^2}
+B_2~=~\frac{\sqrt{5} h^2 (C_2+8 C_3)}{24 \sqrt{M (5 C_2+16 C_3)}},
+\]
+\[
+~B_3~=~\frac{25 \left(C_1^2+C_1 C_2-4 C_2^2\right)+10 C_3 (26 C_1-55 C_2)-412 C_3^2}
 {2 \sqrt{5} (5 C_1+18 C_3) \sqrt{M (5 C_2+16 C_3)}},
 \]
 \[
 B_4~=~\frac{2 \sqrt{5} h (\bar{P}+20 \bar{S}) (5 C_1-2 (5 C_2+7 C_3))}{(5 C_1+18 C_3) \sqrt{M (5 C_2+16 C_3)}}.
 \]
-The cubic non-linear term coefficient, $B_1$, may be of either sign due to the either sign of $\bar{P}, \bar{S}$ and $\bar{P_3}, \bar{S_3}$, the coefficient $B_2$ at the dispersion term is always positive. Both linear and non-linear terms with transverse derivatives, $B_3$ and $B_4$, may be of either sign, and now the sign of $B_3$ also depend on the long-range linear rigidity $C_3$. The sign of $B_1$ defines the type of localized of plane waves, a bell-shaped or a  kink-shaped while the signs of  $B_3$ and $B_4$ may be responsible for a transverse instability of plane waves.
+%The cubic non-linear term coefficient, $B_1$, may be of either sign due to the either sign of $\bar{P}, \bar{S}$ and $\bar{P_3}, \bar{S_3}$, the coefficient $B_2$ at the dispersion term is always positive. Both linear and non-linear terms with transverse derivatives, $B_3$ and $B_4$, may be of either sign, and now the sign of $B_3$ also depend on the long-range linear rigidity $C_3$. The sign of $B_1$ defines the type of localized of plane waves, a bell-shaped or a  kink-shaped while the signs of  $B_3$ and $B_4$ may be responsible for a transverse instability of plane waves.
+
+Коэффициент кубической нелинейности, $ B_1 $, может быть любого знака в силу произвольности знаков для $ \bar {P}, \bar{S} $ и $ \bar {P_3}, \bar {S_3} $, коэффициент $ B_2 $ при дисперсионном члене всегда положителен. И линейные, и нелинейные члены с поперечными производными, $ B_3 $ и $ B_4 $, могут быть любого знака,знак $ B_3 $ также зависит от дальнодействующей линейной жесткости $ C_3 $. Знак $ B_1 $ определяет тип локализованных плоских волн, колоколообразный или кинк, а знаки $ B_3 $ и $ B_4 $ могут быть ответственны за поперечную неустойчивость плоских волн.
 
 
-\section{Распространение двумерных нелинейных волн в гексагональной двухатомной решетке}
-
-\fixme{90\% здесь не нужно...}
-
-%The two-dimensional lattice  garphene consists of two interacting sub-lattices whose numbers are marked  as "1" for the first sublattice and "2" for the second one. The sketch of the model can be found in \cite{poros19}. The elements interaction is modelled by the translational springs with a linear stiffness $C_1$ and angular springs with a linear stiffness $C_2$. The nonlinearity is introduced via additional elastic translational interaction with a stiffness $Q$. This model can be called "geometrically linear", since the nonlinearity introduced in this paper takes into account deviations from the Hook's law, which means the tensor of deformations is no longer linear and the additional mixed derivative occurs. This type is called physical nonlinearity. The geometrical nonlinearity is neglected for simplification's sake.
-Рассматривается двумерная гексагональная решетка состоит из двух взаимодействующих подрешеток, номера которых обозначены цифрой 1 для первой подрешетки и 2 для второй. Эскиз модели можно найти в \cite {poros19}. \fixme{Вставить рисунок.} Взаимодействие элементов моделируется поступательными пружинами с линейной жесткостью $C_1$ и угловыми пружинами с линейной жесткостью $C_2$. Нелинейность вводится за счет дополнительного упругого трансляционного взаимодействия с жесткостью $Q$. Эту модель можно назвать <<геометрически линейной>>, поскольку нелинейность, введенная в этой работе, учитывает отклонения от закона Гука, что означает, что тензор деформаций больше не является линейным и возникает дополнительная смешанная производная. Этот тип называется физической нелинейностью. Для упрощения, геометрической нелинейностью пренебрегается.
-
-%When one tries to set up the nanoscale continuum theory for graphene, two main issues occur: the multi-body interatomic potential and the lack of centrosymmetry of hexagonal atomic structures. Zhang et al. \cite{Zhang} proposed a continuum theory that links the macroscopic deformation to the atomic structure of materials. The macroscopic behavior of the material is defined by the so-called Cauchy-Born rule of crystal elasticity, by equating the strain energy function on the continuum level to the potential energy stored in the atomic bonds due to an imposed deformation on the discrete level.
-При континуальном описании механики графена, возникают две основные проблемы: выражение межатомного потенциала множества частиц и отсутствие центросимметрии гексагональных атомных структур. Zhang \cite{Zhang} предложил континуальную модель, которая связывает макроскопическую деформацию с атомной структурой материалов. Макроскопическое поведение материала определяется так называемым правилом упругости кристалла Коши-Борна, \fixme{приравнивая функцию энергии деформации на континуальном уровне к потенциальной энергии атомных связей из-за наложенной деформации на дискретном уровне}.
-
-%The Cauchy-Born rule assumes that the atoms in a material subject to a homogeneous deformation move according to a single mapping from the undeformed to the deformed configuration. It should be pointed out that the Cauchy-Born rule that links the continuum model with particles interaction requires the atomic structure of the materials to be centrosymmetric, because such a structure ensures the equilibrium of particles in a lattice. The hexagonal arrangement of atoms in a nanotube doesn't meet this requirement: when a carbon nanotube is under "homogeneous deformation" on the cell level, the deformation may not be homogeneous inside the cell.\cite{Peng}
-\fixme{Правило Коши-Борна предполагает, что атомы в материале, подверженном однородной деформации, перемещаются в соответствии с одним отображением от недеформированной конфигурации к деформированной. Следует отметить, что правило Коши-Борна, которое связывает модель континуума с взаимодействием частиц, требует, чтобы атомная структура материалов была центросимметричной, поскольку такая структура обеспечивает равновесие частиц в решетке. Гексагональное расположение атомов в нанотрубке не соответствует этому требованию: когда углеродная нанотрубка находится в состоянии «однородной деформации» на уровне ячейки, деформация может быть неоднородной внутри ячейки \cite{Peng}.}
-
-%An attempt to modify the Cauchy-Born rule to work for hexagonal atomic structure is to introduce a rigid body translation as an internal degree of freedom (DOF). A hexagonal lattice can be decomposed into two sub-lattices,  each of which is centrosymmetric. Under a homogeneous deformation applied on the continuum level, each sub-lattice deforms according to the single mapping. However, the two sub-lattices move relative to each other by a certain rigid body translation, which is the internal DOF, to ensure the equilibrium of the atom. It is determined by minimization of the strain energy density which is equivalent to equilibrium of the atoms.
-\fixme{Попытка изменить правило Коши-Борна для работы с гексагональной атомной структурой состоит в том, чтобы ввести трансляцию твердого тела как внутреннюю степень свободы (DOF). Гексагональную решетку можно разбить на две подрешетки, каждая из которых центросимметрична. При однородной деформации, приложенной на уровне континуума, каждая подрешетка деформируется в соответствии с единственным отображением. Однако две подрешетки перемещаются относительно друг друга за счет определенной трансляции твердого тела, которая является внутренней степенью свободы, чтобы гарантировать равновесие атома. Это определяется минимизацией плотности энергии деформации, которая эквивалентна равновесию атомов.}
-
-%By introducing the internal DOF and enforcing the energy minimization, the equilibrium of each atom is ensured when subject to a deformation specified by the deformation gradient. In other words, neglecting the internal DOF is equivalent to applying some external constraints on top of the deformation. The stiffnesses, or equivalently, the elastic moduli of the graphene lattice, are then re-estimated because of the "external" constraints \cite{Peng}.
-\fixme{За счет введения внутренней степени свободы и обеспечения минимизации энергии равновесие каждого атома обеспечивается при деформации, определяемой градиентом деформации. Другими словами, пренебрежение внутренней глубиной резкости эквивалентно наложению некоторых внешних ограничений поверх деформации. Затем жесткости или, что эквивалентно, модули упругости решетки графена повторно оцениваются из-за «внешних» ограничений \cite{Peng}. }
-
-%Therefore, in addition to the previously mentioned lattice models, the separation into two sub-lattices is used for the graphene modeling. Besides translational interactions, angular interactions are also taken into consideration.
-Поэтому, в дополнение к ранее упомянутым решеточным моделям, для моделирования графена используется разделение на две подрешетки. Помимо поступательных взаимодействий, также принимаются во внимание угловые взаимодействия.
-
-%Let's denote $x_{m,n}$, $y_{m,n}$ as the translational displacements of a central mass marked by $1$ corresponding to the horizontal and vertical directions respectively. The analogous displacements for the second sublattice are denoted by $X_{m,n}$ and $Y_{m,n}$. Then the potential energy is  \cite{poros19}
-Обозначим $x_{m, n}$, $y_{m, n}$ как поступательные смещения центральной массы, отмеченные символом $1$, соответствующие горизонтальному и вертикальному направлениям соответственно. Аналогичные смещения для второй подрешетки обозначены $X_{m, n}$ и $Y_{m, n}$. Тогда потенциальная энергия равна \cite{poros19}
-
-\[
-\Pi_{1Rot}  = C_1(\Delta l_1^2 + \Delta l_2^2 + \Delta l_3^2) + C_2 a^2(\phi^2+\psi^2)+ Q(\Delta l_1^3 + \Delta l_2^3 + \Delta l_3^3)
-\]
-\begin{equation}
-	\Pi_{2Rot} = C_1(\Delta L_1^2 + \Delta L_2^2 + \Delta L_3^2)+ C_2 a^2(\Phi^2+\Psi^2)+
-	Q(\Delta L_1^3 + \Delta L_2^3 + \Delta L_3^3)
-\end{equation}
-%where $a$ is a distance between the particles, $C_1$ is the translational stiffness, $C_2$ is the rotational stiffness, and Q is the nonlinear one.
-где $a$ --- расстояние между частицами, $C_1$ - поступательная жесткость, $C_2$ --- вращательная жесткость, а Q --- нелинейная.
-
-%The translational elongations for both sublattices can be found in  \cite{poros19}.
-Трансляционные удлинения для обеих подрешеток можно найти в \ cite {poros19}.
-
-%The kinetic energy is
-Кинетическая энергия выражается следующим образом,
-\begin{equation}
-	K_1=\frac{M}{2}\left( \dot{x}^2+\dot{y}^2\right) +J~a^2(\dot{\varphi}^2+\dot{\psi}^2),
-\end{equation}
-%where $M$ is the mass of the particles in the lattice, $J$ is the angular mass  (moment of inertia).
-где $M$ --- масса частиц в решетке, $J$ --- момент инерции.
-
-%In order to obtain the expressions for the angles $\phi, \psi$, $\Phi, \Psi$, the cosine formula was used in  \cite{poros19} where the expressions for connecting the angels and the displacements can be found. The physically nonlinear model assumes only small variations in the angular variables that  results in the linearization of the expressions.
-Чтобы получить выражения для углов $\phi, \psi$, $\Phi, \Psi$, была использована формула косинуса в \cite{poros19}, где можно найти выражения для соединения ангелов и смещений. Физически нелинейная модель предполагает только небольшие изменения угловых переменных, что приводит к линеаризации выражений.
-
-%The discrete equations are obtained using the Hamilton-Ostrogradsky variational principle  \cite{poros19},
-Дискретные уравнения получены с использованием вариационного принципа Гамильтона-Остроградского \cite{poros19},
-
-\[
-(3J+M)\ddot{x}_{m,n}+\frac{\sqrt{3}}{2}J\Big(\ddot{Y}_{m-1,n+1} - \ddot{Y}_{m-1,n-1} -\sqrt{3}(\ddot{X}_{m-1,n-1} - \ddot{X}_{m-1,n+1})\Big) +
-\]
-\[
-\frac{C_1}{2}\Big(6x_{m,n} - 4X_{m+1,n} - (X_{m-1,n-1} + X_{m-1,n+1}) + \sqrt{3}(Y_{m-1,n+1} - Y_{m-1,n-1})\Big) +
-\]
-\[
-\frac{\sqrt{3}C_2}{2}\Big(6x_{m,n} - 3(X_{m-1,n-1} + X_{m-1,n+1}+\sqrt{3}(Y_{m-1,n+1} - Y_{m-1,n-1})\Big) +
-\]
-\[
-\frac{3Q}{8}\left(\frac{}{}(x_{m,n} - X_{m-1,n-1})^2 + (x_{m,n} - X_{m-1,n+1})^2 +3(y_{m,n} - Y_{m-1,n-1})^2 + 3(Y_{m-1,n+1}-y_{m,n})^2 \right.
-\]
-\[
-\left. 2\sqrt{3} (x_{m,n} - X_{m-1,n-1})(y_{m,n} - Y_{m-1,n-1}) + 2\sqrt{3}(x_{m,n} - X_{m-1,n+1})(Y_{m-1,n+1}-y_{m,n} )-
-\right.
-\]
-\begin{equation}
-	\left. 8(x_{m,n}-X_{m+1,n})^2)\frac{}{}\right)=0,
-	\label{twod_goveq1}
-\end{equation}
-
-\[
-(J+M)\ddot{y}_{m,n}+\frac{J}{2}\Big(\sqrt{3}(\ddot{X}_{m-1,n+1} - \ddot{X}_{m-1,n-1}) - (\ddot{Y}_{m-1,n-1} + \ddot{Y}_{m-1,n+1}) \Big) +
-\]
-\[
-\frac{C_1}{2}\Big(6y_{m,n} + \sqrt{3}(X_{m-1,n+1} - X_{m-1,n-1}) - 3(Y_{m-1,n-1} + Y_{m-1,n+1})\Big) +
-\]
-\[
-\frac{C_2}{2}\Big(2y_{m,n}+\sqrt{3}(X_{m-1,n+1} - X_{m-1,n-1}) - (Y_{m-1,n-1} + Y_{m-1,n+1})\Big) +
-\]
-\[
-\frac{3\sqrt{3}}{8}Q\Big((x_{m,n} - X_{m-1,n-1})^2 - (x_{m,n} - X_{m-1,n+1})^2 +3(y_{m,n} - Y_{m-1,n-1})^2 - 3(Y_{m-1,n+1}-y_{m,n})^2 +
-\]
-\begin{equation}
-	2\sqrt{3}(x_{m,n} - X_{m-1,n-1})(y_{m,n} - Y_{m-1,n-1}) - 2\sqrt{3}(x_{m,n} - X_{m-1,n+1})(Y_{m-1,n+1}-y_{m,n})\Big)=0,
-	\label{twod_goveq2}
-\end{equation}
-
-\[
-(3J+M)\ddot{X}_{m,n}+\frac{\sqrt{3}}{2}J\Big(\ddot{y}_{m+1,n-1} - \ddot{y}_{m+1,n+1} -\sqrt{3}(\ddot{x}_{m+1,n-1} - \ddot{x}_{m+1,n+1})\Big) +
-\]
-\[
-\frac{C_1}{2}\Big(6X_{m,n} - 4x_{m-1,n} - (x_{m+1,n-1} + x_{m+1,n+1}) + \sqrt{3}(y_{m+1,n-1} - y_{m+1,n+1})\Big) +
-\]
-\[
-\frac{\sqrt{3}C_2}{2}\Big(6X_{m,n} - 3(x_{m+1,n-1} + x_{m+1,n+1}) + \sqrt{3}(y_{m+1,n-1} - y_{m+1,n+1})\Big) +
-\]
-\[
-\frac{3Q}{8}\left(\frac{}{}8(x_{m,n}-X_{m-1,n})^2 - (x_{m+1,n+1} - X_{m,n})^2 - (x_{m+1,n-1} - X_{m,n})^2 - \right.
-\]
-\[
-\left. 3(y_{m+1,n+1} - Y_{m,n})^2 - 3(Y_{m,n} - y_{m+1,n-1})^2-
-2\sqrt{3}(x_{m+1,n+1} - X_{m,n})(y_{m+1,n+1} - Y_{m,n}) - \right.
-\]
-\begin{equation}
-	\left. 2\sqrt{3}(x_{m+1,n-1} - X_{m,n})(Y_{m,n}-y_{m+1,n-1})\frac{}{}\right)=0,
-	\label{goveq3}
-\end{equation}
-
-\[
-(J+M)\ddot{Y}_{m,n}+\frac{J}{2}\Big(\sqrt{3}(\ddot{x}_{m+1,n-1} - \ddot{x}_{m+1,n+1}) - (\ddot{y}_{m+1,n-1} + \ddot{y}_{m+1,n+1})\Big) +
-\]
-\[
-\frac{C_1}{2}\Big(6Y_{m,n} + \sqrt{3}(x_{m+1,n-1} - x_{m+1,n+1}) - 3(y_{m+1,n-1} + y_{m+1,n+1})\Big) +
-\]
-\[
-\frac{C_2}{2}\Big(2Y_{m,n}+ \sqrt{3}(x_{m+1,n-1} - x_{m+1,n+1}) - (y_{m+1,n-1} + y_{m+1,n+1})\Big) +
-\]
-\[
-\frac{3\sqrt{3}}{8}Q\Big((x_{m+1,n-1} - X_{m,n})^2 - (x_{m+1,n+1} - X_{m,n})^2 +3(Y_{m,n} - y_{m+1,n-1})^2 - 3(y_{m+1,n+1}-Y_{m,n})^2 +
-\]
-\begin{equation}
-	2\sqrt{3}(x_{m+1,n-1} - X_{m,n})(Y_{m,n} - y_{m+1,n-1}) - 2\sqrt{3}(x_{m+1,n+1} - X_{m,n})(y_{m+1,n+1}-Y_{m,n})\Big)=0. 
-	\label{goveq4}
-\end{equation}
-%Discrete nonlinear equations cannot be used for an analysis, and a continuum approximation of Eqs. (\ref{twod_goveq1})-(\ref{goveq4}) will be obtained in the following.
-Дискретные нелинейные уравнения не могут использоваться для анализа, а континуальное приближение уравнений. (\ref{twod_goveq1}) - (\ref{goveq4}) будут получены следующим образом.
-
-%\subsection{Continuum limit for weakly transversely perturbed waves}
-\subsection{Континуальный предел для слабо поперечно возмущенных волн}
-
-%\subsubsection{Coupled continuum equations}
-\subsubsection{Связанные уравнения континуальной модели}
-
-%The weak transverse variations along the vertical axis and small vertical displacements are studied. The discrete variables $x_{m,n}$, $y_{m,n}$, $X_{m,n}$, $Y_{m,n}$ are linked to the continuum functions $u(x,y,t)$, $v(x,y,t)$, $U(x,y,t)$ and $V(x,y,t)$ respectively, while the displacements of the neighboring particles are rewritten using the Taylor series expansion, like for the square lattice.
-Изучаются слабые поперечные вариации по вертикальной оси и небольшие вертикальные смещения. Дискретные переменные $ x_{m, n} $, $ y_{m, n} $, $ X_{m, n} $, $ Y_{m, n} $ связаны с функциями континуума $u (x, y, t)$, $v (x, y, t)$, $U (x, y, t)$ и $ V(x, y, t)$ соответственно, а смещения соседних частиц переписываются с использованием Разложение в ряд Тейлора, как и для квадратной решетки.
-
-%We consider predominantly longitudinal waves propagating along the horizontal axis. That is why we leave only the leading order nonlinear and dispersion terms in the equations of motions for $u$ and $U$, and by analogy, only those terms that allow us to establish a connection between horizontal and vertical displacements are left in the equations of motion for the vertical displacements.
-Мы рассматриваем преимущественно продольные волны, распространяющиеся вдоль горизонтальной оси. Поэтому в уравнениях движения для $u$ и $U$ мы оставляем только главные нелинейные и дисперсионные члены, и по аналогии только те члены, которые позволяют установить связь между горизонтальными и вертикальными смещениями, остаются в уравнении движения. уравнения движения для вертикальных перемещений.
-
-Then one obtains from Eqs. (\ref{twod_goveq1}) - (\ref{goveq4}) \cite{poros19}
-
-\[
-(3J+M)u_{tt} +3(C_1+C_2)(u-U) - 3JU_{tt} -a(C_1-3C_2)U_x +3JaU_{xtt} - \frac{3a^2}{2}(C_1+C_2)U_{xx} +
-\]
-\[
-\sqrt{3}a(C_1+C_2)V_y - \sqrt{3}a^2(C_1+C_2)V_{xy} - \frac{a^2}{2}(C_1+3C_2)U_{yy} - \frac{3a^2}{2}JU_{xxtt} - \frac{a^3}{6}(C_1-3C_2)U_{xxx} -
-\]
-\begin{equation}
-	\frac{a^4}{8}(C_1+C_2)U_{xxxx} -  \frac{9Q}{4}(u-U)^2 + \frac{15Q}{2}a(u-U)U_{x} - \frac{9Q}{4}a^2(U_x)^2 = 0,
-\end{equation}
-
-
-\[
-(3J+M)U_{tt} +3(C_1+C_2)(U-u) - 3Ju_{tt} + a(C_1-3C_2)u_x -3Jau_{xtt} - \frac{3a^2}{2}(C_1+C_2)u_{xx} -
-\]
-\[
-\sqrt{3}a(C_1+C_2)v_y - \sqrt{3}a^2(C_1+C_2)v_{xy} - \frac{a^2}{2}(C_1+3C_2)u_{yy} - \frac{3a^2}{2}Ju_{xxtt} +
-\frac{a^3}{6}(C_1-3C_2)u_{xxx} -
-\]
-\begin{equation}
-	\frac{a^4}{8}(C_1+C_2)u_{xxxx} +  \frac{9Q}{4}(u-U)^2 - \frac{15Q}{2}a(u-U)u_{x} + \frac{9Q}{4}a^2(u_x)^2 = 0. 
-\end{equation}
-
-\begin{equation}
-	(3C_1+C_2)(v-V) + \sqrt{3}a(C_1+C_2)U_y  + a(3C_1+C_2)V_x - \sqrt{3}a^2(C_1+C_2)U_{xy} = 0
-	\label{cont3}
-\end{equation}
-
-\begin{equation}
-	(3C_1+C_2)(V-v) - \sqrt{3}a(C_1+C_2)u_y  - a(3C_1+C_2)v_x - \sqrt{3}a^2(C_1+C_2)u_{xy} = 0
-	\label{cont4}
-\end{equation}
-
-The displacements responsible for the sub-lattices elements motion in the discrete equations are not physically reasonable in the continuum model. Then the transformation of variables 
-\[
-U_1~=~\frac{u+U}{2},~U_2~=~\frac{u-U}{2},
-\]
-\[
-V_1~=~\frac{v+V}{2},~V_2~=~\frac{v-V}{2},
-\]
-allows us to describe the dynamics using the macro-displacements $U_1$, $V_1$, and the micro-displacement variables $u_1$, $v_1$ taking the microstructure into account. 
-After the substitution and obvious manipulations with the equations (addition and subtraction) we obtain 
-\[
-MU_{1,tt} - \sqrt{3}a(C_1+C_2)V_{2,y} - \frac{a^2}{2}(C_1+3C_2)U_{1,yy} + a(C_1-3C_2)U_{2,x} - 3aJU_{2,xtt} - 
-\]
-\[
-\sqrt{3}a^2(C_1+C_2)V_{1,xy} -\frac{3a^2}{2}(C_1+C_2)U_{1,xx} - \frac{3a^2}{2}JU_{1,xxtt} - \frac{a^3}{12}(C_1-3C_2)(U_{1,xxx}-U_{2,xxx}) -
-\]
-\begin{equation}
-	\frac{a^4}{16}(C_1+C_2)(U_{1,xxxx}) -Qa^2\left(\frac{15}{2}U_2U_{2,x} + \frac{9a}{4} U_{1,x}U_{2,x} +\frac{9a}{8}U_{2}U_{1,xx} \right) =0, \label{aseq1}
-\end{equation}
-
-\[
-(6J+M)U_{2,tt} + 6(C_1+C_2) +\sqrt{3}a(C_1+C_2)V_{1,y} + \frac{3a^2}{2}(C_1+C_2)U_{2,xx} - 
-\]
-\[
-a(C_1-3C_2)U_{1,x} +3aJ~U_{1,xtt} +\sqrt{3}a^2(C_1+C_2)V_{2,xy} -
-\]
-\[
-\frac{a^3}{12}(C_1-3C_2)(U_{1,xxx}-U_{2,xxx}) - \frac{a^4}{16}(C_1+C_2)U_{1,xxxx} -
-\]
-\begin{equation}
-	Q\left(\frac{9}{2}U_2^2 + \frac{15}{2}a U_2 U_{1,x} - \frac{9}{8}a^2(U_{1,x}^2 - U_{2,x}^2) +\frac{9}{8} a^2U_2(U_{1,xx}-U_{2,xx})\right) =0,  \label{aseq2}
-\end{equation}
-
-\begin{equation}
-	6(C_1+C_2)U_2 + \sqrt{3}a(C_1+C_2)V_{1,y} - a(C_1 - 3C_2)U_{1,x} = 0,  \label{aseq3}
-\end{equation}
-
-\begin{equation}
-	2(3C_1+C_2)V_2 + \sqrt{3}a(C_1+C_2)U_{1,y} + a(3C_1 + C_2)V_{1,x} = 0.  \label{aseq4}
-\end{equation}
-
-The slaving principle \cite{porpas04} will be applied below to obtain a single governing equation for a nonlinear dynamics of longitudinal strain waves.
-
-%\subsubsection{Two-dimensional single governing equation}
-\subsubsection{Двумерное единственное управляющее уравнение}
-
-\fixme{Что за slaving principle?}
-
-%According to the slaving principle \cite{porpas04} we express $U_2$ through the other functions by separating terms by order in Eq. (\ref{aseq2})  and expanding $U_2$,~ $U_2=U_{21}+U_{22}+...$ so as
-В соответствии с принципом подчинения \cite {porpas04} мы выражаем $ U_2 $ через другие функции, разделяя члены по порядку в уравнении. (\ref {aseq2}) и раскрытие $ U_2 $, ~ $ U_2 = U_{21} + U_{22} + ... $ так, чтобы
-\[
-a (3 C_2- C_1) U_{1,x}+6 ( C_1+C_2) U_{21}=0.
-\]
-The solution is
-\begin{equation}
-	U_{21}=\frac{a (C_1-3 C_2) U_{1,x}}{6 (C_1+C_2)}.\label{U21}
-\end{equation}
-Then the equation for $U_{22}$ is
-\[
-3 a^2 (C_1+C_2) U_{21,xx}+2 (6 J+M) U_{21,tt}+ a \left(6 J U_{1,xtt}- (C_1-3 C_2) U_{21,x}\right)+
-\]
-\[
-15 a Q U_{1,x} U_{21}-9 Q U_{21}^2-\frac{1}{3} a^3 (C_1-3 C_2) U_{1,xxx}+2 \sqrt{3} a (C_1+C_2) V_{1,y}+12 (C_1+C_2) U_{22}=0.
-\]
-The solution is
-\[
-U_{22}=\frac{a^2 (C_1-3C_2)^2}{72(C_1+C_2)^2}~ U_{1,xx}-\frac{\sqrt{3} a}{6}~V_{1,y}-\frac{a^3(C_1-3C_2)}{72(C_1+C_2)}~ U_{1,xx}-
-\]
-\[
-\frac{24 a C_1~J+a M (C_1-3C_2)}{36(C_1+C_2)^2}~ U_{1,xtt}-\frac{a^2 Q (C_1-3C_2)(C_1+2C_2)}{12(C_1+C_2)^3}~ U_{1,x}^2.
-\]
-
-Equations (\ref{aseq3}), (\ref{aseq4}) are used to obtain the approximate relationships for $V_1$, $V_2$.
-Equation (\ref{aseq3}) with Eq. (\ref{U21}) being taken into account is
-\[
--\frac{1}{3} a \left(\sqrt{3} a (7 C_1+3 C_2) U_{1,y}+6 (3 C_1+C_2) V_2  \right)
-\] 
-It gives rise to the solution for $V_2$,
-\[
-V_2= -\frac{a (7 C_1+3 C_2) U_{1,y}}{2 \sqrt{3} (3 C_1+C_2)}
-\]
-Equation ( \ref{aseq4}) results in the solution for $V_{1,x}$,
-\[
-V_{1,x}=\frac{4 C_1 U_{1,yy}}{\sqrt{3} (3 C_1+C_2)}
-\]
-
-\fixme{Уравнение 2}
-
-Substitution of all obtained solutions into Eq. (\ref{aseq1}) yields a single governing equation for the function $U_1$,
-\begin{equation}
-	U_{1,tt}-\alpha_1 U_{1,xx}-\alpha_2 U_{1,x}  U_{1,xx}-\alpha_3 U_{1,xxtt}-\alpha_4 U_{1,xxxx}-\alpha_5 U_{1,yy}=0, \label{sineq}
-\end{equation}
-where
-\[
-\alpha_1=\frac{8 a^2 C_1 (C_1+3 C_2)}{3 (C_1+C_2)}, \alpha_2=\frac{5 a^3 Q (C_1-3C_2)^2}{12 (C_1+C_2)^2}, \alpha_3=\frac{4 a^2 C_1 J}{C_1+C_2} , 
-\]
-\[
-\alpha_4=\frac{a^4 \left(7 C_1^2+30 C_1 C_2-9 C_2^2\right)}{36 (C_1+C_2)}, \alpha_5=\frac{4 a^2 C_1 (C_1+2 C_2)}{3C_1+C_2}.
-\]
-
-\fixme{Важно, знаки коэффициентов}
-%It is obvious from the expressions that the coefficients $\alpha_1$, $\alpha_3$, $\alpha_5$ are always positive, $\alpha_4$ may be of either sign depending on the angular stiffness $C_2$, and the sign of the nonlinear term coefficient $\alpha_2$  depends entirely on the sign of nonlinear stiffness $Q$.
-Из выражений очевидно, что коэффициенты $ \alpha_1 $, $ \alpha_3 $, $ \alpha_5 $ всегда положительны, $\alpha_4 $ может иметь любой знак в зависимости от угловой жесткости $ C_2 $ и знака нелинейный членный коэффициент $ \alpha_2 $ полностью зависит от знака нелинейной жесткости $ Q $.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Equation (\ref{sineq}) can be re-written in the form of the Kadomtsev - Petviashvili equation (\ref{kp}) . We introduce the scales for the variables,
-\[
-x=L \tilde{x}, y=a\tilde{y}, t=L/\sqrt{\alpha_1} \tilde{t}, U_1=\varepsilon L \tilde{U_1}, 
-\]
-\[
-\alpha_3=a^2 \tilde{\alpha_3}, \alpha_4=a^2 \tilde{\alpha_4}. 
-\]
-where $L$ is a typical horizontal size of the wave, $\varepsilon=a^2/L^2$ is a small parameter. We assume that 
-$\tilde{U_1}=\tilde{U_1}(\xi, \tilde{y}, T)$, where $\xi=\tilde{x}-\tilde{t}$, $T=\varepsilon \tilde{t}$. Then Eq.  (\ref{sineq})  at order $\varepsilon$ is
-\begin{equation}
-	(w_T+b_1 w w_\xi+b_2 w_{\xi\xi\xi})_\xi+b_3 w_{\tilde{y}\tilde{y}}=0,
-\end{equation}
-where $w=\tilde{U_1}_\xi$,
-\[
-b_1=\frac{\alpha_2}{2\alpha_1}, b_2=\frac{\tilde\alpha_3 \alpha_1+\tilde{\alpha_4}}{2\alpha_1}, b_3=\frac{\alpha_5}{2\alpha_1}
-\]
-The last equation is similar to Eq (\ref{kp}) obtained for the extended square lattice.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Распространение двумерных нелинейных волн в гексагональной двухатомной решетке}
+%
+%\fixme{90\% здесь не нужно...}
+%
+%%The two-dimensional lattice  garphene consists of two interacting sub-lattices whose numbers are marked  as "1" for the first sublattice and "2" for the second one. The sketch of the model can be found in \cite{poros19}. The elements interaction is modelled by the translational springs with a linear stiffness $C_1$ and angular springs with a linear stiffness $C_2$. The nonlinearity is introduced via additional elastic translational interaction with a stiffness $Q$. This model can be called "geometrically linear", since the nonlinearity introduced in this paper takes into account deviations from the Hook's law, which means the tensor of deformations is no longer linear and the additional mixed derivative occurs. This type is called physical nonlinearity. The geometrical nonlinearity is neglected for simplification's sake.
+%Рассматривается двумерная гексагональная решетка состоит из двух взаимодействующих подрешеток, номера которых обозначены цифрой 1 для первой подрешетки и 2 для второй. Эскиз модели можно найти в \cite {poros19}. \fixme{Вставить рисунок.} Взаимодействие элементов моделируется поступательными пружинами с линейной жесткостью $C_1$ и угловыми пружинами с линейной жесткостью $C_2$. Нелинейность вводится за счет дополнительного упругого трансляционного взаимодействия с жесткостью $Q$. Эту модель можно назвать <<геометрически линейной>>, поскольку нелинейность, введенная в этой работе, учитывает отклонения от закона Гука, что означает, что тензор деформаций больше не является линейным и возникает дополнительная смешанная производная. Этот тип называется физической нелинейностью. Для упрощения, геометрической нелинейностью пренебрегается.
+%
+%%When one tries to set up the nanoscale continuum theory for graphene, two main issues occur: the multi-body interatomic potential and the lack of centrosymmetry of hexagonal atomic structures. Zhang et al. \cite{Zhang} proposed a continuum theory that links the macroscopic deformation to the atomic structure of materials. The macroscopic behavior of the material is defined by the so-called Cauchy-Born rule of crystal elasticity, by equating the strain energy function on the continuum level to the potential energy stored in the atomic bonds due to an imposed deformation on the discrete level.
+%При континуальном описании механики графена, возникают две основные проблемы: выражение межатомного потенциала множества частиц и отсутствие центросимметрии гексагональных атомных структур. Zhang \cite{Zhang} предложил континуальную модель, которая связывает макроскопическую деформацию с атомной структурой материалов. Макроскопическое поведение материала определяется так называемым правилом упругости кристалла Коши-Борна, \fixme{приравнивая функцию энергии деформации на континуальном уровне к потенциальной энергии атомных связей из-за наложенной деформации на дискретном уровне}.
+%
+%%The Cauchy-Born rule assumes that the atoms in a material subject to a homogeneous deformation move according to a single mapping from the undeformed to the deformed configuration. It should be pointed out that the Cauchy-Born rule that links the continuum model with particles interaction requires the atomic structure of the materials to be centrosymmetric, because such a structure ensures the equilibrium of particles in a lattice. The hexagonal arrangement of atoms in a nanotube doesn't meet this requirement: when a carbon nanotube is under "homogeneous deformation" on the cell level, the deformation may not be homogeneous inside the cell.\cite{Peng}
+%\fixme{Правило Коши-Борна предполагает, что атомы в материале, подверженном однородной деформации, перемещаются в соответствии с одним отображением от недеформированной конфигурации к деформированной. Следует отметить, что правило Коши-Борна, которое связывает модель континуума с взаимодействием частиц, требует, чтобы атомная структура материалов была центросимметричной, поскольку такая структура обеспечивает равновесие частиц в решетке. Гексагональное расположение атомов в нанотрубке не соответствует этому требованию: когда углеродная нанотрубка находится в состоянии «однородной деформации» на уровне ячейки, деформация может быть неоднородной внутри ячейки \cite{Peng}.}
+%
+%%An attempt to modify the Cauchy-Born rule to work for hexagonal atomic structure is to introduce a rigid body translation as an internal degree of freedom (DOF). A hexagonal lattice can be decomposed into two sub-lattices,  each of which is centrosymmetric. Under a homogeneous deformation applied on the continuum level, each sub-lattice deforms according to the single mapping. However, the two sub-lattices move relative to each other by a certain rigid body translation, which is the internal DOF, to ensure the equilibrium of the atom. It is determined by minimization of the strain energy density which is equivalent to equilibrium of the atoms.
+%\fixme{Попытка изменить правило Коши-Борна для работы с гексагональной атомной структурой состоит в том, чтобы ввести трансляцию твердого тела как внутреннюю степень свободы (DOF). Гексагональную решетку можно разбить на две подрешетки, каждая из которых центросимметрична. При однородной деформации, приложенной на уровне континуума, каждая подрешетка деформируется в соответствии с единственным отображением. Однако две подрешетки перемещаются относительно друг друга за счет определенной трансляции твердого тела, которая является внутренней степенью свободы, чтобы гарантировать равновесие атома. Это определяется минимизацией плотности энергии деформации, которая эквивалентна равновесию атомов.}
+%
+%%By introducing the internal DOF and enforcing the energy minimization, the equilibrium of each atom is ensured when subject to a deformation specified by the deformation gradient. In other words, neglecting the internal DOF is equivalent to applying some external constraints on top of the deformation. The stiffnesses, or equivalently, the elastic moduli of the graphene lattice, are then re-estimated because of the "external" constraints \cite{Peng}.
+%\fixme{За счет введения внутренней степени свободы и обеспечения минимизации энергии равновесие каждого атома обеспечивается при деформации, определяемой градиентом деформации. Другими словами, пренебрежение внутренней глубиной резкости эквивалентно наложению некоторых внешних ограничений поверх деформации. Затем жесткости или, что эквивалентно, модули упругости решетки графена повторно оцениваются из-за «внешних» ограничений \cite{Peng}. }
+%
+%%Therefore, in addition to the previously mentioned lattice models, the separation into two sub-lattices is used for the graphene modeling. Besides translational interactions, angular interactions are also taken into consideration.
+%Поэтому, в дополнение к ранее упомянутым решеточным моделям, для моделирования графена используется разделение на две подрешетки. Помимо поступательных взаимодействий, также принимаются во внимание угловые взаимодействия.
+%
+%%Let's denote $x_{m,n}$, $y_{m,n}$ as the translational displacements of a central mass marked by $1$ corresponding to the horizontal and vertical directions respectively. The analogous displacements for the second sublattice are denoted by $X_{m,n}$ and $Y_{m,n}$. Then the potential energy is  \cite{poros19}
+%Обозначим $x_{m, n}$, $y_{m, n}$ как поступательные смещения центральной массы, отмеченные символом $1$, соответствующие горизонтальному и вертикальному направлениям соответственно. Аналогичные смещения для второй подрешетки обозначены $X_{m, n}$ и $Y_{m, n}$. Тогда потенциальная энергия равна \cite{poros19}
+%
+%\[
+%\Pi_{1Rot}  = C_1(\Delta l_1^2 + \Delta l_2^2 + \Delta l_3^2) + C_2 a^2(\phi^2+\psi^2)+ Q(\Delta l_1^3 + \Delta l_2^3 + \Delta l_3^3)
+%\]
+%\begin{equation}
+%	\Pi_{2Rot} = C_1(\Delta L_1^2 + \Delta L_2^2 + \Delta L_3^2)+ C_2 a^2(\Phi^2+\Psi^2)+
+%	Q(\Delta L_1^3 + \Delta L_2^3 + \Delta L_3^3)
+%\end{equation}
+%%where $a$ is a distance between the particles, $C_1$ is the translational stiffness, $C_2$ is the rotational stiffness, and Q is the nonlinear one.
+%где $a$ --- расстояние между частицами, $C_1$ - поступательная жесткость, $C_2$ --- вращательная жесткость, а Q --- нелинейная.
+%
+%%The translational elongations for both sublattices can be found in  \cite{poros19}.
+%Трансляционные удлинения для обеих подрешеток можно найти в \ cite {poros19}.
+%
+%%The kinetic energy is
+%Кинетическая энергия выражается следующим образом,
+%\begin{equation}
+%	K_1=\frac{M}{2}\left( \dot{x}^2+\dot{y}^2\right) +J~a^2(\dot{\varphi}^2+\dot{\psi}^2),
+%\end{equation}
+%%where $M$ is the mass of the particles in the lattice, $J$ is the angular mass  (moment of inertia).
+%где $M$ --- масса частиц в решетке, $J$ --- момент инерции.
+%
+%%In order to obtain the expressions for the angles $\phi, \psi$, $\Phi, \Psi$, the cosine formula was used in  \cite{poros19} where the expressions for connecting the angels and the displacements can be found. The physically nonlinear model assumes only small variations in the angular variables that  results in the linearization of the expressions.
+%Чтобы получить выражения для углов $\phi, \psi$, $\Phi, \Psi$, была использована формула косинуса в \cite{poros19}, где можно найти выражения для соединения ангелов и смещений. Физически нелинейная модель предполагает только небольшие изменения угловых переменных, что приводит к линеаризации выражений.
+%
+%%The discrete equations are obtained using the Hamilton-Ostrogradsky variational principle  \cite{poros19},
+%Дискретные уравнения получены с использованием вариационного принципа Гамильтона-Остроградского \cite{poros19},
+%
+%\[
+%(3J+M)\ddot{x}_{m,n}+\frac{\sqrt{3}}{2}J\Big(\ddot{Y}_{m-1,n+1} - \ddot{Y}_{m-1,n-1} -\sqrt{3}(\ddot{X}_{m-1,n-1} - \ddot{X}_{m-1,n+1})\Big) +
+%\]
+%\[
+%\frac{C_1}{2}\Big(6x_{m,n} - 4X_{m+1,n} - (X_{m-1,n-1} + X_{m-1,n+1}) + \sqrt{3}(Y_{m-1,n+1} - Y_{m-1,n-1})\Big) +
+%\]
+%\[
+%\frac{\sqrt{3}C_2}{2}\Big(6x_{m,n} - 3(X_{m-1,n-1} + X_{m-1,n+1}+\sqrt{3}(Y_{m-1,n+1} - Y_{m-1,n-1})\Big) +
+%\]
+%\[
+%\frac{3Q}{8}\left(\frac{}{}(x_{m,n} - X_{m-1,n-1})^2 + (x_{m,n} - X_{m-1,n+1})^2 +3(y_{m,n} - Y_{m-1,n-1})^2 + 3(Y_{m-1,n+1}-y_{m,n})^2 \right.
+%\]
+%\[
+%\left. 2\sqrt{3} (x_{m,n} - X_{m-1,n-1})(y_{m,n} - Y_{m-1,n-1}) + 2\sqrt{3}(x_{m,n} - X_{m-1,n+1})(Y_{m-1,n+1}-y_{m,n} )-
+%\right.
+%\]
+%\begin{equation}
+%	\left. 8(x_{m,n}-X_{m+1,n})^2)\frac{}{}\right)=0,
+%	\label{twod_goveq1}
+%\end{equation}
+%
+%\[
+%(J+M)\ddot{y}_{m,n}+\frac{J}{2}\Big(\sqrt{3}(\ddot{X}_{m-1,n+1} - \ddot{X}_{m-1,n-1}) - (\ddot{Y}_{m-1,n-1} + \ddot{Y}_{m-1,n+1}) \Big) +
+%\]
+%\[
+%\frac{C_1}{2}\Big(6y_{m,n} + \sqrt{3}(X_{m-1,n+1} - X_{m-1,n-1}) - 3(Y_{m-1,n-1} + Y_{m-1,n+1})\Big) +
+%\]
+%\[
+%\frac{C_2}{2}\Big(2y_{m,n}+\sqrt{3}(X_{m-1,n+1} - X_{m-1,n-1}) - (Y_{m-1,n-1} + Y_{m-1,n+1})\Big) +
+%\]
+%\[
+%\frac{3\sqrt{3}}{8}Q\Big((x_{m,n} - X_{m-1,n-1})^2 - (x_{m,n} - X_{m-1,n+1})^2 +3(y_{m,n} - Y_{m-1,n-1})^2 - 3(Y_{m-1,n+1}-y_{m,n})^2 +
+%\]
+%\begin{equation}
+%	2\sqrt{3}(x_{m,n} - X_{m-1,n-1})(y_{m,n} - Y_{m-1,n-1}) - 2\sqrt{3}(x_{m,n} - X_{m-1,n+1})(Y_{m-1,n+1}-y_{m,n})\Big)=0,
+%	\label{twod_goveq2}
+%\end{equation}
+%
+%\[
+%(3J+M)\ddot{X}_{m,n}+\frac{\sqrt{3}}{2}J\Big(\ddot{y}_{m+1,n-1} - \ddot{y}_{m+1,n+1} -\sqrt{3}(\ddot{x}_{m+1,n-1} - \ddot{x}_{m+1,n+1})\Big) +
+%\]
+%\[
+%\frac{C_1}{2}\Big(6X_{m,n} - 4x_{m-1,n} - (x_{m+1,n-1} + x_{m+1,n+1}) + \sqrt{3}(y_{m+1,n-1} - y_{m+1,n+1})\Big) +
+%\]
+%\[
+%\frac{\sqrt{3}C_2}{2}\Big(6X_{m,n} - 3(x_{m+1,n-1} + x_{m+1,n+1}) + \sqrt{3}(y_{m+1,n-1} - y_{m+1,n+1})\Big) +
+%\]
+%\[
+%\frac{3Q}{8}\left(\frac{}{}8(x_{m,n}-X_{m-1,n})^2 - (x_{m+1,n+1} - X_{m,n})^2 - (x_{m+1,n-1} - X_{m,n})^2 - \right.
+%\]
+%\[
+%\left. 3(y_{m+1,n+1} - Y_{m,n})^2 - 3(Y_{m,n} - y_{m+1,n-1})^2-
+%2\sqrt{3}(x_{m+1,n+1} - X_{m,n})(y_{m+1,n+1} - Y_{m,n}) - \right.
+%\]
+%\begin{equation}
+%	\left. 2\sqrt{3}(x_{m+1,n-1} - X_{m,n})(Y_{m,n}-y_{m+1,n-1})\frac{}{}\right)=0,
+%	\label{goveq3}
+%\end{equation}
+%
+%\[
+%(J+M)\ddot{Y}_{m,n}+\frac{J}{2}\Big(\sqrt{3}(\ddot{x}_{m+1,n-1} - \ddot{x}_{m+1,n+1}) - (\ddot{y}_{m+1,n-1} + \ddot{y}_{m+1,n+1})\Big) +
+%\]
+%\[
+%\frac{C_1}{2}\Big(6Y_{m,n} + \sqrt{3}(x_{m+1,n-1} - x_{m+1,n+1}) - 3(y_{m+1,n-1} + y_{m+1,n+1})\Big) +
+%\]
+%\[
+%\frac{C_2}{2}\Big(2Y_{m,n}+ \sqrt{3}(x_{m+1,n-1} - x_{m+1,n+1}) - (y_{m+1,n-1} + y_{m+1,n+1})\Big) +
+%\]
+%\[
+%\frac{3\sqrt{3}}{8}Q\Big((x_{m+1,n-1} - X_{m,n})^2 - (x_{m+1,n+1} - X_{m,n})^2 +3(Y_{m,n} - y_{m+1,n-1})^2 - 3(y_{m+1,n+1}-Y_{m,n})^2 +
+%\]
+%\begin{equation}
+%	2\sqrt{3}(x_{m+1,n-1} - X_{m,n})(Y_{m,n} - y_{m+1,n-1}) - 2\sqrt{3}(x_{m+1,n+1} - X_{m,n})(y_{m+1,n+1}-Y_{m,n})\Big)=0. 
+%	\label{goveq4}
+%\end{equation}
+%%Discrete nonlinear equations cannot be used for an analysis, and a continuum approximation of Eqs. (\ref{twod_goveq1})-(\ref{goveq4}) will be obtained in the following.
+%Дискретные нелинейные уравнения не могут использоваться для анализа, а континуальное приближение уравнений. (\ref{twod_goveq1}) - (\ref{goveq4}) будут получены следующим образом.
+%
+%%\subsection{Continuum limit for weakly transversely perturbed waves}
+%\subsection{Континуальный предел для слабо поперечно возмущенных волн}
+%
+%%\subsubsection{Coupled continuum equations}
+%\subsubsection{Связанные уравнения континуальной модели}
+%
+%%The weak transverse variations along the vertical axis and small vertical displacements are studied. The discrete variables $x_{m,n}$, $y_{m,n}$, $X_{m,n}$, $Y_{m,n}$ are linked to the continuum functions $u(x,y,t)$, $v(x,y,t)$, $U(x,y,t)$ and $V(x,y,t)$ respectively, while the displacements of the neighboring particles are rewritten using the Taylor series expansion, like for the square lattice.
+%Изучаются слабые поперечные вариации по вертикальной оси и небольшие вертикальные смещения. Дискретные переменные $ x_{m, n} $, $ y_{m, n} $, $ X_{m, n} $, $ Y_{m, n} $ связаны с функциями континуума $u (x, y, t)$, $v (x, y, t)$, $U (x, y, t)$ и $ V(x, y, t)$ соответственно, а смещения соседних частиц переписываются с использованием Разложение в ряд Тейлора, как и для квадратной решетки.
+%
+%%We consider predominantly longitudinal waves propagating along the horizontal axis. That is why we leave only the leading order nonlinear and dispersion terms in the equations of motions for $u$ and $U$, and by analogy, only those terms that allow us to establish a connection between horizontal and vertical displacements are left in the equations of motion for the vertical displacements.
+%Мы рассматриваем преимущественно продольные волны, распространяющиеся вдоль горизонтальной оси. Поэтому в уравнениях движения для $u$ и $U$ мы оставляем только главные нелинейные и дисперсионные члены, и по аналогии только те члены, которые позволяют установить связь между горизонтальными и вертикальными смещениями, остаются в уравнении движения. уравнения движения для вертикальных перемещений.
+%
+%Then one obtains from Eqs. (\ref{twod_goveq1}) - (\ref{goveq4}) \cite{poros19}
+%
+%\[
+%(3J+M)u_{tt} +3(C_1+C_2)(u-U) - 3JU_{tt} -a(C_1-3C_2)U_x +3JaU_{xtt} - \frac{3a^2}{2}(C_1+C_2)U_{xx} +
+%\]
+%\[
+%\sqrt{3}a(C_1+C_2)V_y - \sqrt{3}a^2(C_1+C_2)V_{xy} - \frac{a^2}{2}(C_1+3C_2)U_{yy} - \frac{3a^2}{2}JU_{xxtt} - \frac{a^3}{6}(C_1-3C_2)U_{xxx} -
+%\]
+%\begin{equation}
+%	\frac{a^4}{8}(C_1+C_2)U_{xxxx} -  \frac{9Q}{4}(u-U)^2 + \frac{15Q}{2}a(u-U)U_{x} - \frac{9Q}{4}a^2(U_x)^2 = 0,
+%\end{equation}
+%
+%
+%\[
+%(3J+M)U_{tt} +3(C_1+C_2)(U-u) - 3Ju_{tt} + a(C_1-3C_2)u_x -3Jau_{xtt} - \frac{3a^2}{2}(C_1+C_2)u_{xx} -
+%\]
+%\[
+%\sqrt{3}a(C_1+C_2)v_y - \sqrt{3}a^2(C_1+C_2)v_{xy} - \frac{a^2}{2}(C_1+3C_2)u_{yy} - \frac{3a^2}{2}Ju_{xxtt} +
+%\frac{a^3}{6}(C_1-3C_2)u_{xxx} -
+%\]
+%\begin{equation}
+%	\frac{a^4}{8}(C_1+C_2)u_{xxxx} +  \frac{9Q}{4}(u-U)^2 - \frac{15Q}{2}a(u-U)u_{x} + \frac{9Q}{4}a^2(u_x)^2 = 0. 
+%\end{equation}
+%
+%\begin{equation}
+%	(3C_1+C_2)(v-V) + \sqrt{3}a(C_1+C_2)U_y  + a(3C_1+C_2)V_x - \sqrt{3}a^2(C_1+C_2)U_{xy} = 0
+%	\label{cont3}
+%\end{equation}
+%
+%\begin{equation}
+%	(3C_1+C_2)(V-v) - \sqrt{3}a(C_1+C_2)u_y  - a(3C_1+C_2)v_x - \sqrt{3}a^2(C_1+C_2)u_{xy} = 0
+%	\label{cont4}
+%\end{equation}
+%
+%The displacements responsible for the sub-lattices elements motion in the discrete equations are not physically reasonable in the continuum model. Then the transformation of variables 
+%\[
+%U_1~=~\frac{u+U}{2},~U_2~=~\frac{u-U}{2},
+%\]
+%\[
+%V_1~=~\frac{v+V}{2},~V_2~=~\frac{v-V}{2},
+%\]
+%allows us to describe the dynamics using the macro-displacements $U_1$, $V_1$, and the micro-displacement variables $u_1$, $v_1$ taking the microstructure into account. 
+%After the substitution and obvious manipulations with the equations (addition and subtraction) we obtain 
+%\[
+%MU_{1,tt} - \sqrt{3}a(C_1+C_2)V_{2,y} - \frac{a^2}{2}(C_1+3C_2)U_{1,yy} + a(C_1-3C_2)U_{2,x} - 3aJU_{2,xtt} - 
+%\]
+%\[
+%\sqrt{3}a^2(C_1+C_2)V_{1,xy} -\frac{3a^2}{2}(C_1+C_2)U_{1,xx} - \frac{3a^2}{2}JU_{1,xxtt} - \frac{a^3}{12}(C_1-3C_2)(U_{1,xxx}-U_{2,xxx}) -
+%\]
+%\begin{equation}
+%	\frac{a^4}{16}(C_1+C_2)(U_{1,xxxx}) -Qa^2\left(\frac{15}{2}U_2U_{2,x} + \frac{9a}{4} U_{1,x}U_{2,x} +\frac{9a}{8}U_{2}U_{1,xx} \right) =0, \label{aseq1}
+%\end{equation}
+%
+%\[
+%(6J+M)U_{2,tt} + 6(C_1+C_2) +\sqrt{3}a(C_1+C_2)V_{1,y} + \frac{3a^2}{2}(C_1+C_2)U_{2,xx} - 
+%\]
+%\[
+%a(C_1-3C_2)U_{1,x} +3aJ~U_{1,xtt} +\sqrt{3}a^2(C_1+C_2)V_{2,xy} -
+%\]
+%\[
+%\frac{a^3}{12}(C_1-3C_2)(U_{1,xxx}-U_{2,xxx}) - \frac{a^4}{16}(C_1+C_2)U_{1,xxxx} -
+%\]
+%\begin{equation}
+%	Q\left(\frac{9}{2}U_2^2 + \frac{15}{2}a U_2 U_{1,x} - \frac{9}{8}a^2(U_{1,x}^2 - U_{2,x}^2) +\frac{9}{8} a^2U_2(U_{1,xx}-U_{2,xx})\right) =0,  \label{aseq2}
+%\end{equation}
+%
+%\begin{equation}
+%	6(C_1+C_2)U_2 + \sqrt{3}a(C_1+C_2)V_{1,y} - a(C_1 - 3C_2)U_{1,x} = 0,  \label{aseq3}
+%\end{equation}
+%
+%\begin{equation}
+%	2(3C_1+C_2)V_2 + \sqrt{3}a(C_1+C_2)U_{1,y} + a(3C_1 + C_2)V_{1,x} = 0.  \label{aseq4}
+%\end{equation}
+%
+%The slaving principle \cite{porpas04} will be applied below to obtain a single governing equation for a nonlinear dynamics of longitudinal strain waves.
+%
+%%\subsubsection{Two-dimensional single governing equation}
+%\subsubsection{Двумерное единственное управляющее уравнение}
+%
+%\fixme{Что за slaving principle?}
+%
+%%According to the slaving principle \cite{porpas04} we express $U_2$ through the other functions by separating terms by order in Eq. (\ref{aseq2})  and expanding $U_2$,~ $U_2=U_{21}+U_{22}+...$ so as
+%В соответствии с принципом подчинения \cite {porpas04} мы выражаем $ U_2 $ через другие функции, разделяя члены по порядку в уравнении. (\ref {aseq2}) и раскрытие $ U_2 $, ~ $ U_2 = U_{21} + U_{22} + ... $ так, чтобы
+%\[
+%a (3 C_2- C_1) U_{1,x}+6 ( C_1+C_2) U_{21}=0.
+%\]
+%The solution is
+%\begin{equation}
+%	U_{21}=\frac{a (C_1-3 C_2) U_{1,x}}{6 (C_1+C_2)}.\label{U21}
+%\end{equation}
+%Then the equation for $U_{22}$ is
+%\[
+%3 a^2 (C_1+C_2) U_{21,xx}+2 (6 J+M) U_{21,tt}+ a \left(6 J U_{1,xtt}- (C_1-3 C_2) U_{21,x}\right)+
+%\]
+%\[
+%15 a Q U_{1,x} U_{21}-9 Q U_{21}^2-\frac{1}{3} a^3 (C_1-3 C_2) U_{1,xxx}+2 \sqrt{3} a (C_1+C_2) V_{1,y}+12 (C_1+C_2) U_{22}=0.
+%\]
+%The solution is
+%\[
+%U_{22}=\frac{a^2 (C_1-3C_2)^2}{72(C_1+C_2)^2}~ U_{1,xx}-\frac{\sqrt{3} a}{6}~V_{1,y}-\frac{a^3(C_1-3C_2)}{72(C_1+C_2)}~ U_{1,xx}-
+%\]
+%\[
+%\frac{24 a C_1~J+a M (C_1-3C_2)}{36(C_1+C_2)^2}~ U_{1,xtt}-\frac{a^2 Q (C_1-3C_2)(C_1+2C_2)}{12(C_1+C_2)^3}~ U_{1,x}^2.
+%\]
+%
+%Equations (\ref{aseq3}), (\ref{aseq4}) are used to obtain the approximate relationships for $V_1$, $V_2$.
+%Equation (\ref{aseq3}) with Eq. (\ref{U21}) being taken into account is
+%\[
+%-\frac{1}{3} a \left(\sqrt{3} a (7 C_1+3 C_2) U_{1,y}+6 (3 C_1+C_2) V_2  \right)
+%\] 
+%It gives rise to the solution for $V_2$,
+%\[
+%V_2= -\frac{a (7 C_1+3 C_2) U_{1,y}}{2 \sqrt{3} (3 C_1+C_2)}
+%\]
+%Equation ( \ref{aseq4}) results in the solution for $V_{1,x}$,
+%\[
+%V_{1,x}=\frac{4 C_1 U_{1,yy}}{\sqrt{3} (3 C_1+C_2)}
+%\]
+%
+%\fixme{Уравнение 2}
+%
+%Substitution of all obtained solutions into Eq. (\ref{aseq1}) yields a single governing equation for the function $U_1$,
+%\begin{equation}
+%	U_{1,tt}-\alpha_1 U_{1,xx}-\alpha_2 U_{1,x}  U_{1,xx}-\alpha_3 U_{1,xxtt}-\alpha_4 U_{1,xxxx}-\alpha_5 U_{1,yy}=0, \label{sineq}
+%\end{equation}
+%where
+%\[
+%\alpha_1=\frac{8 a^2 C_1 (C_1+3 C_2)}{3 (C_1+C_2)}, \alpha_2=\frac{5 a^3 Q (C_1-3C_2)^2}{12 (C_1+C_2)^2}, \alpha_3=\frac{4 a^2 C_1 J}{C_1+C_2} , 
+%\]
+%\[
+%\alpha_4=\frac{a^4 \left(7 C_1^2+30 C_1 C_2-9 C_2^2\right)}{36 (C_1+C_2)}, \alpha_5=\frac{4 a^2 C_1 (C_1+2 C_2)}{3C_1+C_2}.
+%\]
+%
+%\fixme{Важно, знаки коэффициентов}
+%%It is obvious from the expressions that the coefficients $\alpha_1$, $\alpha_3$, $\alpha_5$ are always positive, $\alpha_4$ may be of either sign depending on the angular stiffness $C_2$, and the sign of the nonlinear term coefficient $\alpha_2$  depends entirely on the sign of nonlinear stiffness $Q$.
+%Из выражений очевидно, что коэффициенты $ \alpha_1 $, $ \alpha_3 $, $ \alpha_5 $ всегда положительны, $\alpha_4 $ может иметь любой знак в зависимости от угловой жесткости $ C_2 $ и знака нелинейный членный коэффициент $ \alpha_2 $ полностью зависит от знака нелинейной жесткости $ Q $.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%Equation (\ref{sineq}) can be re-written in the form of the Kadomtsev - Petviashvili equation (\ref{kp}) . We introduce the scales for the variables,
+%\[
+%x=L \tilde{x}, y=a\tilde{y}, t=L/\sqrt{\alpha_1} \tilde{t}, U_1=\varepsilon L \tilde{U_1}, 
+%\]
+%\[
+%\alpha_3=a^2 \tilde{\alpha_3}, \alpha_4=a^2 \tilde{\alpha_4}. 
+%\]
+%where $L$ is a typical horizontal size of the wave, $\varepsilon=a^2/L^2$ is a small parameter. We assume that 
+%$\tilde{U_1}=\tilde{U_1}(\xi, \tilde{y}, T)$, where $\xi=\tilde{x}-\tilde{t}$, $T=\varepsilon \tilde{t}$. Then Eq.  (\ref{sineq})  at order $\varepsilon$ is
+%\begin{equation}
+%	(w_T+b_1 w w_\xi+b_2 w_{\xi\xi\xi})_\xi+b_3 w_{\tilde{y}\tilde{y}}=0,
+%\end{equation}
+%where $w=\tilde{U_1}_\xi$,
+%\[
+%b_1=\frac{\alpha_2}{2\alpha_1}, b_2=\frac{\tilde\alpha_3 \alpha_1+\tilde{\alpha_4}}{2\alpha_1}, b_3=\frac{\alpha_5}{2\alpha_1}
+%\]
+%The last equation is similar to Eq (\ref{kp}) obtained for the extended square lattice.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %\section{Two-dimensional dynamical strain processes}
@@ -713,10 +731,10 @@ $R$ выражается следующим образом,
 \subsubsection{Численные результаты для продольных волн}
 
 %In order to check the numerical scheme given by Eq.~(\ref{fkpscheme}) for $c_1=1$, $c_2=1$, $p=1$, $f=3$ and $\gamma=0$ the values of the parameters are $N_x = N_y = 129$, time step $\Delta t = 0.005$ with 2 iterations per step.
-Чтобы проверить численную схему, заданную уравнением ~ (\ref {fkpscheme}) для $c_1 = 1$, $c_2 = 1$, $p = 1$, $f = 3$ и $\gamma = 0$ значения параметров равны $N_x = N_y = 129$, временной шаг $\ Delta t = 0.005$ с 2 итерациями на шаг.
+Чтобы проверить численную схему, заданную уравнением ~ (\ref {fkpscheme}) для $c_1 = 1$, $c_2 = 1$, $p = 1$, $f = 3$ и $\gamma = 0$ значения параметров равны $N_x = N_y = 129$, временной шаг $\Delta t = 0.005$ с 2 итерациями на шаг.
 
 %The numerical solution shown in  Fig.~\ref{figex2} demonstrates stable propagation of the exact plane wave solution to the KP equation (\ref{kp}) when an initial condition is chosen in the form of (\ref{solkp}) at $t=0$. This is a test simulation for checking the scheme.
-Численное решение, показанное на рис. ~\ref{figex2}, демонстрирует устойчивое распространение точного решения в виде плоской волны уравнения КП (\ref {kp}) при выборе начального условия в виде (\ref{solkp}) при $t = 0$. Это тестовая симуляция для проверки схемы.
+Численное решение, показанное на рис.~\ref{figex2}, демонстрирует устойчивое распространение точного решения в виде плоской волны уравнения КП (\ref {kp}) при выборе начального условия в виде (\ref{solkp}) при $t = 0$. Это тестовая симуляция для проверки схемы.
 
 \begin{figure}
 	\centering
@@ -852,11 +870,11 @@ c_1 = 1, \quad c_2 = 1, \quad f = 3, \quad \gamma = 2.
 
 The governing equation for shear waves reads \cite{PorKrOs, poosan20}
 \begin{equation}
-	v_{xt} +c_1~F_{xxxx}+ c_2~ v_{x}^2~ v_{xx}+\lambda v_{yy}+\gamma~v_{y}~ v_{xx}~=~0, \label{kpsh}
+	v_{xt} +c_1~F_{xxxx}+ c_2~ v_{x}^2~ v_{xx}+\lambda v_{yy}+\gamma~v_{y}~ v_{xx}~=~0, \label{kpsh222}
 \end{equation}
 where $v(x,t)$ is a shear displacement, $c_i$, $\lambda$, $\gamma$ are the constants. 
 
-One can see that Eq. (\ref{kpsh}) is not invariant under the transformation $y\rightarrow -y$.  Consider its plane traveling wave solution depending only on the phase variable $\xi=x+ m y-V t$ and assume that $u=v_x$. 
+One can see that Eq. (\ref{kpsh222}) is not invariant under the transformation $y\rightarrow -y$.  Consider its plane traveling wave solution depending only on the phase variable $\xi=x+ m y-V t$ and assume that $u=v_x$. 
 The solution, obtained by using direct integration, reads
 \begin{equation}
 	u=\frac{A}{Q+{\text{cosh}}( \beta \xi)},\label{solshear}
@@ -882,7 +900,7 @@ For the wave propagating along $x$ axis we have $m=0$ and $Q=0$. Then the famili
 that exists only when $c_1 c_2>0$. 
 
 \section{Numerical study of nonlinear shear strains localization}
-Let us re-write Eq. (\ref{kpsh}) through the shear strain, 
+Let us re-write Eq. (\ref{kpsh222}) through the shear strain, 
 \begin{equation}
 	\label{kp3gen}
 	\partial_x\left(\partial_t u+c_1 \partial_{xxx} u+\frac{c_2 }{3}\partial_x u^{3}\right)+\lambda \partial_{yy} u+\gamma \partial_x\left(\partial_x u \int_{-\infty}^x \partial_y u \, dx'\right)=0.
