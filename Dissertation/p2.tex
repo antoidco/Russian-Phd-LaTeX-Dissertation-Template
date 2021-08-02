@@ -5,19 +5,15 @@
 
 %The dynamics of two dimenesional lattice structures is studied. The complexity of the structure includes non-neigboring interactions between the lattice masses, consideration of both translation and rotation interactions and also their  nonlinear character (physical nonlinearity). The asymptotic procedures are developed to obtain the governing nonlinear equations of motion in the continuum limit. The equations obtained are studied both analytically and numerically. Of special interest are the propagation and transverse instability of the plane solitary strain waves. It is shown that the dynamics of  longitudinal and shear waves is different in various two-dimensional lattices. The relationships for the elastic constants are obtained to characterize the type of the localized strain waves (tensile or compression), their transverse instability and possible auxetic behavior. Numerical solutions are obtained that describe unstable and stable dynamics of the plane longitudinal and shear waves.
 
-\fixme{Abstract оригинальной работы, заменить кратким описанием задачи, связать с основной работой каким-нибудь образом. В диссертации не выводятся модельные уравнения, а используются.}
 
-В работе исследуется динамика механических структур с двумерной решеткой. Модель включает в себя взаимодействия между соседними и не соседними частицами решетки, учет как трансляционного, так и вращательного взаимодействий, а также их нелинейный характер (физическая нелинейность) взаимодействия. \fixme{Разработаны асимптотические процедуры для получения определяющих нелинейных уравнений движения в континуальном пределе}. Полученные уравнения исследуются как аналитически, так и численно. Особый интерес представляют распространение и поперечная неустойчивость плоских уединенных волн деформации. Показано, как отличается динамика продольных и поперечных волн разных двумерных решетках. Получены соотношения для упругих постоянных, характеризующие тип локализованных волн деформации (растяжение или сжатие), их поперечную неустойчивость и возможное ауксетическое поведение \fixme{$<-$ убрать}. Получены численные решения, описывающие неустойчивую и устойчивую динамику плоских продольных и поперечных волн.
 	
 \section{Введение}
-
-\fixme{Перевод неточный, так как значительную часть нужно переделать}
 
 %When dealing with the problem of description of materials with a complex microstucture, one usually wants to take into consideration either the influence of some specific dynamic processes on the stress-strain behaviour, or the influence of a complex microstructure, additional degrees of freedom or non-neigbouring interactions on the macro-parameters, and, in turn, on the model equations. 
 При решении проблемы описания материалов со сложной микроструктурой обычно принимают во внимание или влияние некоторых конкретных динамических процессов на поведение напряженно-деформированного состояния, или влияние сложной микроструктуры, дополнительных степеней свободы, или наличие взаимодействия между несоседними элементами решетки на макропараметры системы и, в свою очередь, на уравнения модели.
 	
 %The modelling of the dynamical  behaviour of solid materials may be generally divided into two categories. Firstly, there are the discrete models, for which the equilibrium conditions, the kinematic conditions and the constitutive behaviour are formulated for each individual micro-structural element (cell) with respect to its neighbouring micro-structural elements \cite{Born,AskMetr, Askar, Ostoja}. Secondly, there are the continuum models, where the equilibrium conditions, the kinematic conditions and the constitutive behaviour are formulated for an assembly of micro-structural elements, using the continuum concepts of stress and strain, see, e.g., \cite{Maug,engbook97, erofeev}.
-Моделирование динамического поведения твердых материалов можно разделить на две категории. Во-первых, это дискретные модели, для которых условия равновесия, кинематические условия и определяющее поведение сформулированы для каждого отдельного микроструктурного элемента (ячейки) по отношению к его соседним микроструктурным элементам \cite{Born, AskMetr, Askar, Ostoja}. Во-вторых, существуют континуальные модели, в которых условия равновесия, кинематические условия и определяющее поведение сформулированы для суперпозиции микроструктурных элементов с использованием континуальных концепций напряжения и деформации, см., Например, \cite{Maug, engbook97, erofeev}.
+Моделирование динамического поведения твердых материалов можно разделить на две категории. Во-первых, это дискретные модели, для которых условия равновесия, кинематические условия и определяющее поведение сформулированы для каждого отдельного микроструктурного элемента (ячейки) по отношению к его соседним микроструктурным элементам \cite{Born, AskMetr, Askar, Ostoja}. Во-вторых, существуют континуальные модели, в которых условия равновесия, кинематические условия и определяющее поведение сформулированы для суперпозиции микроструктурных элементов с использованием континуальных концепций напряжения и деформации, см., \cite{Maug, engbook97, erofeev}.
 	
 %A considerable advantage of discrete models in comparison to continuum models is that the inhomogeneous effects at the micro-level can be taken into account more accurately. The study of discrete models with non-neighboring interactions between the particles in the lattice has attracted considerable interest due to dispersion of the waves propagating in such a system \cite{AskMetr,Maug, Manev, Andrianov, Kosev, Mich, erem}. In particular, this is also important for the study of an influence of a microstructure of the materials. Dynamic processes in the one-dimensional lattices are investigated more extensively both in the linear and nonlinear consideration \cite{ Ostoja,Maug}, while two-dimensional lattices are mainly considered in the linearized case \cite{AskMetr, Ostoja, Tov}. Some two-dimensional processes may be modeled in the one-dimensional approximation, like plane waves propagation, while their transverse instability requires two-dimensional consideration.
 Значительное преимущество дискретных моделей по сравнению с континуальными моделями состоит в том, что неоднородные эффекты на микроуровне могут быть учтены более точно. Изучение дискретных моделей с несоседними взаимодействиями между частицами в решетке вызвало значительный интерес из-за дисперсии волн, распространяющихся в такой системе \cite{AskMetr, Maug, Manev, Andrianov, Kosev, Mich, erem}. В частности, это также важно для изучения влияния микроструктуры материалов. Динамические процессы в одномерных решетках более широко исследуются как в линейном, так и в нелинейном рассмотрении \cite{Ostoja, Maug}, а двумерные решетки в основном рассматриваются в линеаризованном случае \cite{AskMetr, Ostoja, Tov}. Некоторые двумерные процессы можно моделировать в одномерном приближении, например распространение плоских волн, а их поперечная неустойчивость требует двумерного рассмотрения. 
@@ -27,23 +23,23 @@
 	
 %In order to link the micro - and microscopic description, it is necessary to understand how exactly the transition from one description to another has to be made, and how to derive continuous equations from the discrete ones.
 Чтобы связать микро- и микроскопическое описание моделей, необходимо понимать, как именно должен быть осуществлен переход от одного описания к другому и как вывести континуальные уравнения из дискретных.
-	
 %One of the famous methods is described in the works of \cite{AskMetr, SuiMetr}. In the linear case, both discrete and continuum equations may be considered analytically.  However, only a few discrete nonlinear equations, like the Toda lattice equation or the Ablowitz-Ladik equation, possess exact solutions \cite{Ablowitz}. That is why an approach based on a continuum limit of an original discrete equation is needed to obtain governing nonlinear continuum equations. The familiar acoustic branch continuum limit requires the long wavelength approximation and corresponds to the discrete model only for small wave numbers.
-Один из известных методов описан в работах \cite{AskMetr, SuiMetr}. В линейном случае как дискретные, так и континуальные уравнения можно рассматривать аналитически. Однако только несколько дискретных нелинейных уравнений, таких как уравнение цепочки Тода или уравнение Абловица-Ладика, имеют точные решения \cite {Ablowitz}. Вот почему для получения определяющих нелинейных уравнений сплошной среды необходим подход, основанный на континуальном пределе исходного дискретного уравнения. Известный континуальный предел акустической ветви требует длинноволнового приближения и соответствует дискретной модели только для малых волновых чисел.
-	
+%Один из известных методов описан в работах \cite{AskMetr, SuiMetr}. В линейном случае как дискретные, так и континуальные уравнения можно рассматривать аналитически. Однако только несколько дискретных нелинейных уравнений, таких как уравнение цепочки Тода или уравнение Абловица-Ладика, имеют точные решения \cite {Ablowitz}. Вот почему для получения определяющих нелинейных уравнений сплошной среды необходим подход, основанный на континуальном пределе исходного дискретного уравнения. Известный континуальный предел акустической ветви требует длинноволнового приближения и соответствует дискретной модели только для малых волновых чисел.	
 %A well-known enhanced continuum formulation is the Cosserat continuum (or micro-polar continuum), which is an augmentation of the standard Boltzmann continuum by three rotational degrees of freedom. The rotational degrees of freedom introduce a "bending effect" in the constitutive formulations, and the characteristic length scale is therefore governed by the ratio between this additional bending stiffness and the normal stiffness. The development of the Cosserat continuum formulation started at the beginning of this century with the concept of the inclusion of rotational degrees of freedom was introduced for the first time.
-\fixme{Хорошо известной усовершенствованной формулировкой континуума является континуум Коссера (или микрополярный континуум), который является дополнением стандартного континуума Больцмана тремя вращательными степенями свободы. Вращательные степени свободы создают «эффект изгиба» в составах компонентов, и поэтому характерный масштаб длины определяется соотношением между этой дополнительной жесткостью на изгиб и нормальной жесткостью. Разработка континуума Коссера началась в начале этого века, когда впервые была введена концепция включения вращательных степеней свободы.}
-	
+%\fixme{Хорошо известной усовершенствованной формулировкой континуума является континуум Коссера (или микрополярный континуум), который является дополнением стандартного континуума Больцмана тремя вращательными степенями свободы. Вращательные степени свободы создают «эффект изгиба» в составах компонентов, и поэтому характерный масштаб длины определяется соотношением между этой дополнительной жесткостью на изгиб и нормальной жесткостью. Разработка континуума Коссера началась в начале этого века, когда впервые была введена концепция включения вращательных степеней свободы.}	
 %The problem of reasonable simplification when describing properties of materials is closely connected with the question of what can be neglected and what must be included. This can be resolved by utilizing a range of asymptotic methods. This is particularly important when dealing with nonlinear processes in crystal lattices. \cite{Maug,Zabus, engbook83, Manev, Zab, engber, PorBer, PorBer2, porkros, porosmich1, porosmich2}
-Проблема выбора корректных упрощений при описании свойств материалов тесно связана с вопросом о том, чем можно пренебречь, а чем нельзя. Эту проблему можно решить, используя ряд асимптотических методов. Это особенно важно при рассмотрении нелинейных процессов в кристаллических решетках \cite{Maug, Zabus, engbook83, Manev, Zab, engber, PorBer, PorBer2, porkros, porosmich1, porosmich2}.
+Проблема выбора корректных упрощений при описании свойств материалов тесно связана с вопросом о том, чем можно пренебречь, а чем нельзя. Эта проблема особенно важна при рассмотрении нелинейных процессов в кристаллических решетках и может решаться применением асимптотических методов \cite{Maug, Zabus, engbook83, Manev, Zab, engber, PorBer, PorBer2, porkros, porosmich1, porosmich2}.
 	
 %Each of the approaches mentioned above have led to significant advances connected with higher precision of materials with microstructure description: from breathers and solitary waves to discovery of auxetic properties of 2D crystals \cite{erof_pav}.
-Каждый из упомянутых выше подходов привел к значительному прогрессу в этом разделе механики, связанному с повышением точности описания процессов микроструктуры материалов: от бризеров и уединенных волн до открытия ауксетических свойств двумерных кристаллов \cite{erof_pav}.
+%Каждый из упомянутых выше подходов привел к значительному прогрессу в этом разделе механики, связанному с повышением точности описания процессов микроструктуры материалов: от бризеров и уединенных волн до открытия ауксетических свойств двумерных кристаллов \cite{erof_pav}.
 	
 %In the following sections authors show the asymptotic simplification procedure developed to make nonlinear analysis feasible.
-\fixme{В следующих разделах авторы показывают процедуру асимптотического упрощения, разработанную для обеспечения возможности нелинейного анализа.}
+%\fixme{В следующих разделах авторы показывают процедуру асимптотического упрощения, разработанную для обеспечения возможности нелинейного анализа.}
 %Later, it is applied to obtain Kadomtsev-Petviashvili\cite{kadpet} type equations and their solutions for the cases of generalized square and graphene lattices. Finally, it helps to describe the system's behaviour in terms of stability and later utilize the findings in the numerical simulation.
-Далее он применяется для получения уравнений типа Кадомцева-Петвиашвили \cite {kadpet} и их решений для случаев обобщенных квадратных и графеновых решеток. Наконец, это помогает описать поведение системы с точки зрения устойчивости, а затем использовать результаты \textbf{численного моделирования}.
+\fixme{Что было получено в porkos, что будем делать. }
+Далее он применяется для получения уравнений типа Кадомцева-Петвиашвили \cite {kadpet} и их решений для случаев обобщенных квадратных решеток. Наконец, это помогает описать поведение системы с точки зрения устойчивости, а затем использовать результаты \textbf{численного моделирования}.
+
+\fixme{Про численное моделирование.}
 	
 %\section{Two-dimensional waves in a generalized square lattice}
 \section{Двумерные волны в обобщенной квадратной решетке}
@@ -258,7 +254,11 @@ A_3 = \frac{(5 C_2 + 16 C_3) (5 C_1 + 20 C_2+ 82 C_3)}{2  \sqrt{5M} (5 C_1+18 C_
 %	\left. \frac{2}{5} (5 C_2+16 C_3) u_{x,Y}+4 h~ (\bar{P}+20 \bar{S}) (v_x (u_{x}+2 v_{Y}))_x + 6 h^2 (\bar{P_3}+32 \bar{S_3}) v_x^2 v_{xx}\frac{}{}\right)~=~O(\varepsilon^3)
 %	\label{nonshear2}
 %\end{equation}
-Аналогичным образом ищется асимптотическое решение $u= G\left(\theta, T ,Y\right);~ v= F\left(\theta, T, Y\right)$ для тех же быстрых и медленных переменных, что и для продольных волн. Выражение для фазовой скорости в высшем порядке,
+Аналогичным образом ищется асимптотическое решение $u= G\left(\theta, T ,Y\right);~ v= F\left(\theta, T, Y\right)$ для тех же быстрых и медленных переменных, что и для продольных волн. 
+\[
+G = G_0 + \varepsilon^2 G_1+...,~F = F_0+\varepsilon^2 F_1+...
+\]
+Выражение для фазовой скорости в высшем порядке,
 \begin{equation}
     V~=~\sqrt{\frac{5 C_2 + 16 C_3}{5 M}}
 \end{equation}
@@ -266,9 +266,6 @@ A_3 = \frac{(5 C_2 + 16 C_3) (5 C_1 + 20 C_2+ 82 C_3)}{2  \sqrt{5M} (5 C_1+18 C_
 \begin{equation}
 	F_{0,\theta T}+ B_1~ F_{0,\theta}^2~ F_{0,\theta \theta} +B_2 ~F_{0,\theta \theta \theta \theta}+ B_3~ F_{0,Y Y}+B_4~F_{0,Y}~ F_{0,\theta \theta}~=~0, \label{kpsh}
 \end{equation}
-\[
-G = G_0 + \varepsilon^2 G_1+...,~F = F_0+\varepsilon^2 F_1+...
-\]
 где
 \[
 B_1~=~\frac{3 \sqrt{5} h^2 \left((5 C_1 +18 C_3)(\bar{P_3}+32 \bar{S_3})-20 (\bar{P}+20 \bar{S})^2 \right)}{2 (5 C_1+18 C_3) \sqrt{M (5 C_2+16 C_3)}},
@@ -605,12 +602,12 @@ B_4~=~\frac{2 \sqrt{5} h (\bar{P}+20 \bar{S}) (5 C_1-2 (5 C_2+7 C_3))}{(5 C_1+18
 Знак амплитуды определяется знаком $A_2$ или нелинейной жесткостью пружины решеток. Форма волны описывается одним и тем же выражением для нулевого и ненулевого $m$.
 
 %This is not the case of Eq. (\ref{kpsh}) for shear waves. onsider its plane traveling wave solution depending only on the phase variable $\xi=\theta+ m Y -V T$ and assume that $q=F_\xi$. Then Eq.  (\ref{kpsh}) is transformed to the ordinary differential equation,
-Это не случай уравнения. (\ref{kpsh}) для поперечных волн. Рассмотрим его решение с плоской бегущей волной, зависящее только от фазовой переменной $\xi = \theta + m Y - V T$, и предположим, что $ q = F_\xi $. Тогда уравнение (\ref {kpsh}) преобразуется в обыкновенное дифференциальное уравнение,
+Это не случай уравнения (\ref{kpsh}) для поперечных волн. Рассмотрим его решение с плоской бегущей волной, зависящее только от фазовой переменной $\xi = \theta + m Y - V T$, и предположим, что $ q = F_\xi $. Тогда уравнение (\ref {kpsh}) преобразуется в обыкновенное дифференциальное уравнение,
 \[
 (-V q_\xi+\frac{B_1}{3} (q^3)_\xi+B_2 q_{\xi\xi\xi})_\xi+B_3m^2  q_{\xi\xi} +\frac{B_4 k}{2} (q^2)_{\xi\xi}=0.
 \]
 %The solution is
-Его решение суть,
+Его решение,
 \begin{equation}
 	q=\frac{A}{Q+{\text{cosh}( \beta \xi)}},\label{solshear}
 \end{equation}
