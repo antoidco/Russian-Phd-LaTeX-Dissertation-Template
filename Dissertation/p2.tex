@@ -13,10 +13,10 @@
 При решении проблемы описания материалов со сложной микроструктурой обычно принимают во внимание или влияние некоторых конкретных динамических процессов на поведение напряженно-деформированного состояния, или влияние сложной микроструктуры, дополнительных степеней свободы, или наличие взаимодействия между несоседними элементами решетки на макропараметры системы и, в свою очередь, на уравнения модели.
 	
 %The modelling of the dynamical  behaviour of solid materials may be generally divided into two categories. Firstly, there are the discrete models, for which the equilibrium conditions, the kinematic conditions and the constitutive behaviour are formulated for each individual micro-structural element (cell) with respect to its neighbouring micro-structural elements \cite{Born,AskMetr, Askar, Ostoja}. Secondly, there are the continuum models, where the equilibrium conditions, the kinematic conditions and the constitutive behaviour are formulated for an assembly of micro-structural elements, using the continuum concepts of stress and strain, see, e.g., \cite{Maug,engbook97, erofeev}.
-Моделирование динамического поведения твердых материалов можно разделить на две категории. Во-первых, это дискретные модели, для которых условия равновесия, кинематические условия и определяющее поведение сформулированы для каждого отдельного микроструктурного элемента (ячейки) по отношению к его соседним микроструктурным элементам \cite{Born, AskMetr, Askar, Ostoja}. Во-вторых, существуют континуальные модели, в которых условия равновесия, кинематические условия и определяющее поведение сформулированы для суперпозиции микроструктурных элементов с использованием континуальных концепций напряжения и деформации, см., \cite{Maug, engbook97, erofeev}.
+Моделирование динамического поведения твердых материалов можно разделить на две категории. Во-первых, это дискретные модели, для которых условия равновесия, кинематические условия и определяющее поведение сформулированы для каждого отдельного микроструктурного элемента (ячейки) по отношению к его соседним микроструктурным элементам \cite{bound_Born, AskMetr, bound_askar, Ostoja}. Во-вторых, существуют континуальные модели, в которых условия равновесия, кинематические условия и определяющее поведение сформулированы для суперпозиции микроструктурных элементов с использованием континуальных концепций напряжения и деформации, см., \cite{Maug, engbook97, Erofeyev2003}.
 	
 %A considerable advantage of discrete models in comparison to continuum models is that the inhomogeneous effects at the micro-level can be taken into account more accurately. The study of discrete models with non-neighboring interactions between the particles in the lattice has attracted considerable interest due to dispersion of the waves propagating in such a system \cite{AskMetr,Maug, Manev, Andrianov, Kosev, Mich, erem}. In particular, this is also important for the study of an influence of a microstructure of the materials. Dynamic processes in the one-dimensional lattices are investigated more extensively both in the linear and nonlinear consideration \cite{ Ostoja,Maug}, while two-dimensional lattices are mainly considered in the linearized case \cite{AskMetr, Ostoja, Tov}. Some two-dimensional processes may be modeled in the one-dimensional approximation, like plane waves propagation, while their transverse instability requires two-dimensional consideration.
-Значительное преимущество дискретных моделей по сравнению с континуальными моделями состоит в том, что неоднородные эффекты на микроуровне могут быть учтены более точно. Изучение дискретных моделей с несоседними взаимодействиями между частицами в решетке вызвало значительный интерес из-за дисперсии волн, распространяющихся в такой системе \cite{AskMetr, Maug, Manev, Andrianov, Kosev, Mich, erem}. В частности, это также важно для изучения влияния микроструктуры материалов. Динамические процессы в одномерных решетках более широко исследуются как в линейном, так и в нелинейном рассмотрении \cite{Ostoja, Maug}, а двумерные решетки в основном рассматриваются в линеаризованном случае \cite{AskMetr, Ostoja, Tov}. Некоторые двумерные процессы можно моделировать в одномерном приближении, например распространение плоских волн, а их поперечная неустойчивость требует двумерного рассмотрения. 
+Значительное преимущество дискретных моделей по сравнению с континуальными моделями состоит в том, что неоднородные эффекты на микроуровне могут быть учтены более точно. Изучение дискретных моделей с учетом несоседних взаимодействий между частицами в решетке вызвало значительный интерес из-за дисперсии волн, распространяющихся в такой системе \cite{AskMetr, Maug, Manev, bound_andr, Kosev, Mich, erem}. В частности, это также важно для изучения влияния микроструктуры материалов. Динамические процессы в одномерных решетках более широко исследуются как в линейном, так и в нелинейном рассмотрении \cite{Ostoja, Maug}, а двумерные решетки в основном рассматриваются в линеаризованном случае \cite{AskMetr, Ostoja, Tov}. Некоторые двумерные процессы можно моделировать в одномерном приближении, например распространение плоских волн, а их поперечная неустойчивость требует двумерного рассмотрения. 
 
 %Considering everything mentioned above, it is obvious that discrete models can be utilized for the sake of accuracy. However, the number of representative micro-structural elements in a macro-structural configuration is normally very large, which causes the number of equations that has to be solved for a discrete system to become large as well. The discrete equations derived are very complex and stacked up, and cannot be solved analytically. So, the simplification and transition to some kind of a continuous model is needed in order to achieve a reasonable result for a further analysis.
 Учитывая все вышесказанное, очевидно, что дискретные модели могут быть использованы как более точные. Однако количество репрезентативных микроструктурных элементов в макроструктурной конфигурации обычно очень велико, что приводит к тому, что количество уравнений, которые необходимо решить для дискретной системы, также становится огромным. Эта система, как правило, не может быть решена аналитически. Таким образом, континуальный переход от получаемых дискретных моделей к упрощенному виду является необходимым шагом для достижения разумных результатов для дальнейшего аналитического и численного анализа.
@@ -27,8 +27,8 @@
 %Один из известных методов описан в работах \cite{AskMetr, SuiMetr}. В линейном случае как дискретные, так и континуальные уравнения можно рассматривать аналитически. Однако только несколько дискретных нелинейных уравнений, таких как уравнение цепочки Тода или уравнение Абловица-Ладика, имеют точные решения \cite {Ablowitz}. Вот почему для получения определяющих нелинейных уравнений сплошной среды необходим подход, основанный на континуальном пределе исходного дискретного уравнения. Известный континуальный предел акустической ветви требует длинноволнового приближения и соответствует дискретной модели только для малых волновых чисел.	
 %A well-known enhanced continuum formulation is the Cosserat continuum (or micro-polar continuum), which is an augmentation of the standard Boltzmann continuum by three rotational degrees of freedom. The rotational degrees of freedom introduce a "bending effect" in the constitutive formulations, and the characteristic length scale is therefore governed by the ratio between this additional bending stiffness and the normal stiffness. The development of the Cosserat continuum formulation started at the beginning of this century with the concept of the inclusion of rotational degrees of freedom was introduced for the first time.
 %\fixme{Хорошо известной усовершенствованной формулировкой континуума является континуум Коссера (или микрополярный континуум), который является дополнением стандартного континуума Больцмана тремя вращательными степенями свободы. Вращательные степени свободы создают «эффект изгиба» в составах компонентов, и поэтому характерный масштаб длины определяется соотношением между этой дополнительной жесткостью на изгиб и нормальной жесткостью. Разработка континуума Коссера началась в начале этого века, когда впервые была введена концепция включения вращательных степеней свободы.}	
-%The problem of reasonable simplification when describing properties of materials is closely connected with the question of what can be neglected and what must be included. This can be resolved by utilizing a range of asymptotic methods. This is particularly important when dealing with nonlinear processes in crystal lattices. \cite{Maug,Zabus, engbook83, Manev, Zab, engber, PorBer, PorBer2, porkros, porosmich1, porosmich2}
-Проблема выбора корректных упрощений при описании свойств материалов тесно связана с вопросом о том, чем можно пренебречь, а чем нельзя. Эта проблема особенно важна при рассмотрении нелинейных процессов в кристаллических решетках и может решаться применением асимптотических методов \cite{Maug, Zabus, engbook83, Manev, Zab, engber, PorBer, PorBer2, porkros, porosmich1, porosmich2}.
+%The problem of reasonable simplification when describing properties of materials is closely connected with the question of what can be neglected and what must be included. This can be resolved by utilizing a range of asymptotic methods. This is particularly important when dealing with nonlinear processes in crystal lattices. \cite{Maug,Zabus, engbook83, Manev, Zab, engber, PorBer, PorBer2, porkros, porosmich2}
+Проблема выбора корректных упрощений при описании свойств материалов тесно связана с вопросом о том, чем можно пренебречь, а чем нельзя. Эта проблема особенно важна при рассмотрении нелинейных процессов в кристаллических решетках и может решаться применением асимптотических методов \cite{Maug, Zabus, engbook83, Manev, Zab, engber, PorBer, PorBer2, porkros, porosmich2}.
 	
 %Each of the approaches mentioned above have led to significant advances connected with higher precision of materials with microstructure description: from breathers and solitary waves to discovery of auxetic properties of 2D crystals \cite{erof_pav}.
 %Каждый из упомянутых выше подходов привел к значительному прогрессу в этом разделе механики, связанному с повышением точности описания процессов микроструктуры материалов: от бризеров и уединенных волн до открытия ауксетических свойств двумерных кристаллов \cite{erof_pav}.
@@ -36,7 +36,7 @@
 %In the following sections authors show the asymptotic simplification procedure developed to make nonlinear analysis feasible.
 %\fixme{В следующих разделах авторы показывают процедуру асимптотического упрощения, разработанную для обеспечения возможности нелинейного анализа.}
 %Later, it is applied to obtain Kadomtsev-Petviashvili\cite{kadpet} type equations and their solutions for the cases of generalized square and graphene lattices. Finally, it helps to describe the system's behaviour in terms of stability and later utilize the findings in the numerical simulation.
-\fixme{Что было получено в porkos, что будем делать. }
+\fixme{Что было получено в \cite{porkros, PorOsAnt2020}, что будем делать. }
 Далее он применяется для получения уравнений типа Кадомцева-Петвиашвили \cite {kadpet} и их решений для случаев обобщенных квадратных решеток. Наконец, это помогает описать поведение системы с точки зрения устойчивости, а затем использовать результаты \textbf{численного моделирования}.
 
 \fixme{Про численное моделирование.}
@@ -665,7 +665,7 @@ B_4~=~\frac{2 \sqrt{5} h (\bar{P}+20 \bar{S}) (5 C_1-2 (5 C_2+7 C_3))}{(5 C_1+18
 Аналитические решения, представленные в предыдущем разделе, являются частными решениями, которые существуют при определенных начальных условиях. Более общие решения могут быть получены численно. Основная цель --- выявить разницу между динамикой двумерных продольных и поперечных волн.
 
 %\subsubsection{Simulation technique}
-\subsubsection{Метод исследования}
+\subsubsection{Численный метод исследования}
 %The model equations (\ref{kp}), (\ref{kpsh})  can be rewritten in the following form,
 Уравнения модели (\ref {kp}), (\ref {kpsh}) можно переписать в следующем виде:
 \begin{equation}
@@ -679,7 +679,7 @@ B_4~=~\frac{2 \sqrt{5} h (\bar{P}+20 \bar{S}) (5 C_1-2 (5 C_2+7 C_3))}{(5 C_1+18
 %%A wide range of methods~\cite{porrogue,Lu2003,klein2007,Infeld1995,Kao2012,Kodama2009} was developed for the  Kadomtsev--Petviashvili equation to numerically solve this equation and its generalizations studying solitons interactions, solutions stability, asymptotic regimes and other aspects.
 %%Для уравнения Кадомцева-Петвиашвили был разработан широкий спектр методов \cite {porrogue, Lu2003, klein2007, Infeld1995, Kao2012, Kodama2009} для численного решения этого уравнения и его обобщений, изучающих взаимодействие солитонов, устойчивость решений, асимптотические режимы и другие аспекты.
 %For $p=1$ Eq.~(\ref{kp3gen}) is the Kadomtsev--Petviashvili equation, a wide range of methods~\cite{porrogue,Lu2003,klein2007,Infeld1995,Kao2012,Kodama2009} was developed to numerically solve this equation and its generalizations studying solitons interactions, solutions stability, asymptotic regimes and other aspects.
-Для $ p = 1 $ уравнение ~ (\ref {kp3gen}) представляет собой уравнение Кадомцева-Петвиашвили, широкий спектр методов \cite{porrogue, Lu2003, klein2007, Infeld1995, Kao2012, Kodama2009} был разработан для численного решения этого уравнения и его обобщений, изучающих взаимодействия солитонов, устойчивость решений, асимптотические режимы и другие аспекты. 
+Для $ p = 1 $ уравнение ~ (\ref {kp3gen}) представляет собой уравнение Кадомцева-Петвиашвили, широкий спектр методов \cite{porrogue, Lu2003, Klein2007, Infeld1995, Kao2012, Kodama2009} был разработан для численного решения этого уравнения и его обобщений, позволяющих изучать взаимодействия солитонов, устойчивость решений, асимптотические режимы и другие аспекты. 
 %The Fourier spectral method is used here to numerically solve Eq.~(\ref{kp3gen}) in the domain $\left[-L_x, L_x\right] \times \left[-L_y, L_y\right]$ with the periodic boundary conditions. Applying the antiderivative $\partial_x^{-1}$ and Fourier transform to Eq. (\ref{kp3gen}) gives rise to
 \fixme{Обосновать использование спектрального метода.}
 Спектральный метод Фурье используется здесь для численного решения уравнения ~ (\ref {kp3gen}) в области $\left[-L_x, L_x\right] \times \left[-L_y, L_y\right]$ с периодическими граничными условиями. \fixme{Пояснить за <<антипроизводную>>: }Применяя антипроизводную $\partial_x^{-1}$ и преобразование Фурье к уравнению (\ref {kp3gen}), получаем
@@ -689,7 +689,7 @@ B_4~=~\frac{2 \sqrt{5} h (\bar{P}+20 \bar{S}) (5 C_1-2 (5 C_2+7 C_3))}{(5 C_1+18
 \end{equation}
 %where $u(x,y,t) \xrightarrow{\hat{F}} \hat{u}(k,l,t)$, $k_x = \frac{2\pi k}{L_x}$ and $k_y = \frac{2\pi l}{L_y}$. This equation is solved using the Sanz-Serna discretization scheme and the fast Fourier transform for the nonlinear terms based on the method proposed in~\cite{Chebab2016}. The numerical scheme is
 где $u (x, y, t) \xrightarrow {\hat{F}} \hat{u} (k, l, t)$, $k_x = \frac{2 \ pi k}{L_x}$ и $ k_y = \frac{2 \ pi l}{L_y}$. Это уравнение решается с использованием схемы дискретизации Санца-Серны и быстрого преобразования Фурье для нелинейных членов на основе метода, предложенного в ~\cite {Chebab2016}. Тогда численная схема,
-\vtop{
+%\vtop{
 	\begin{equation}
 		\label{fkpscheme}
 		\frac{\hat{U}_{n+1} - \hat{U}_{n}}{\Delta t} - \imath \left(c_1 I_y \otimes K_x^3 - f K_y^2 \otimes \bar{K_x}^{-1} \right) \frac{\hat{U}_{n+1} + \hat{U}_{n}}{2} +
@@ -697,7 +697,7 @@ B_4~=~\frac{2 \sqrt{5} h (\bar{P}+20 \bar{S}) (5 C_1-2 (5 C_2+7 C_3))}{(5 C_1+18
 	$$
 	+\imath \frac{c_2}{p+1}\left( I_y \otimes K_x \right) \hat{F} \left[ \left( \frac{U_{n+1} + U_{n}}{2}  \right)^{p+1}\right] + \gamma \hat{F} \left[ \left(I_y \otimes D_x \frac{U_{n+1} + U_{n}}{2} \right) \circ R \right] = 0,
 	$$
-}
+%}
 %$U_n$ denotes the approximation of $u$ at time $n\Delta t$, $I_x, I_y$ are identity matrices with the size $N_x$ and $N_y$ respectively, $R$ is the approximation of the last term of Eq.~(\ref{KP3F}), $D_*$ is the second order central finite difference matrix of $\partial / \partial *$ operator with periodic boundary conditions and $K_x$, $K_y$, $\bar{K_x}^{-1}$ are diagonal matrices
 $ U_n $ обозначает приближение $ u $ в момент времени $ n \Delta t $, $ I_x, I_y $ --- единичные матрицы с размером $ N_x $ и $ N_y $ соответственно, $ R $ --- \fixme{приближение интеграла из последнего члена уравнения} ~ (\ref{KP3F}), $ D_* $ --- центральная конечно-разностная матрица второго порядка оператора $ \partial / \partial *$ с периодическими граничными условиями и $ K_x $, $ K_y $, $ \bar {K_x}^{-1} $ --- диагональные матрицы,
 $$
@@ -779,7 +779,7 @@ $R$ выражается следующим образом,
 %Consider Eq.~(\ref{fkpscheme}) for $p=2$ and $\gamma \ne 0$.   
 %For all simulations $N_x = 1025, N_y = 129$, time step $\Delta t = 0.003$ with 2 iterations per step. $N_x$ is chosen to be higher than it was for previous simulations in order to increase the accuracy of evaluation of the term given by Eq.~(\ref{termRY}).
 Рассмотрим уравнение ~ (\ref{fkpscheme}) в случае $ p = 2 $ и $ \gamma \ ne 0 $.
-Для всех расчетов $ N_x = 1025, N_y = 129 $, временной шаг выбран равным $ \ Delta t = 0,003 $ с 2 итерациями на шаг. $ N_x $ выбрано больше, чем было для предыдущих симуляций, чтобы повысить точность оценки члена, задаваемого уравнением ~ (\ref{termRY}).
+Для всех расчетов $ N_x = 1025, N_y = 129 $, временной шаг выбран равным $ \Delta t = 0.003 $ с 2 итерациями на шаг. $ N_x $ выбрано больше, чем было для предыдущих симуляций, чтобы повысить точность оценки члена, задаваемого уравнением ~ (\ref{termRY}).
 
 %The parameters  (\ref{solshearpar}) of exact solution (\ref{solshear}) depend on $m$ responsible for propagation inclined to the $x$ axis and two sets of parameters are possible. Therefore it is of interest to study inclined propagation of shear waves. For this purpose the initial condition is constructed as the sums of three plane wave solitons (\ref{solshear}) (at $t=0$). The distance between them is chosen  larger than their effective length, so the interaction between these solitons is very small. Also the choice of the distance provides periodic conditions for $y$ as it is seen in  Fig.~\ref{figex1025l}.
 Параметры (\ref{solshearpar}) точного решения (\ref{solshear}) зависят от $ m $, ответственного за направление распространения волны относительно оси $ x $. При $m \ne 0$ необходимо сохранить условие на периодичность по обеим осям в силу ограничений численной модели. Для этого начальное условие можно построить как сумму трех солитонов плоских волн (\ref{solshear}) (при $ t = 0 $) таким образом, что периодичность сохраняется в обоих направлениях. Очевидно, что такая суперпозиция не является точным решением уравнения. Однако расстояние между солитонами выбрано больше их эффективной длины, поэтому взаимодействие между этими солитонами очень мало, и какое-то достаточно большое время плоские уединенные волны должны продолжать устойчиво распространяться с постоянной скоростью. Также выбор этого расстояния фактически обязывает изменить границы области, чтобы обеспечить периодичность, как это видно на рис. ~ \ref{figex1025l},
@@ -855,57 +855,88 @@ c_1 = 1, \quad c_2 = 1, \quad f = 3, \quad \gamma = 2.
 \end{figure}
 
 %The unstable plane shear wave propagation is shown in  Figs.~\ref{fig_good3}, \ref{fig_good2}. In the former Figure one can see an evolution similar to that found for longitudinal waves: increase in the amplitude and deep transverse modulation of the plane wave front. The latter Figure demonstrates an influence of the value of  $\gamma $ on the transverse instability. The oscillations on the front don't grow anymore while perturbations are developing both before and after the plane wave front.
-Распространение неустойчивой плоской поперечной волны показано на рис. ~ \ref {fig_good3}, \ref{fig_good2}. На первом рисунке можно увидеть эволюцию, аналогичную той, что наблюдается для продольных волн: увеличение амплитуды и глубокая поперечная модуляция фронта плоской волны. Последний рисунок демонстрирует влияние значения $ \gamma $ на поперечную неустойчивость. Колебания на фронте больше не нарастают, а возмущения развиваются как до, так и после фронта плоской волны.
+Распространение неустойчивой плоской поперечной волны показано на рис.~ \ref {fig_good3}, \ref{fig_good2}. На первом рисунке можно увидеть эволюцию, аналогичную той, что наблюдается для продольных волн: увеличение амплитуды и глубокая поперечная модуляция фронта плоской волны. Последний рисунок демонстрирует влияние значения $ \gamma $ на поперечную неустойчивость. Колебания на фронте больше не нарастают, а возмущения развиваются как до, так и после фронта плоской волны.
 
 \fixme{Далее ожидается добавить более корректное обобщение численной схемы, так как текущая не является полноценной и была сделана лишь для получения результатов <<любым>> способом. В таком случае ее можно будет представить к защите.}
 
 
-\subsection{Другие численные решения}
-\textbf{Equation for shear strains and its solution}
+\subsection{Начальные условий, локализованные в обоих направлениях}
+%\textbf{Equation for shear strains and its solution}
 
-\fixme{Перевести, отмасштабировать рисунки на textwidth, убрать multiple definitions}
+%\fixme{Перевести, отмасштабировать рисунки на textwidth, убрать multiple definitions}
+%%The governing equation for shear waves reads \cite{porkros, PorOsAnt2020}
+%Для дальнейшего численного анализа уравнения (\ref{nonkp}), (\ref{kpsh}) удобно представить в новых переменных следующем виде
+%\begin{equation}
+%	v_{xt} +c_1~F_{xxxx}+ c_2~ v_{x}^2~ v_{xx}+\lambda v_{yy}+\gamma~v_{y}~ v_{xx}~=~0, \label{kpsh222}
+%\end{equation}
+%где $c_i$, $\lambda$, $\gamma$ --- константы. 
+%
+%%One can see that Eq. (\ref{kpsh222}) is not invariant under the transformation $y\rightarrow -y$.  Consider its plane traveling wave solution depending only on the phase variable $\xi=x+ m y-V t$ and assume that $u=v_x$.
+%Можно видеть, что уравнение (\ref {kpsh222}) не инвариантно относительно преобразования $ y \rightarrow -y $. Рассмотрим его решение в виде плоской бегущей волны, зависящее только от фазовой переменной $ \xi = x + m y-V t $, и предположим, что $ u = v_x $.
+%%The solution, obtained by using direct integration, reads
+%Решение, полученное с помощью прямого интегрирования аналогично \ref{solshear}, в новых переменных имеет вид
+%\begin{equation}
+%	u=\frac{A}{Q+{\text{cosh}}( \beta \xi)},\label{solshear2}
+%\end{equation}
+%%where
+%где
+%\begin{equation}
+%	A=\pm \frac{6c_1 \beta^2}{\sqrt{\gamma^2 m^2+6 c_1 c_2 \beta^2}}, 
+%	Q_{\pm}=\pm\frac{\gamma m }{\sqrt{\gamma^2 m^2+6 c_1 c_2 \beta^2}},  V=\beta^2 c_1+m^2 \lambda . \label{solshearpar2}
+%\end{equation}
+%%We consider only bounded solutions when $Q<1$. This is guaranteed if $c_1 c_2>0$, and the solutions with both $Q_{+}$  and $Q_{-}$ being bounded. Otherwise only positive $Q_{\pm}$ give rise to a bounded solution.  The sign of $Q$ depends on the sign of the parameter $m$ responsible for the angle of the wave front propagation relative to the $x$- axis and the sign of the denominator.  However, the presence of $\pm$ in the expression for $Q_{\pm}$ discards the dependence on the sign of $m$. The sign of the amplitude $A/(Q+1)$ of the bounded solution is not sensitive to the sign of $m$.
+%В новых переменных, решение ограничено также в случае $ Q < 1 $. Последнее гарантируется, если $ c_1 c_2> 0 $ и решения с $ Q_ {+} $ и $ Q_ {-} $ ограничены. В противном случае только положительное значение $ Q_ {\pm} $ приводит к ограниченному решению. Знак $ Q $ зависит от знака параметра $ m $, отвечающего за угол распространения волнового фронта относительно оси $ x $, и знака знаменателя. Однако наличие $ \pm $ в выражении для $ Q_ {\ pm} $ снимает зависимость от знака $ m $. Знак амплитуды $ A / (Q + 1) $ ограниченного решения не чувствителен к знаку $ m $.
+%%% уже объяснено ранее ^^^
 
-The governing equation for shear waves reads \cite{PorKrOs, poosan20}
-\begin{equation}
-	v_{xt} +c_1~F_{xxxx}+ c_2~ v_{x}^2~ v_{xx}+\lambda v_{yy}+\gamma~v_{y}~ v_{xx}~=~0, \label{kpsh222}
-\end{equation}
-where $v(x,t)$ is a shear displacement, $c_i$, $\lambda$, $\gamma$ are the constants. 
+%%For the wave propagating along $x$ axis we have $m=0$ and $Q=0$. Then the familiar solitary wave solution to the modified Korteweg-de Vries equation appears from (\ref{solshear2}),
+%Частный случай уединенной волны, распространяющейся строго вдоль оси $x$, аналогичный описываемому уравнением \ref{qp}, требует $m=0$ и $Q=0$ и выражается следующим образом,
+%\begin{equation}
+%	q_m=\pm \frac{6c_1\beta}{\sqrt{6 c_1 c_2}}{\text{cosh}}^{-1}(\beta \xi). \label{qp2}
+%\end{equation}
+%Решение существует только при $c_1 c_2>0$. 
 
-One can see that Eq. (\ref{kpsh222}) is not invariant under the transformation $y\rightarrow -y$.  Consider its plane traveling wave solution depending only on the phase variable $\xi=x+ m y-V t$ and assume that $u=v_x$. 
-The solution, obtained by using direct integration, reads
-\begin{equation}
-	u=\frac{A}{Q+{\text{cosh}}( \beta \xi)},\label{solshear}
+%\section{Numerical study of nonlinear shear strains localization}
+%Let us re-write Eq. (\ref{kpsh222}) through the shear strain, 
+%\begin{equation}
+%	\label{kp3gen}
+%	\partial_x\left(\partial_t u+c_1 \partial_{xxx} u+\frac{c_2 }{3}\partial_x u^{3}\right)+\lambda \partial_{yy} u+\gamma \partial_x\left(\partial_x u \int_{-\infty}^x \partial_y u \, dx'\right)=0.
+%\end{equation}
+
+%The Fourier spectral method is used here to solve Eq.~(\ref{kp3gen}) numerically. More detailed information about the method can be found in \cite{PorOsAnt2020}.
+%In all the simulations we put $p=2$, $c_1 = 1$, $c_2 = 1$ and $f = 3$. The initial condition is assumed as
+Для численного исследования распространения волн при начальных условиях, локализованных в обоих направлениях для уравнения (\ref{kp3gen}), выберем начальное условие следующего вида,
+\begin{equation}\label{init}
+	u_0 = \frac{\sqrt{6}\;\mathrm{sech}(X)}{10^{-8} \mathrm
+		{cosh} (0.6 Y)+1},
 \end{equation}
-where
-\begin{equation}
-	A=\pm \frac{6c_1 \beta^2}{\sqrt{\gamma^2 m^2+6 c_1 c_2 \beta^2}}, 
-	Q_{\pm}=\pm\frac{\gamma m }{\sqrt{\gamma^2 m^2+6 c_1 c_2 \beta^2}},  V=\beta^2 c_1+m^2 \lambda . \label{solshearpar}
-\end{equation}
-We consider only bounded solutions when $Q<1$. This is guaranteed if $c_1 c_2>0$, and the solutions with both $Q_{+}$  and $Q_{-}$ being bounded. Otherwise only positive $Q_{\pm}$ give rise to a bounded solution.  The sign of $Q$ depends on the sign of the parameter $m$ responsible for the angle of the wave front propagation relative to the $x$- axis and the sign of the denominator.  However, the presence of $\pm$ in the expression for $Q_{\pm}$ discards the dependence on the sign of $m$. The sign of the amplitude $A/(Q+1)$ of the bounded solution is not sensitive to the sign of $m$. 
+$$
+X = a_1 x + b_1 y, ~Y = a_2 x + b_2 y,
+$$
+где $a_1, b_1, a_2, b_2$ --- константы, определяющие угол между осью $x$ и направлением, перпендикулярным фронту волны. Выражения для $X, Y$ и соответствующих наборов коэффициентов для разных случаев расчета представлены в таблице ~\ref{table1}. Профиль такого вида представляет собой плоскую уединенную волну, гладко ограниченную в направлении, перпендикулярном фронту волны. 
+
+Константы уравнения (\ref{kp3gen}) определяются следующим образом,
+\[
+p=2, ~c_1 = 1, ~c_2 = 1, ~f = 3.
+\]
+Такой выбор соответствует уравнению (\ref{kpsh}), описывающему распространение сдвиговых волн деформации. 
+
+Ниже представлены результаты численного счета для разных случаев, рис.~\ref{fig1}, \ref{fig2}, \ref{fig3}, \ref{fig4}. Для всех случаев время моделирования и границы расчетной области выбраны одинаковыми.
+
+%The values of $X, Y$ and $\gamma$ are varied as shown in Table~\ref{table1}.
 \begin{figure}[h]
 	\begin{center}
 		\begin{tabular}{cc}
 			\includegraphics[scale=0.8]{fig1t.pdf} & \includegraphics[scale=0.8]{palette.pdf}
 		\end{tabular}
-		\caption{Evolution of the shear strain wave(\ref{init}) in Case 1.}\label{fig1}
+		%\caption{Evolution of the shear strain wave(\ref{init}) in Case 1.}\label{fig1}
+		\caption{Эволюция решения для начального условия, определяемого уравнением (\ref{init}) в случае 1.}\label{fig1}
 	\end{center}
 \end{figure}
-For the wave propagating along $x$ axis we have $m=0$ and $Q=0$. Then the familiar solitary wave solution to the modified Korteweg-de Vries equation appears from (\ref{solshear}),
-\begin{equation}
-	q_m=\pm \frac{6c_1\beta}{\sqrt{6 c_1 c_2}}{\text{cosh}}^{-1}(\beta \xi) \label{qp}
-\end{equation}
-that exists only when $c_1 c_2>0$. 
-
-\section{Numerical study of nonlinear shear strains localization}
-Let us re-write Eq. (\ref{kpsh222}) through the shear strain, 
-\begin{equation}
-	\label{kp3gen}
-	\partial_x\left(\partial_t u+c_1 \partial_{xxx} u+\frac{c_2 }{3}\partial_x u^{3}\right)+\lambda \partial_{yy} u+\gamma \partial_x\left(\partial_x u \int_{-\infty}^x \partial_y u \, dx'\right)=0.
-\end{equation}
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=0.8]{fig2_instead.pdf} 
-		\caption{Transformation to an asymmetric profile in Case 2 at t = 4.5.}\label{fig2}
+		%\caption{Transformation to an asymmetric profile in Case 2 at t = 4.5.}\label{fig2}
+		\caption{Асимметричность профиля, возникающая в случае 2 при $t = 4.5$.}\label{fig2}		
 	\end{center}
 \end{figure}
 \begin{figure}
@@ -913,23 +944,18 @@ Let us re-write Eq. (\ref{kpsh222}) through the shear strain,
 		\begin{tabular}{cc}
 			\includegraphics[scale=0.8]{fig3t.pdf} & \includegraphics[scale=0.8]{palette.pdf}
 		\end{tabular}
-		\caption{Asymmetry for the initial condition corresponding to Case 3.}\label{fig3}
+		%\caption{Asymmetry for the initial condition corresponding to Case 3.}\label{fig3}
+		\caption{Эволюция решения для начального условия, определяемого уравнением (\ref{init}) в случае 3.}\label{fig3}
 	\end{center}
 \end{figure}
-The Fourier spectral method is used here to solve Eq.~(\ref{kp3gen}) numerically. More detailed information about the method can be found in \cite{poosan20}.
-In all the simulations we put $c_1 = 1$, $c_2 = 1$ and $\lambda = 3$. The initial condition is assumed as
-\begin{equation}\label{init}
-	u_0 = \frac{\sqrt{6}\;\mathrm{sech}(X)}{10^{-8} \mathrm
-		{cosh} (0.6 Y)+1}.
-\end{equation}
-The values of $X, Y$ and $\gamma$ are varied as shown in Table~\ref{table1}.
 
 \begin{figure}
 	\begin{center}
 		\begin{tabular}{cc}
 			\includegraphics[scale=0.8]{fig4t.pdf} & \includegraphics[scale=0.8]{palette.pdf}
 		\end{tabular}
-		\caption{Scattering of the initial condition corresponding to Case 4.}\label{fig4}
+		%\caption{Scattering of the initial condition corresponding to Case 4.}\label{fig4}
+		\caption{Эволюция решения для начального условия, определяемого уравнением (\ref{init}) в случае 4.}\label{fig4}
 	\end{center}
 \end{figure}
 \begin{table}[h!]
@@ -937,22 +963,36 @@ The values of $X, Y$ and $\gamma$ are varied as shown in Table~\ref{table1}.
 	\begin{tabular}{|l|l|l|l|}
 		\hline
 		& $X$ & $Y$ & $\gamma$\\ \hline
-		Case 1 &  $x$   & $y$  & 0 \\ \hline
-		Case 2 &   $x$   &   $y$ & 1 \\ \hline
-		Case 3 &  $x \cos (0.2 )+y \sin (0.2 )$   &   $x \cos (0.2 )+y \sin (0.2 )$ & 1\\ \hline
-		Case 4 &   $x \cos (0.2 )+y \sin (0.2 )$  &  $x \cos (0.2 )+y \sin (0.2 )$  & 5\\ \hline
+		%Case 1 &  $x$   & $y$  & 0 \\ \hline
+		%Case 2 &   $x$   &   $y$ & 1 \\ \hline
+		%Case 3 &  $x \cos (0.2 )+y \sin (0.2 )$   &   $x \cos (0.2 )+y \sin (0.2 )$ & 1\\ \hline
+		%Case 4 &   $x \cos (0.2 )+y \sin (0.2 )$  &  $x \cos (0.2 )+y \sin (0.2 )$  & 5\\ \hline
+		Случай 1 &  $x$   & $y$  & 0 \\ \hline
+		Случай 2 &   $x$   &   $y$ & 1 \\ \hline
+		Случай 3 &  $x \cos (0.2 )+y \sin (0.2 )$   &   $x \cos (0.2 )+y \sin (0.2 )$ & 1\\ \hline
+		Случай 4 &   $x \cos (0.2 )+y \sin (0.2 )$  &  $x \cos (0.2 )+y \sin (0.2 )$  & 5\\ \hline
+		
 	\end{tabular}
-	\caption{Expressions of $X, Y$ for the initial conditions.}\label{table1}
+%	\caption{Expressions of $X, Y$ for the initial conditions.}\label{table1}
+	\caption{Выражения для коэффициентов $X, Y$ в начальных условиях, определяемым уравнением \ref{init}, для разных расчетных случаев.}\label{table1}
 \end{table}
 
 
-\textbf{Case 1}. In Fig.~\ref{fig1} the symmetric relative to the $x$-axis propagation of the strain wave (\ref{init}) is shown. The curvature of the wave profile develops in time and a scattering of the wave happens behind the curved wave front. The amplitude and the velocity of the wave  decrease in  time. 
+%\textbf{Case 1}. In Fig.~\ref{fig1} the symmetric relative to the $x$-axis propagation of the strain wave (\ref{init}) is shown. The curvature of the wave profile develops in time and a scattering of the wave happens behind the curved wave front. The amplitude and the velocity of the wave  decrease in  time. 
+%
+%\textbf{Case 2}. The initial profile suffers from asymmetric variations relatively to the $x$-axis, see Fig. \ref{fig2}. The highest  amplitude is not reached on the $Ox$ axis. However, changing the sign of $\gamma$ does not provide additional non-symmetry.   
+%
+%\textbf{Case 3}. The role of quadratic nonlinearity on the initially inclined wave is shown in Fig. \ref{fig3}. It is quite similar to what is shown in Fig.~\ref{fig2}. The presence of the nonlinear term changes the direction of wave propagation in the similar way as in Case 2. The amplitude and velocity  also decrease in time.
+%
+%\textbf{Case 4}. One can see in Fig. \ref{fig4} that an increase in the value of $\gamma$ results in a  scattering behind the wave front.
 
-\textbf{Case 2}. The initial profile suffers from asymmetric variations relatively to the $x$-axis, see Fig. \ref{fig2}. The highest  amplitude is not reached on the $Ox$ axis. However, changing the sign of $\gamma$ does not provide additional non-symmetry.   
+\textbf {Случай 1}. На рис. ~\ref {fig1} представлены численные результаты, предсказывающие симметричное относительно оси $ x $  распространение волны деформации (\ref {init}). Кривизна профиля волны развивается со временем, и происходит рассеяние волны за искривленным фронтом волны. Амплитуда и скорость волны уменьшаются со временем.
 
-\textbf{Case 3}. The role of quadratic nonlinearity on the initially inclined wave is shown in Fig. \ref{fig3}. It is quite similar to what is shown in Fig.~\ref{fig2}. The presence of the nonlinear term changes the direction of wave propagation in the similar way as in Case 2. The amplitude and velocity  also decrease in time.
+\textbf {Случай 2}. Начальный профиль подвергается асимметричными изменениями относительно оси $ x $, см. Рис. \ref{fig2}. На оси $ Ox $ наибольшая амплитуда не достигается. Однако изменение знака $ \ gamma $ не дает дополнительной несимметрии.
 
-\textbf{Case 4}. One can see in Fig. \ref{fig4} that an increase in the value of $\gamma$ results in a  scattering behind the wave front.
+\textbf {Случай 3}. Роль квадратичной нелинейности на изначально повернутой относительно оси $x$ волне демонстрируется на рис. \ref{fig3}. Эволюция схожа с той, что показано на рис.~\ref {fig2}. Наличие нелинейного члена изменяет направление распространения волны аналогично случаю 2. Амплитуда и скорость также уменьшаются со временем.
+
+\textbf {Случай 4}. Согласно численным результатам, представленным на рис.~\ref {fig4} видно, что дальнейшее увеличение значения $ \gamma $ приводит к рассеянию за фронтом и быстрому распаду изначально локализованной волны.
 
 %\section{Conclusions}
 \section{Заключение}
