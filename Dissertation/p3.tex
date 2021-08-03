@@ -87,7 +87,7 @@ D=(\beta_1(1+\eta)+\beta_0 h^2 p^2)^2-4\beta_0 h^2 p^2,
 %where the frequency is  $\omega=\omega_a$,  or $\omega=\omega_o$, $x_0$ accounts for an initial phase.
 где частота равна $ \omega = \omega_a $ или $ \omega = \omega_o $, $ x_0 $ учитывает начальную фазу.
 %The acoustic band frequency varies from $0$ to $\sqrt{\beta_1}$\, while the optic one lies in the interval $(\sqrt{\beta_1(1+\eta)}, \infty)$. Therefore, there is a band gap $\sqrt{\beta_1}<\omega<\sqrt{\beta_1(1+\eta)}$ where no harmonic traveling wave propagates.
-\fixme{Частота акустической ветви} колеблется от $ 0 $ до $ \sqrt {\beta_1} $, а \fixme{частота оптической ветви} лежит в интервале $(\sqrt{\beta_1(1+\eta)}, \infty)$. Следовательно, существует запрещенная зона $ \sqrt {\beta_1} <\omega <\sqrt {\beta_1 (1+ \eta)} $, где не распространяется гармоническая бегущая волна.
+Акустическая ветвь лежит в диапазоне частот от $ 0 $ до $ \sqrt {\beta_1} $, а оптическая --- лежит в интервале $(\sqrt{\beta_1(1+\eta)}, \infty)$. Следовательно, существует запрещенная зона $ \sqrt {\beta_1} <\omega <\sqrt {\beta_1 (1+ \eta)} $, где не распространяется гармоническая бегущая волна.
 
 %\section{Generation of harmonic waves}
 \section {Генерация гармонических волн}
@@ -99,10 +99,10 @@ u(0,t)=\frac{\beta_1-\omega^2}{\beta_1}~B~ {\text{sin}} (\omega ~t),~u(x,0)=0, ~
 %while for $v$ we assume that
 а для $ v $ мы предполагаем, что
 \begin{equation}\label{bcv}
-v(0,t)=B ~{\text{sin}} (\omega ~t),~v(x,0)=0, ~v(x,0)_t=0,
+v(0,t)=B ~{\text{sin}} (\omega ~t),~v(x,0)=0, ~v(x,0)_t=0.
 \end{equation}
 %This problem can be solved numerically. The Wolfram Mathematica NDSolve command is used to solve Eqs. (\ref{eq3}), (\ref{eq4}) with the conditions (\ref{bcu}), (\ref{bcv}).
-Эта проблема решается численно. Команда Wolfram Mathematica NDSolve используется для решения уравнений (\ref {eq3}), (\ref{eq4}) с условиями (\ref {bcu}), (\ref {bcv}).
+Эта задача может быть решена численно. При помощи команды Wolfram Mathematica NDSolve, предназначенной для численного решения дифференциальных уравнений в частных производных, будет решаться система уравнений (\ref {eq3}), (\ref{eq4}) с условиями (\ref {bcu}), (\ref {bcv}).
 %%%The interval of calculations is $0<x<x_N$,
 %The interval of interest is $0<x<x_N$, the absorbing boundary conditions are imposed at $x=x_N$ using the following masking technique. The calculation domain $0 < x < 3 x_N$ is being splitted into two parts:  $0 < x < x_N$ and  $x_N < x < 3 x_N$ while the system of Eq. (\ref{eq1}), (\ref{eq2}) is replaced with
 Интересующий интервал составляет $ 0 <x < x_N $, поглощающие граничные условия накладываются при $ x = x_N $ с использованием следующей техники. Расчетная область $ 0 <x < 3 x_N $ делится на две части: $ 0 <x <x_N $ и $ x_N <x <3 x_N $, в то время как система уравнения (\ref {eq1}), (\ref {eq2}) заменяется на
