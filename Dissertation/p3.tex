@@ -16,8 +16,10 @@
 %\section{Statement of problem}
 \section{Постановка задачи}
 
+\fixme{Нужно поправить перевод}
+
 %Consider a  chain   when interaction between the  masses,  $m$,  is modeled by linearly- elastic springs \cite{Huang2010}. An elastic internal oscillator is modelled by the additional masses $m_1$ , attached by springs to each mass $m$ in the chain, and this interaction is also linear and elastic. Masses $m_1$ do not interact directly between themselves. The displacement of the mass $m$ with the number $n$ is denoted by $x_n$, while that of $m_1$ is denoted by $y_n$.
-Рассмотрим цепочку, в которой взаимодействие между массами $ m $ моделируется линейно-упругими пружинами \cite {Huang2009, Huang2010}. Упругий внутренний осциллятор моделируется дополнительными массами $ m_1 $, прикрепленными пружинами к каждой массе $ m $ в цепочке, и это взаимодействие также является линейным и упругим. Массы $ m_1 $ не взаимодействуют между собой напрямую. Смещение массы $ m $ с числом $ n $ обозначено $ x_n $, а перемещение $ m_1 $ обозначено $ y_n $. \fixme{Здесь нужен рисунок.}
+Рассмотрим цепочку, в которой взаимодействие между массами $ m $ моделируется линейно-упругими пружинами \cite {Huang2009, Huang2010}. Упругий внутренний осциллятор моделируется дополнительными массами $ m_1 $, прикрепленными пружинами к каждой массе $ m $ в цепочке, и это взаимодействие также является линейным и упругим. Массы $ m_1 $ не взаимодействуют между собой напрямую. Смещение массы $ m $ с числом $ n $ обозначено $ x_n $, а перемещение $ m_1 $ --- $ y_n $. \fixme{Здесь нужен рисунок.}
 
 \begin{equation}
 \ddot{x_n}=\beta_0 (x_{n-1}-2x_n+x_{n+1})+\eta \beta_1 (y_n-x_n), 
@@ -35,7 +37,7 @@
 \includegraphics[width=1.0\textwidth]{new_pic/fig1.eps}
 \end{center}
 %\caption{ Evolution of $u$ wave below the band gap, $\omega<\sqrt{\beta_1}$. Shown by dashed line is the imagine part of the  exact solution (\ref{solfin}) with the frequency $\omega=\omega_a$.  a)$t=0$; b)$ t=t_N/4$; c) $t=t_N/2$, d)$t=t_N$.}
-\caption{ Эволюция волны $ u $ ниже запрещенной зоны, $\omega<\sqrt{\beta_1}$. Пунктирной линией показана воображаемая часть точного решения. (\ref{solfin}) с частотой $\omega=\omega_a$.  a)$t=0$; b)$ t=t_N/4$; c) $t=t_N/2$, d)$t=t_N$.}
+\caption{ Эволюция волны $ u $ ниже запрещенной зоны, $\omega<\sqrt{\beta_1}$. Пунктирной линией обозначена мнимая часть точного решения (\ref{solfin}) с частотой $\omega=\omega_a$.  a)$t=0$; b)$ t=t_N/4$; c) $t=t_N/2$, d)$t=t_N$.}
 \label{fg1}
   \end{figure*}
 %We proceed with a continuum limit of Eqs. (\ref{eq1}), (\ref{eq2}). Following the standard procedure we introduce the continuum functions $u(x,t)$, $v(x,t)$ for description of the displacements of the masses $m$, $m_1$ with the number $n$ while the continuum displacements of the neighboring masses are sought using the Taylor series around $u$. Retaining only the first nonzero term in the expansion we obtain
@@ -133,7 +135,7 @@ p=\omega\sqrt{\frac{\beta_1(1+\eta)-\omega^2}{\beta_0 h^2(\beta_1-\omega^2)}}.
 Значения коэффициентов выбраны следующими, $t_N = 600; x_N = 60;\beta_0=1, h = 0.5; \beta_1 = 0.1; \eta = 0.5;  B=0.25$, что соответствует запрещенной зоне $0.316<\omega<0.387$.
   
 %Shown in Fig \ref{fg1} is the formation of harmonic wave $u$ at various times when the excitation frequency lies below the band gap, $\omega<\sqrt{\beta_1}$, $\omega=0.2$, $x_0= 15.8$. The exact solution is placed on each time sketch a)-d).  One can see that initially undisturbed stage a) transforms to a non-harmonic wave which partially coincides with the harmonic exact traveling wave solution at the stage b). The last two stages c) and d) demonstrate almost full similarity between numerical and analytical solution.
-На рисунке \ref{fg1} показано формирование гармонической волны $ u $ в разные моменты времени, когда частота возбуждения лежит ниже запрещенной зоны, $ \omega <\sqrt {\beta_1} $, $ \omega = 0.2 $, $ x_0 = 15.8 $. Точное решение помещается каждый раз на графиках a)-d). Видно, что изначально невозмущенная стадия а) трансформируется в негармоническую волну, которая частично совпадает с гармоническим точным решением бегущей волны на стадии б). Последние два этапа c) и d) демонстрируют почти полное сходство численного и аналитического решений.
+На рисунке \ref{fg1} показано формирование гармонической волны $ u $ в разные моменты времени, когда частота возбуждения лежит ниже запрещенной зоны, $ \omega <\sqrt {\beta_1} $, $ \omega = 0.2 $, $ x_0 = 15.8 $. Точное решение помещается каждый раз на графиках a)-d). Видно, что изначально невозмущенная стадия а) трансформируется в негармоническую волну, которая частично совпадает с гармоническим точным решением бегущей волны на стадии b). Последние два этапа c) и d) демонстрируют почти полное сходство численного и аналитического решений.
 \begin{figure*}
 \begin{center}
 %\begin{flushleft}
@@ -146,7 +148,7 @@ p=\omega\sqrt{\frac{\beta_1(1+\eta)-\omega^2}{\beta_0 h^2(\beta_1-\omega^2)}}.
 \end{figure*}
   
 %An increase in the excitation frequency up to  the lower boundary of the band gap, $\omega \approx \sqrt{\beta_1}$,  $\omega=0.3$,  results in the formation of the wave shown in Fig. \ref{fg2}. One can see no harmonic wave generation, the amplitude of the wave decays away from the left boundary. The last two stages c) and d) demonstrate almost stable wave dynamics.
-Увеличение частоты возбуждения до нижней границы запрещенной зоны $ \omega \approx \sqrt {\beta_1} $, $\omega = 0.3 $ приводит к формированию волны, показанной на рис. \ref{ fg2}. Генерации гармонической волны не наблюдается, амплитуда волны спадает при удалении от левой границы. Последние два этапа c) и d) демонстрируют практически стабильную волновую динамику.
+Увеличение частоты возбуждения до нижней границы запрещенной зоны $ \omega \approx \sqrt {\beta_1} $, $\omega = 0.3 $ приводит к формированию волны, показанной на Рис. \ref{ fg2}. Генерации гармонической волны не наблюдается, амплитуда волны спадает при удалении от левой границы. Последние два этапа c) и d) демонстрируют практически стабильную волновую динамику.
 \begin{figure*}
 \begin{center}
 %\begin{flushleft}
@@ -154,7 +156,7 @@ p=\omega\sqrt{\frac{\beta_1(1+\eta)-\omega^2}{\beta_0 h^2(\beta_1-\omega^2)}}.
 \includegraphics[width=1.0\textwidth]{new_pic/fig4.eps}
 \end{center}
 %\caption{ Control of evolution of $u$ wave below the band gap, $\omega<\sqrt{\beta_1}$ when the control switches-on at $t=t_N/4$.   a)$t=0$; b)$ t=t_N/4$. Shown by dashed line is the imagine part of the  exact solution (\ref{solfin}) ; c) $t=t_N/2$, d)$t=t_N$. Shown by dashed line is the imagine part of the  exact solution (\ref{solwave}) }
-\caption{ Управление эволюцией волны $ u $ ниже запрещенной зоны, $\omega<\sqrt{\beta_1}$ при включении управления в момент $t=t_N/4$. a)$t=0$; b)$ t=t_N/4$. Пунктирной линией показана воображаемая часть точного решения (\ref{solfin}); c) $t=t_N/2$, d)$t=t_N$. Пунктирной линией показана мнимая часть точного решения (\ref{solwave}) }
+\caption{ Управление эволюцией волны $ u $ ниже запрещенной зоны, $\omega<\sqrt{\beta_1}$ при включении управления в момент $t=t_N/4$. a)$t=0$; b)$ t=t_N/4$. Пунктирной линией обозначена мнимая часть точного решения (\ref{solfin}); c) $t=t_N/2$, d)$t=t_N$. Пунктирной линией показана мнимая часть точного решения (\ref{solwave}) }
 \label{fg4}
   \end{figure*}
 \begin{figure*}
@@ -164,7 +166,7 @@ p=\omega\sqrt{\frac{\beta_1(1+\eta)-\omega^2}{\beta_0 h^2(\beta_1-\omega^2)}}.
 \includegraphics[width=1.0\textwidth]{new_pic/fig5.eps}
 \end{center}
 %\caption{Control of evolution of $u$ wave at the lower boundary of the band gap, $\omega \approx \sqrt{\beta_1}$, $\omega=0.3$,  when the control switches-on at $t=t_N/4$.   a)$t=0$; b)$ t=t_N/4$ ; c) $t=t_N/2$; d)$t=t_N$. Shown by dashed line in the last two stages  is the imagine part of the  exact solution (\ref{solwave}) .}
-\caption{Управление эволюцией $ u $ волны на нижней границе запрещенной зоны, $\omega \approx \sqrt{\beta_1}$, $\omega=0.3$, при включении управления в момент $t=t_N/4$. a)$t=0$; b)$ t=t_N/4$ ; c) $t=t_N/2$; d)$t=t_N$. Пунктирная линия на последних двух этапах - это воображаемая часть точного решения. (\ref{solwave}) .}
+\caption{Управление эволюцией $ u $ волны на нижней границе запрещенной зоны, $\omega \approx \sqrt{\beta_1}$, $\omega=0.3$, при включении управления в момент $t=t_N/4$. a)$t=0$; b)$ t=t_N/4$ ; c) $t=t_N/2$; d)$t=t_N$. Пунктирной линией на последних рисунках обозначена мнимая часть точного решения (\ref{solwave}).}
 \label{fg5}
 \end{figure*}
   
@@ -175,11 +177,11 @@ p=\omega\sqrt{\frac{\beta_1(1+\eta)-\omega^2}{\beta_0 h^2(\beta_1-\omega^2)}}.
 \includegraphics[width=1.0\textwidth]{new_pic/fig6.eps}
 \end{center}
 %\caption{Control of evolution of $u$ wave inside  the band gap, $\omega=0.35$,  when the control switches-on at $t=t_N/4$.   a)$t=0$; b)$ t=t_N/4$ ; c) $t=t_N/2$; d)$t=t_N$. Shown by dashed line in the last two stages  is the imagine part of the  exact solution (\ref{solwave}) .}
-\caption{Управление эволюцией $ u $ волны внутри запрещенной зоны, $\omega=0.35$, при включении управления в момент $t=t_N/4$. a)$t=0$; b)$ t=t_N/4$; c) $t=t_N/2$; d)$t=t_N$. Пунктирная линия на последних двух этапах - это воображаемая часть точного решения. (\ref{solwave}) .}
+\caption{Управление эволюцией $ u $ волны внутри запрещенной зоны, $\omega=0.35$, при включении управления в момент $t=t_N/4$. a)$t=0$; b)$ t=t_N/4$; c) $t=t_N/2$; d)$t=t_N$. Пунктирной линией на последних рисунках обозначена мнимая часть точного решения (\ref{solwave}).}
 \label{fg6}
  \end{figure*}
 %Inside the band gap, $\sqrt{\beta_1}<\omega<\sqrt{\beta_1(1+\eta)}$,  $\omega=0.35$ there is no even a wave with decreasing amplitude. Shown in Fig.\ref{fg3} is a stromg decrease in the amplitude of disturbances and their chaotic character. This is in an agreement with the analysis from the previous Section.
-Внутри запрещенной зоны $ \sqrt {\beta_1} <\omega <\sqrt {\beta_1 (1+ \eta)} $, $ \omega = 0.35 $ нет даже волны с убывающей амплитудой. На рис. \ref{fg3} показано резкое уменьшение амплитуды возмущений и их хаотический характер. Это согласуется с анализом из предыдущего раздела.
+Внутри запрещенной зоны $ \sqrt {\beta_1} <\omega <\sqrt {\beta_1 (1+ \eta)} $, $ \omega = 0.35 $ нет даже волны с убывающей амплитудой. На Рис. \ref{fg3} показано резкое уменьшение амплитуды возмущений и их хаотический характер. Это согласуется с анализом из предыдущего раздела.
 
 
 %Further increase in the value of the excitation frequency results in the realization of the dynamics shown in Fig. \ref{fg2} when the frequency achieves the value of the upper boundary of band gap. At higher frequencies a formation of periodic wave happens with the frequency belonging to the optic branch, $\omega=\omega_o$. Again the similarity with the exact solution is observed like that shown in Fig.\ref{fg1}.
@@ -195,7 +197,7 @@ p=\omega\sqrt{\frac{\beta_1(1+\eta)-\omega^2}{\beta_0 h^2(\beta_1-\omega^2)}}.
 u_{tt}=\beta_0 h^2 u_{xx}+\eta \beta_1 (v-u)~H(t_0-t)
 \]
 %Also, the unit step function should be added in equation of motion  (\ref{eq4}) and  boundary condition for $v$ (\ref{bcv}). The switch-on time for the control , $t_0$, is chosen equal to $t_N/4$, other parameters of calculations are the same as in the previous Section.
-Кроме того, функция Хэвисайда должна быть добавлена в уравнение движения (\ref {eq4}) и граничное условие для $ v $ (\ref{bcv}). Время включения управления $ t_0 $ выбрано равным $ t_N / 4 $, остальные параметры вычислений выбраны такими же, как в предыдущем разделе.
+Кроме того, функция Хэвисайда должна быть добавлена в уравнение движения (\ref {eq4}) и граничное условие для $ v $, уравнение (\ref{bcv}). Время включения управления $ t_0 $ выбрано равным $ t_N / 4 $, остальные параметры вычислений выбраны такими же, как в предыдущем разделе.
 
 %Again the comparison with the exact solution will be given.  However, after switch-on the control, equation of motion for $u$ becomes the linear wave equation whose solution is
 Снова будет дано сравнение с точным решением. Однако после включения управления уравнение движения для $ u $ становится линейным волновым уравнением, решение которого имеет вид
@@ -206,7 +208,7 @@ u_w=\frac{\beta_1-\omega^2}{\beta_1}~B~{\text{sin}}  (\imath(\omega/a~ x - \omeg
 Затем будет проведено сравнение с разными решениями до и после включения управления. 
  
 %Shown in Fig \ref{fg4} is the generation of the harmonic waves at $\omega=0,2$ when the control switches on at the stage b).  A comparison with the solution (\ref{solfin}) demonstrates partial similarity between the analytical and numerical solution. However, contrary to Fig. \ref{fg1}, the stages c) and d) show the tendency to the solution (\ref{solwave}) . So the control provides a transition from one harmonic wave to another.
-На рис. \ref{fg4} показана генерация гармонических волн при $ \omega = 0,2 $ при включении управления на этапе b). Сравнение с решением (\ref{solfin}) демонстрирует частичное сходство между аналитическим и численным решениями. Однако, в отличие от рис. \ref{fg1}, этапы c) и d) демонстрируют тенденцию к решению (\ref{solwave}). Таким образом, управление обеспечивает переход от одной гармонической волны к другой.
+На рис. \ref{fg4} показана генерация гармонических волн при $ \omega = 0,2 $ при включении управления на этапе b). Сравнение с решением (\ref{solfin}) демонстрирует частичное сходство между аналитическим и численным решениями. Однако, в отличие от рис. \ref{fg1}, этапы c) и d) демонстрируют тенденцию сходимости к решению (\ref{solwave}). Таким образом, управление обеспечивает переход от одной гармонической волны к другой.
 
 %An increase in the excitation frequency up to the lower boundary of the band gap shown in Fig. \ref{fg5} did not result in the harmonic wave without control as shown in Fig. \ref{fg2}. Here the switch-on the control at $t_0=t_N/4$ results in the formation of the harmonic wave whose shape is close to the analytical solution shown by dashed line  (\ref{solfin}).
 Увеличение частоты возбуждения до нижней границы запрещенной зоны, показанной на рис. \ref{fg5}, не привело к возникновению гармонической волны без контроля, как показано на рис. \ref{fg2}. Здесь включение управления при $ t_0 = t_N / 4 $ приводит к формированию гармонической волны, форма которой близка к аналитическому решению, показанному пунктирной линией (\ref {solfin}).
