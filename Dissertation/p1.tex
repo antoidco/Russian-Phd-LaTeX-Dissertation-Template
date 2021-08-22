@@ -15,6 +15,40 @@
 
 %The nonlinear continuum governing equations obtained for strongly nonlinear waves possess exact solitary wave solutions [13]. However, their stable propagation depends on many factors, first of all, the initial conditions [14]. Recently, an approach has been developed to use control methods [15] for providing stable propagation of nonlinear waves [16–19]. According to the method, a control function is added into an equation. However, this function has been introduced in [16–19] formally without any physical meaning. In this paper, an attempt is done to describe the control function as a consequence of an external loading of the lateral surfaces of the layer made of material having a di-atomic crystalline structure. The two-dimensional problem is formulated in Section 1 using the strain energy obtained in [20]. An asymptotic procedure is developed in Section 2 to obtain the coupled governing one-dimensional equations for the macro-displacements and variations in an internal structure (microstructure). Section 3 is devoted to a development of the control algorithm for a strongly nonlinear case as a result of the action of the external stresses on the lateral surfaces of the layer. Next Section considers the weakly nonlinear case where the equations are decoupled using the slaving principle. The distributed feedback control algorithm is obtained where the target function of the control is modeled by the external tangential stress.
 
+В ряде предшествующих работ \cite{porant16, porant17, PorubovAntonov2018mechSystem} рассматривались различные задачи об управлении нелинейными волновыми процессами в механических системах с применением метода скоростного градиента \cite{fradkov_rus_speed_grad}. Сводя большую часть задач в упрощенном безразмерном виде можно представить в виде дифференциального уравнения в частных производных относительно функции смещения или деформации $U(x,t)$:
+
+\begin{equation}
+	U_{tt}-U_{xx}+F\left(U\right)+u(x,t)=0.
+	\label{sing}
+\end{equation}
+
+Тем или иным образом введенная в уравнение \eqref{sing} функция $u(x,t)$ призвана управлять решением уравнения $U(x,t)$, со временем устремляя его некоей целевой функции $U^*$ максимально допустимым образом. $F\left(U\right)$ представляет собой нелинейную часть уравнения и зависит от задачи, в общем случае может быть выражен следующим образом,
+$$
+F\left(U\right) = l_1 U_{xxxx} + n_1 \sin (U) + n_2 \sin(2 U) + \cdots,
+$$
+с хотя бы одним ненулевым $n_i$. Таким образом, в качестве модельных уравнений рассматривались разные обобщения уравнения синус-Гордона. Алгоритм управления волновыми механическими процессами, описываемыми классом уравнений (\ref{sing}), определяется выбором функции $u(x,t)$. Управляющая функция вводится согласно методу скоростного градиента \cite{fradkov_rus_speed_grad},
+\begin{equation}
+	u(x,t)=\gamma \epsilon(x,t),
+	\label{contrP}
+\end{equation}
+$$
+\epsilon(x,t)=\alpha e(x,t)+\alpha_1 e_t(x,t),
+$$
+$$
+e(x,t)=U(x,t)-U^*(x,t),~ e_t(x,t)=U_t(x,t)-U^*_t(x,t).
+$$
+где $\gamma$, $\alpha$ и $\alpha_1$ --- постоянные параметры алгоритма. Целевой функционал определяется следующим образом,
+\begin{equation}
+	Q(u)=\frac{1}{2}(\alpha e(x,t) + \alpha_1 e_t(x,t))^2.
+\end{equation}
+
+Чтобы осуществить управление в нашем случае, необходимо минимизировать производную по времени от целевого функционала:
+\begin{equation}
+	Q_t(u) = (\alpha e(x,t) + \alpha_1 e_t(x,t))(\alpha e_t(x,t) + \alpha_1 e_{tt}(x,t)) = \epsilon(x,t)(\alpha e_t(x,t) + \alpha_1 (... \: -u))
+\end{equation}
+где $...$ --- члены, не зависящие от $u$. Минимизация по $u$ такого функционала дает в качестве $u$ выражение, пропорциональное $\epsilon$, то есть в точности \eqref{contrP}. 
+
+
 \fixme{Возможно, сюда в качестве вступления следует добавить часть результатов магистерской работы и предыдущих исследований, с рисунками.}
 
 В данной главе рассматривается задача о распространении волн деформации и управления ими в слое <<двухатомного>> кристалла. Исследовано влияние внешней нагрузки на нелинейные динамические процессы в слое с двухатомной кристаллической структурой. Разработана асимптотическая процедура преобразования исходной двумерной задачи к связанным одномерным нелинейным уравнениям для продольных деформаций макро- и микроструктуры. Показано, что внешняя нагрузка может играть роль управления с обратной связью, обеспечивающей устойчивое распространение локализованных волн деформации. Рассмотрен слабонелинейный случай для получения нового единого определяющего уравнения для продольных деформаций. Уравнения движения для смещений выводятся на основе принципа Гамильтона-Остроградского, при этом потенциальная энергия системы предлагается в виде составной функции, линейная часть которой является континуальным пределом энергии двухатомной дискретной модели слоя, а в качестве нелинейной части выбирается форма, предложенная ранее в других работах. Показывается, что при выборе определенных граничных условий, уравнения, описывающие распространение продольных волн в слабонелинейном приближении могут быть упрощены к виду, который допускает наличие точных решений в виде солитонов, а также допускает управление при ненулевых управляющих воздействиях на одной из границ слоя. Приводится серия численных исследований, демонстрирующих работу управляющей нагрузки.
