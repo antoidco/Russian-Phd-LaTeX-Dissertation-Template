@@ -1,5 +1,5 @@
 %\chapter{Nonlinear dynamics of two-dimensional lattices with complex structure}
-\chapter{Нелинейная динамика двумерных решеток сложной структуры}
+\chapter{Численные методы исследования волновых процессов в двумерных решетках}
 
 %\abstract*{The dynamics of two dimensional lattice structures is studied. The complexity of the structure includes non-neigboring interactions between the lattice masses, consideration of both translation and rotation interactions and also their  nonlinear character (physical nonlinearity). The asymptotic procedures are developed to obtain the governing nonlinear equations of motion in the continuum limit. The equations obtained are studied both analytically and numerically. Of special interest are the propagation and transverse instability of the plane solitary strain waves. It is shown that the dynamics of  longitudinal and shear waves is different in various two-dimensional lattices. The relationships for the elastic constants are obtained to characterize the type of the localized strain waves (tensile or compression), their transverse instability and possible auxetic behavior. Numerical solutions are obtained that describe unstable and stable dynamics of the plane longitudinal and shear waves.}
 
@@ -650,7 +650,7 @@ V=\beta^2 B_2+m^2 B_3.\label{solshearpar}
 Аналитические решения, представленные в предыдущем разделе, являются частными решениями, которые существуют при определенных начальных условиях. Более общие решения могут быть получены численно. Основная цель --- выявить разницу между динамикой двумерных продольных и поперечных волн.
 
 %\subsubsection{Simulation technique}
-\subsubsection{Численный метод исследования}
+\subsubsection{Метод исследования}
 %The model equations (\ref{kp}), (\ref{kpsh})  can be rewritten in the following form,
 Уравнения модели (\ref {kp}), (\ref {kpsh}) можно переписать в следующем виде:
 \begin{equation}
@@ -719,7 +719,7 @@ $R$ выражается следующим образом,
 Используя метод простой итерации, уравнение ~ (\ref{fkpscheme}) может быть решено с использованием быстрого преобразования Фурье, чтобы найти решение на следующем временном шаге $ \hat {U}_{n + 1} $. Применение обратного преобразования дает решение $ u $ уравнения ~(\ref{kp3gen}).
 
 %\subsubsection{Numerical results for longitudinal waves}
-\subsubsection{Численные результаты для продольных волн}
+\subsubsection{Исследование свойств распространения продольных волн деформации}
 
 %In order to check the numerical scheme given by Eq.~(\ref{fkpscheme}) for $c_1=1$, $c_2=1$, $p=1$, $f=3$ and $\gamma=0$ the values of the parameters are $N_x = N_y = 129$, time step $\Delta t = 0.005$ with 2 iterations per step.
 Чтобы проверить численную схему, заданную уравнением ~ (\ref {fkpscheme}) для $c_1 = 1$, $c_2 = 1$, $p = 1$, $f = 3$ и $\gamma = 0$ значения параметров равны $N_x = N_y = 129$, временной шаг $\Delta t = 0.005$ с 2 итерациями на шаг.
@@ -768,7 +768,7 @@ $R$ выражается следующим образом,
 Напротив, на Рис. ~\ref{figex4} видно, что начальное условие с отрицательным значением $ f $ приводит к серьезным поперечным изменениям на фронте плоской волны. Начальные малые периодические возмущения претерпевают увеличение амплитуды, и первоначально почти плоская волна превращается в поперечно-модулированную волну. Этот факт находится в соответствии с результатами теоретического анализа. Ранее отмечалось, что $ c_1 $ может быть отрицательным, а $ f $ --- нет. Однако преобразование переменных $ t = - \tau $, $ u = -v $ при отрицательном $ c_1 $ и положительном $ f $ приводит к получению уравнения для $ v $ с положительным $ c_1 $ и отрицательным $ f $, что соответствует неустойчивому распространению волны отрицательной амплитуды $ u $ (см. Рис. ~\ref{figex44}).
 
 %\subsubsection{Numerical results for shear waves equation}
-\subsubsection{Численные результаты для уравнения поперечных волн}
+\subsubsection{Исследование свойств распространения поперечных волн деформации}
 
 %Consider Eq.~(\ref{fkpscheme}) for $p=2$ and $\gamma \ne 0$.   
 %For all simulations $N_x = 1025, N_y = 129$, time step $\Delta t = 0.003$ with 2 iterations per step. $N_x$ is chosen to be higher than it was for previous simulations in order to increase the accuracy of evaluation of the term given by Eq.~(\ref{termRY}).
@@ -854,7 +854,7 @@ c_1 = 1, \quad c_2 = 1, \quad f = 3, \quad \gamma = 2.
 %\fixme{Добавить более корректное обобщение численной схемы, так как текущая пренебрегает некоторыми условиями, о которых нигде не сказано. В таком случае ее можно будет представить к защите.}
 
 
-\subsection{Начальные условия, локализованные в обоих направлениях}
+\subsection{Случаи начальных условий, локализованных в обоих направлениях}
 %\textbf{Equation for shear strains and its solution}
 
 %\fixme{Перевести, отмасштабировать рисунки на textwidth, убрать multiple definitions}
