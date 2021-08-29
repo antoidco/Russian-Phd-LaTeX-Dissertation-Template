@@ -125,7 +125,7 @@ T~=~\frac{1}{2} M\left(\dot{x}_{m,n}^2+\dot{y}_{m,n}^2\right).
 %The  equations of motion  obtained from the variational principle are further reduced when the plane waves propagating in horizontal direction are studied   \cite{porkros}. For simplicity let us consider  nonlinear  waves propagating in a horizontal direction along the  $x$ axis and weakly perturbed in the transverse direction along the  $y$ axis. The transverse weakness is characterized by the small parameter $\varepsilon~\ll~1$, the continuum displacements are assumed to be the functions of slow transverse variable $Y~=~\varepsilon y$. The same small parameter is used to account for the weakly nonlinear waves, however, its utilization depends on whether transverse variations of  longitudinal or shear waves are studied.
 Для дальнейшего анализа в работах, уравнения движения, полученные из вариационного принципа, дополнительно сокращаются ограничиваясь изучением плоских волн, распространяющихся в горизонтальном направлении \cite{porkros}. Для простоты рассматриваются нелинейные волны, распространяющиеся в горизонтальном направлении вдоль оси $ x $ и слабо возмущенные в поперечном направлении вдоль оси $y$. Поперечная слабость характеризуется малым параметром $\varepsilon ~ \ll ~ 1$, непрерывные смещения считаются функциями медленной переменной $Y ~=~ \varepsilon y$ в поперечном направлении. Тот же самый малый параметр используется для учета слабонелинейных волн, однако его использование зависит от того, исследуются ли поперечные вариации продольных или поперечных волн. 
 
-\subsubsection{Продольные волны}
+\subsection{Продольные волны}
 
 %For small wave numbers, one assumes that  the continuum displacements of the central particle $x_{m,n}$, $y_{m,n}$ are  $u(x, Y, t)$, $v(x, Y, t)$. Of special interest are the localized waves keeping their shape and velocity on propagation. These waves exist under the balance between nonlinearity and dispersion. Dispersion terms are the higher-order linear derivative terms arising from the Taylor expansion. Their smallness may be provided by choosing $l~=~\varepsilon~ h$. Nonlinear terms turn out of the same order under an assumption about smallness of the continuum displacement of the form $\varepsilon^2~u(x, Y, t)$, $\varepsilon^3~v(x, Y, t)$, also the nonlinear rigidities should be $P=P/\varepsilon$, $Q=Q/\varepsilon$, $S=S/\varepsilon$,  and cubic nonlinear terms are negligibly small for longitudinal waves. Higher power of the small parameter for $v$ provides predominantly longitudinal waves propagation.
 Для малых волновых чисел можно осуществить континуальный переход от дискретных смещений $x_{m, n} $, $y_{m, n}$ к континуальным функциям $u(x, Y, t) $, $v(x, Y, t)$ \cite{porkros}. Особый интерес представляют локализованные волны, сохраняющие форму и скорость при распространении, которые могут существовать при балансе между нелинейностью и дисперсией. Малость дисперсионных членов обеспечивается выбором $l ~ = ~ \varepsilon ~ h$. Нелинейные члены оказываются того же порядка при предположении о малости смещений вида $\varepsilon^2 ~ u (x, Y, t) $, $\varepsilon ^ 3 ~ v (x, Y, t)$, нелинейных жесткостей вида $P = P / \varepsilon $, $ Q = Q / \varepsilon$, $ S = S / \varepsilon $. Более высокая степень малого параметра при $v$ обеспечивает преимущественное распространение продольных волн.
@@ -566,7 +566,7 @@ B_4~=~\frac{2 \sqrt{5} h (\bar{P}+20 \bar{S}) (5 C_1-2 (5 C_2+7 C_3))}{(5 C_1+18
 
 
 %\section{Two-dimensional dynamical strain processes}
-\section{Двумерные динамические процессы деформации}
+\section{Свойства модельных уравнений}
 
 %\subsection{Exact solutions}
 \subsection{Точные решения}
@@ -645,12 +645,12 @@ V=\beta^2 B_2+m^2 B_3.\label{solshearpar}
 Следовательно, устойчивость возникает при $ B_3> 0 $, а положительное значение $ \lambda $ может быть достигнуто при отрицательном $ B_3 $, что приводит к поперечной неустойчивости плоских поперечных волн в решетке. Здесь коэффициенты линейной жесткости $ C_2 $, $ C_3 $ дальнодействующих взаимодействий могут быть ответственны за неустойчивость.
 
 %\subsection{Numerical solutions}
-\subsection{Численный анализ}
+\section{Численный анализ}
 %The analytical solutions presented in the previous section are the particular solutions which exist under specific initial conditions. More general solutions can be obtained numerically. The main aim is to reveal the difference between the dynamics of two-dimensional longitudinal and shear waves.
 Аналитические решения, представленные в предыдущем разделе, являются частными решениями, которые существуют при определенных начальных условиях. Более общие решения могут быть получены численно. Основная цель --- выявить разницу между динамикой двумерных продольных и поперечных волн.
 
 %\subsubsection{Simulation technique}
-\subsubsection{Метод исследования}
+\subsection{Метод исследования}
 %The model equations (\ref{kp}), (\ref{kpsh})  can be rewritten in the following form,
 Уравнения модели (\ref {kp}), (\ref {kpsh}) можно переписать в следующем виде:
 \begin{equation}
@@ -719,7 +719,7 @@ $R$ выражается следующим образом,
 Используя метод простой итерации, уравнение ~ (\ref{fkpscheme}) может быть решено с использованием быстрого преобразования Фурье, чтобы найти решение на следующем временном шаге $ \hat {U}_{n + 1} $. Применение обратного преобразования дает решение $ u $ уравнения ~(\ref{kp3gen}).
 
 %\subsubsection{Numerical results for longitudinal waves}
-\subsubsection{Исследование свойств распространения продольных волн деформации}
+\subsection{Исследование свойств распространения продольных волн деформации}
 
 %In order to check the numerical scheme given by Eq.~(\ref{fkpscheme}) for $c_1=1$, $c_2=1$, $p=1$, $f=3$ and $\gamma=0$ the values of the parameters are $N_x = N_y = 129$, time step $\Delta t = 0.005$ with 2 iterations per step.
 Чтобы проверить численную схему, заданную уравнением ~ (\ref {fkpscheme}) для $c_1 = 1$, $c_2 = 1$, $p = 1$, $f = 3$ и $\gamma = 0$ значения параметров равны $N_x = N_y = 129$, временной шаг $\Delta t = 0.005$ с 2 итерациями на шаг.
@@ -768,7 +768,7 @@ $R$ выражается следующим образом,
 Напротив, на Рис. ~\ref{figex4} видно, что начальное условие с отрицательным значением $ f $ приводит к серьезным поперечным изменениям на фронте плоской волны. Начальные малые периодические возмущения претерпевают увеличение амплитуды, и первоначально почти плоская волна превращается в поперечно-модулированную волну. Этот факт находится в соответствии с результатами теоретического анализа. Ранее отмечалось, что $ c_1 $ может быть отрицательным, а $ f $ --- нет. Однако преобразование переменных $ t = - \tau $, $ u = -v $ при отрицательном $ c_1 $ и положительном $ f $ приводит к получению уравнения для $ v $ с положительным $ c_1 $ и отрицательным $ f $, что соответствует неустойчивому распространению волны отрицательной амплитуды $ u $ (см. Рис. ~\ref{figex44}).
 
 %\subsubsection{Numerical results for shear waves equation}
-\subsubsection{Исследование свойств распространения поперечных волн деформации}
+\subsection{Исследование свойств распространения поперечных волн деформации}
 
 %Consider Eq.~(\ref{fkpscheme}) for $p=2$ and $\gamma \ne 0$.   
 %For all simulations $N_x = 1025, N_y = 129$, time step $\Delta t = 0.003$ with 2 iterations per step. $N_x$ is chosen to be higher than it was for previous simulations in order to increase the accuracy of evaluation of the term given by Eq.~(\ref{termRY}).
