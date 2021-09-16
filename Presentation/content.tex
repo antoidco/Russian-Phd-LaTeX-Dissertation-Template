@@ -89,7 +89,8 @@ $$
 \Pi_{nl} = \left( p - s_{xx} U_x - s_{yx} \left( U_y + V_x\right) - s_{yy} V_y\right) \left( 1- \cos{(u+v)}\right) \label{pot}
 $$
 \end{small}		
-\footnotetext[2]{The solutions of equations for nonlinear model of deformation of the crystal media allowing martensitic transformations / E. L. Aero, A. N. Bulygin, Y. V. Pavlov // 2017 Days on Diffraction (DD). -- IEEE, 06.2017.}
+\footnotetext[2]{The solutions of equations for nonlinear model of deformation of the crystal media allowing martensitic transformations / E. L. Aero, A. N. Bulygin, Y. V. Pavlov // 2017 Days on Diffraction (DD). -- IEEE, 06.2017.
+}
 \end{frame}
 
 \begin{frame}
@@ -308,236 +309,215 @@ $$
 \end{frame}
 
 \begin{frame}
-	Дисперсионное соотношение системы имеет вид,
+	Решения в виде бегущих волн
 	$$
-	\omega^4 -(\beta_1(1+\eta)+\beta_0 k^2 h^2)\omega^2+\beta_0 \beta_1 k^2 h^2=0.
+	u=A \exp (\imath(p~ x - \omega~ t- p~ x_0)), ~
+	v=B \exp (\imath(p~ x - \omega~ t-p~ x_0)).
 	$$
+	Подстановка в уравнения модели дает
+	$$
+	A = \frac{\beta_1-\omega^2}{\beta_1}~B
+	$$
+	Дисперсионное соотношение
+	$$
+	\omega^4 -(\beta_1(1+\eta)+\beta_0 p^2 h^2)\omega^2+\beta_0 \beta_1 p^2 h^2=0.
+	$$
+	\begin{small}
+	$$
+		\omega_a^2=\frac{\beta_1(1+\eta)+\beta_0 h^2 p^2}{2}-\frac{\sqrt{D}}{2},
+	$$
+	$$
+		\omega_o^2=\frac{\beta_1(1+\eta)+\beta_0 h^2 p^2}{2}+\frac{\sqrt{D}}{2},
+	$$
+
+	$$
+	D=(\beta_1(1+\eta)+\beta_0 h^2 p^2)^2-4\beta_0 h^2 p^2.
+	$$
+	\end{small}
 \end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item Акустическая ветвь лежит в диапазоне частот от $ 0 $ до $ \sqrt {\beta_1} $.
+		\item Оптическая --- в интервале $(\sqrt{\beta_1(1+\eta)}, \infty)$.
+	\end{itemize}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=0.75\textwidth]{disp_rel.png}
+		\end{center}
+		Акустическая и оптическая ветви колебаний, наличие запрещенной зоны, $\beta_0 = 1, \beta_1 = 1, h = 0.2, \eta = 0.3$.
+	\end{figure}
+\end{frame}
+
+
 
 \subsection{Генерация и управление гармоническими волнами}
+
+\begin{frame}
+	\frametitle{Генерация волн}
+	Начальные и граничные условия для численного решения с целью генерации бегущих волн,
+	$$
+	u(0,t)=\frac{\beta_1-\omega^2}{\beta_1}~B~ {\text{sin}} (\omega ~t),~u(x,0)=0, ~u(x,0)_t=0,
+	$$
+	$$
+	v(0,t)=B ~{\text{sin}} (\omega ~t),~v(x,0)=0, ~v(x,0)_t=0.
+	$$
+	На правой границе --- условие поглощения. Реализуется с использованием подхода маскирующего потенциала, система переписывается в виде
+	$$
+	U_{t}=\beta_0 h^2 u_{xx}+\eta \beta_1 (v-u)
+	$$
+	$$
+	u_{t}=U + u f_{\text{mask}},
+	$$
+	$$
+	v_{tt}=-\beta_1 (v-u),
+	$$
+	где $ f_{\text {mask}} = \log \left[ \left(\tanh {0.03 (3 x_N - x)} \right)^2 \right] $, при интервале интереса от $0$ до $x_N$ и расчетном интервале от $0$ до $3 x_N$.
+\end{frame}
+
+\begin{frame}
+	\begin{small}
+	$t_N = 600; x_N = 60;\beta_0=1, h = 0.5, \beta_1 = 0.1, \eta = 0.5,  B=0.25$, запрещенная зона $0.316<\omega<0.387$.
+	\end{small}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{new_pic/fig1.eps}
+		\end{center}
+		Генерация бегущей волны $u$ ниже запрещенной зоны в разные моменты времени, $\omega = 0.2 < \sqrt{\beta_1}$.  a) $t=0$; b) $ t=t_N/4$; c) $t=t_N/2$; d) $t=t_N$.
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{small}
+		$t_N = 600; x_N = 60;\beta_0=1, h = 0.5, \beta_1 = 0.1, \eta = 0.5,  B=0.25$, запрещенная зона $0.316<\omega<0.387$.
+	\end{small}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{new_pic/fig2.eps}
+		\end{center}
+		Генерация бегущей волны $u$ на нижней границе запрещенной зоны в разные моменты времени, $\omega = 0.3 \approx \sqrt{\beta_1}$.  a) $t=0$; b) $ t=t_N/4$; c) $t=t_N/2$; d) $t=t_N$.
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{small}
+		$t_N = 600; x_N = 60;\beta_0=1, h = 0.5, \beta_1 = 0.1, \eta = 0.5,  B=0.25$, запрещенная зона $0.316<\omega<0.387$.
+	\end{small}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{new_pic/fig3.eps}
+		\end{center}
+		Генерация бегущей волны $u$ внутри запрещенной зоны в разные моменты времени, $\omega = 0.35 < \sqrt{\beta_1}$.  a) $t=0$; b) $ t=t_N/4$; c) $t=t_N/2$; d) $t=t_N$.
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Управление включением}
+	Управление волнами может быть реализовано использованием электромагнитных сигналов в для изменения внутренних свойств метаматериала, рассматривается механизм мгновенного включения,
+	$$
+	u_{tt}=\beta_0 h^2 u_{xx}+\eta \beta_1 (v-u)~H(t_0-t)
+	$$
+	$$
+	v_{tt}=-\beta_1 (v-u) ~H(t_0-t)
+	$$
+	Включение управления предполагает переход уравнений движений к режиму волнового уравнения, решение которого будет иметь вид
+	$$
+	u_w=\frac{\beta_1-\omega^2}{\beta_1}~B~{\text{sin}}  (\imath(\omega/a~ x - \omega~ t-\omega/a~ x_0))
+	$$
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{new_pic/fig4.eps}
+		\end{center}
+		Управление включением, частота ниже запрещенной зоны в разные моменты времени, $\omega = 0.2$.  a) $t=0$; b) $ t=t_0=t_N/4$; c) $t=t_N/2$; d) $t=t_N$.
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{new_pic/fig5.eps}
+		\end{center}
+		Управление включением, частота на нижней границе запрещенной зоны в разные моменты времени, $\omega = 0.3$.  a) $t=0$; b) $ t=t_0=t_N/4$; c) $t=t_N/2$; d) $t=t_N$.
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{new_pic/fig6.eps}
+		\end{center}
+		Управление включением, частота внутри запрещенной зоны в разные моменты времени, $\omega = 0.35$.  a) $t=0$; b) $ t=t_0=t_N/4$; c) $t=t_N/2$; d) $t=t_N$.
+	\end{figure}
+\end{frame}
+
 \subsection{Основные результаты}
-\begin{frame}[plain, noframenumbering]
-    \begin{center}
-        \Huge
-        Графика
-    \end{center}
-\end{frame}
-
 \begin{frame}
-	\frametitle{Результаты расчетов}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Одиночное изображение}
-    \centering
-    \includegraphics[width=0.8\linewidth]{latex} % окружение figure не требуется
-\end{frame}
-
-\begin{frame}
-    \frametitle{Векторная графика}
-    \begin{figure}
-        \centering
-        \ifdefmacro{\tikzsetnextfilename}{\tikzsetnextfilename{tikz_presentation}}{}% присваиваемое предкомпилированному pdf имя файла (не обязательно)
-        \input{Presentation/images/tikz_plot.tikz}
-    \end{figure}
-\end{frame}
-
-%\subsection{Расположение}
-
-\begin{frame}
-    \frametitle{Изображения по-вертикали}
-    \centering
-    \vfill
-    \includegraphics[width=0.8\linewidth,height=0.1\textheight]{latex} \\
-    \TeX
-    \vfill
-    \includegraphics[width=0.8\linewidth,height=0.2\textheight]{latex} \\
-    \LaTeX
-    \vfill
-    \includegraphics[scale=0.2]{latex} \\
-    \vfill
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Изображения по-горизонтали}
-    \begin{minipage}[t]{0.47\linewidth}
-        \textbf{Составная \\ подпись 1}
-        \center{\includegraphics[width=1\linewidth]{knuth1}}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.47\linewidth}
-        \textbf{Составная \\ подпись 2}
-        \center{\includegraphics[width=1\linewidth]{knuth2}}
-    \end{minipage}
-\end{frame}
-
-%\subsection{Линии}
-
-\begin{frame}
-    \frametitle{Разделяющие линии}
-    \begin{minipage}[c]{0.47\linewidth}
-        \center{\includegraphics[width=1\linewidth]{latex}}
-        \bigskip
-        \hrule{}
-        \bigskip
-        \textbf{Составная \\ подпись 1}
-    \end{minipage}
-    \hfill
-    \vrule{}
-    \hfill
-    \begin{minipage}[c]{0.47\linewidth}
-        \flushright
-        \textbf{Составная \\ подпись 2}
-        \center{\includegraphics[width=1\linewidth]{knuth2}}
-    \end{minipage}
+	\frametitle{Результаты}
+	Основные результаты данной части работы заключаются в следующем,
+	\begin{itemize}
+		\item{Граничное возбуждение может генерировать гармонические волны в метаматериале, что согласуется с результатами, полученными на основе конкретного решения в виде бегущей волны;}
+		\item{Численно продемонстрировано, как управление включением позволяет менять режим распространения волн;}
+		\item{Дальнейшие перспективы могут быть связаны с рассмотрением модели активного метаматериала под действием внешней силы, обеспечивающей управление обратной связью, а также обобщение модели на нелинейный случай.}
+	\end{itemize}
 \end{frame}
 
 \section{Численные методы исследования волновых процессов в двумерных решетках}
 \subsection{Постановка задачи}
 \subsection{Численный метод}
 \subsection{Основные результаты}
-\begin{frame}[plain, noframenumbering]
-    \begin{center}
-        \Huge
-        Остальное
-    \end{center}
+
+\begin{frame} % публикации на одной странице
+	% \begin{frame}[t,allowframebreaks] % публикации на нескольких страницах
+	\frametitle{Публикации по теме диссертации}
+	\begin{small}
+\begin{enumerate}
+	\item \textit{Porubov, A. V.} Further progress in control of localized nonlinear waves [Текст] / A. V. Porubov, I. D. Antonov, A. L. Fradkov // Journal of Physics: Conference Series. -- 2017. -- Дек. -- Т. 937. -- С. 012043.	
+	
+	\item \textit{Porubov, A. V.} Nonlinear Dynamics of Two-Dimensional Lattices with Complex Structure [Текст] / A. V. Porubov, A. E. Osokina, I. D. Antonov // Advanced Structured Materials. -- Springer International Publishing, 2020. -- С. 309--334.
+	
+	\item \textit{Porubov, A. V.} Boundary control of nonlinear strain waves in di-atomic crystal layer [Текст] / A. V. Porubov, I. D. Antonov, A. L. Fradkov // Wave Motion. -- 2019. -- Нояб. -- Т. 91. -- С. 102400.
+	
+	\item \textit{Porubov, A. V.} On control of harmonic waves in an acoustic metamaterial [Текст] / A. V. Porubov, I. D. Antonov // Mechanics Research Communications. -- 2021. -- Сент. -- Т. 116. -- С. 103745.
+	
+	\item \textit{Антонов, И. Д.} Управление нелинейными локализованными волнами в механических системах [Текст] / И. Д. Антонов, А. В. Порубов // Нелинейные волны, XVIII научная школа, Нижний Новгород. -- 2018
+\end{enumerate}
+\end{small}
 \end{frame}
 
-%\subsection{Формулы}
 
 \begin{frame}
-    \frametitle{Формулы}
-    \[
-    \left\{
-    \begin{array}{rl}
-        \dot x = & \sigma (y-x)  \\
-        \dot y = & x (r - z) - y \\
-        \dot z = & xy - bz
-    \end{array}
-    \right.
-    \]
+\frametitle{Другие публикации}
+\begin{tiny}
+\begin{enumerate}
+	\item \textit{Antonov, I. D.} Pseudo-three-dimensional model for hydraulic fracturing with foams [Текст] / I. D. Antonov // Journal of Physics: Conference Series. -- 2019. -- Июнь. -- Т. 1236. -- С. 012055. -- URL: https://doi.org/10.1088/1742-6596/1236/1/012055.
+	
+	\item \textit{Antonov, I. D.} Numerical modeling of hydraulic fracturing with foams and energized fluids [Текст] / I. D. Antonov // 28TH RUSSIAN CONFERENCE ON MATHEMATICAL MODELLING IN NATURAL SCIENCES. -- AIP Publishing, 2020. -- URL: https://doi.org/10.1063/5.0004658.
+	
+	\item \textit{Antonov, I. D.} Two-dimensional model for hydraulic fracturing with foams [Текст] / I. D. Antonov, A. V. Porubov, N. M. Bessonov // Material Physics and Mechanics. -- 2018. -- Т. 40.1. -- URL: https://mpm.spbstu.ru/article/2018.65.5/.
+	
+	\item \textit{Porubov, A. V.} Influence of compressibility on the foam fracture modeling [Текст] / A. V. Porubov, I. D. Antonov // Journal of Physics: Conference Series. -- 2019. -- Апр. -- Т. 1205. -- С. 012048. -- URL: https://doi.org/10.1088/1742-6596/1205/1/012048.
+	
+	\item Strain localization in two-dimensional lattices [Текст] / A. V. Porubov, I. Antonov, A. Sokolov, W. H. Muller // Journal of Physics: Conference Series. -- 2020. -- Дек. -- Т. 1686. -- С. 012036. -- URL: https://doi.org/10.1088/1742-6596/1686/1/012036.
+	
+	\item Geometrically nonlinear dynamic model for a hexagonal lattice [Текст] / A. V. Porubov, A. M. Krivtsov, I. Antonov, W. H. Muller, A. A. Sokolov // Physical Review E. -- 2020. -- Авг. -- Т. 102, № 2. -- URL: https://doi.org/10.1103/physreve.102.022209.
+	
+	\item Mechanical system allowing distributive control with feedback [Текст] / A. V. Porubov, I. D. Antonov, D. A. Indeitsev, A. L. Fradkov // Mechanics Research Communications. -- 2018. -- Окт. -- Т. 93. -- С. 124--127. -- URL: https://doi.org/10.1016/j.mechrescom.2017.07.014.
+	
+	\item Control of localized non-linear strain waves in complex crystalline lattices [Текст] / A. V. Porubov, I. D. Antonov, A. L. Fradkov, B. R. Andrievsky // International Journal of Non-Linear Mechanics. -- 2016. -- Нояб. -- Т. 86. -- С. 174--184. -- URL: https://doi.org/10.1016/j.ijnonlinmec.2016.09.002.
+	
+	\item \textit{Porubov, A. V.} Control of coupled localized nonlinear wave solutions [Текст] / A. V. Porubov, I. D. Antonov // Journal of Physics: Conference Series. -- 2017. -- Янв. -- Т. 788. -- С. 012029. -- URL: https://doi.org/10.1088/1742-6596/788/1/012029.
+	
+\end{enumerate}
+\end{tiny}
 \end{frame}
 
-\begin{frame}
-    \frametitle{amsmath}
-    \centering
-    \begin{minipage}[t]{0.5\linewidth}
-        \begin{multline*}
-            y = 1 x^1 + 2 x^2 + 3 x^3 + \\ + 4 x^4 + 5 x^5 + \dots
-        \end{multline*}
-    \end{minipage}
-\end{frame}
-
-\begin{frame}[allowframebreaks]
-    \frametitle{Уравнения Максвелла}
-    \centering{
-        \small
-        \def\arraystretch{1.8}%
-        \begin{tabular}{ll}
-            \toprule
-            Интегральная форма                                                                                                                                            & Дифференциальная форма                                                          \\ \midrule
-            \(Q_e(t) = \displaystyle\oiint_S \vec D(t) \cdot d\vec{s} = \displaystyle\iiint_V \rho_v(t) dv\)                                                              & \(\nabla \cdot \vec D(t) = \rho_v(t)\)                                          \\
-            \(\displaystyle\oiint_S \vec B(t) \cdot d\vec{s} = 0\)                                                                                                        & \(\nabla \cdot \vec B(t) = 0\)                                                  \\
-            \(V_{emf}(t) = \displaystyle\oint_L \vec E(t) \cdot d\vec{l}\) = \(- \displaystyle\iint_S \left[\frac{\partial\vec{B}(t)}{\partial t}\right] \cdot d\vec{s}\) & \(\nabla \times \vec E(t) = - \frac{\partial\vec{B}(t)}{\partial t}\)           \\
-            \(I(t) = \displaystyle\oint_L \vec H(t) \cdot d\vec{l} = \displaystyle\iint_S \left[\vec J(t) + \frac{\partial\vec{D}(t)}{\partial t}\right] \cdot d\vec{s}\) & \(\nabla \times \vec H(t) = \vec J(t) + \frac{\partial\vec{D}(t)}{\partial t}\) \\ \midrule
-            \(\displaystyle\oiint_S \vec J \cdot d\vec{s} = -\frac{\partial Q_e}{\partial t}\)                                                                            & \(\nabla \cdot \vec J = - \frac{\partial \rho_v}{\partial t}\)                  \\
-            \bottomrule
-            \multicolumn{2}{c}{\(\vec D(t) = \left[\varepsilon(t)\right] * \vec E(t)\)}                                                                                                                                                                     \\
-            \multicolumn{2}{c}{\(\vec B(t) = \left[\mu(t)\right] * \vec H(t)\)}                                                                                                                                                                             \\
-        \end{tabular}
-    }
-    \framebreak
-
-    \hspace{0.05\linewidth}
-    \centering{
-        \small
-        \def\arraystretch{1.8}%
-        \begin{tabular}{ll}
-            \toprule
-            Интегральная форма                                                                                                                & Дифференциальная форма                               \\ \midrule
-            \(Q_e = \displaystyle\oiint_S \vec D \cdot d\vec{s} = \displaystyle\iiint_V \rho_v dv\)                                           & \(\nabla \cdot \vec D = \rho_v\)                     \\
-            \(\displaystyle\oiint_S \vec B \cdot d\vec{s} = 0\)                                                                               & \(\nabla \cdot \vec B = 0\)                          \\
-            \(V_{emf} = \displaystyle\oint_L \vec E \cdot d\vec{l}\) = \(- \displaystyle\iint_S \left[j \omega \vec B\right] \cdot d\vec{s}\) & \(\nabla \times \vec E = - j \omega \vec B\)         \\
-            \(I = \displaystyle\oint_L \vec H \cdot d\vec{l} = \displaystyle\iint_S \left[\vec J + j \omega \vec D\right] \cdot d\vec{s}\)    & \(\nabla \times \vec H = \vec J + j \omega \vec{D}\) \\ \midrule
-            \(\displaystyle\oiint_S \vec J \cdot d\vec{s} = - j \omega Q_e\)                                                                  & \(\nabla \cdot \vec J = - j \omega \rho_v\)          \\
-            \bottomrule
-            \multicolumn{2}{c}{\(\vec D(t) = \left[\varepsilon\right] \vec E(t)\)}                                                                                                                   \\
-            \multicolumn{2}{c}{\(\vec B(t) = \left[\mu\right] \vec H(t)\)}                                                                                                                           \\
-        \end{tabular}
-    }
-\end{frame}
-
-%\subsection{Таблицы}
-
-\begin{frame}
-    \frametitle{Таблица}
-    \centering
-    \begin{tabular}{|l|l|}
-        \hline
-        \textbf{Заголовок 1} & \textbf{Заголовок 2} \\
-        \hline
-        Сумма                & \(b+a\)              \\
-        \hline
-        Разность             & \(a-b\)              \\
-        \hline
-        Произведение         & \(a*b\)              \\
-        \hline
-    \end{tabular}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Другая таблица}
-    \centering
-    \begin{tabular}{lc}
-        \toprule
-        \multicolumn{1}{c}{\textbf{Заголовок 1}} & \textbf{Заголовок 2} \\ \midrule
-        Сумма                                    & \(b+a\)              \\
-        Разность                                 & \(a-b\)              \\
-        Произведение                             & \(a*b\)              \\
-        \bottomrule
-    \end{tabular}
-\end{frame}
-
-
-%\subsection{Разное}
-
-\begin{frame}
-    \frametitle{Большой многоуровневый список}
-    \begin{itemize}
-        \item \textbf{Пункт 1}
-              \begin{itemize}
-                  \itemi Подпункт 1-1
-                  \itemi Подпункт 1-2
-              \end{itemize}
-        \item \textbf{Пункт 2}
-              \begin{itemize}
-                  \itemi Подпункт 2-1
-              \end{itemize}
-        \item \textbf{Пункт 3}
-              \begin{itemize}
-                  \itemi Подпункт 3-1
-                  \itemi Подпункт 3-2
-              \end{itemize}
-        \item \textbf{Пункт 4}
-              \begin{itemize}
-                  \itemi Подпункт 4-1
-              \end{itemize}
-        \item \textbf{Пункт 5}
-              \begin{itemize}
-                  \itemi Подпункт 5-1
-                  \itemi Подпункт 5-2
-                  \itemi Подпункт 5-3
-              \end{itemize}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Четыре изображения}
-    \centering
-    \includegraphics[width=0.35\linewidth,angle=35]{latex}
-    \includegraphics[width=0.35\linewidth,angle=135]{latex}\\
-    \includegraphics[width=0.35\linewidth,angle=15]{latex}
-    \includegraphics[width=0.35\linewidth,angle=-15]{latex}
+\begin{frame}[plain, noframenumbering] % последний слайд без оформления
+	\begin{center}
+		\Huge
+		Спасибо за внимание!
+	\end{center}
 \end{frame}
 
