@@ -263,7 +263,57 @@ $$
 \end{frame}
 
 \section{Управление гармоническими волнами в акустическом метаматериале}
+\begin{frame}[plain, noframenumbering]
+	\begin{center}
+		\Large
+		Управление гармоническими волнами в акустическом метаматериале
+	\end{center}
+\end{frame}
 \subsection{Уравнения модели}
+
+\begin{frame}
+	\frametitle{Постановка задачи}
+	Рассматривается модель акустического метаматериала <<масса в массе>>, 
+	\begin{itemize}
+		\item одномерная цепочка, массы $m$ соединены упругими пружинами жесткости $\beta_0 m$;
+		\item к каждой частице массы $m$ присоединена масса $m_1$ пружиной линейной жесткости $\beta_1 m_1$, $\eta = m_1/m$;
+		\item массы $m_1$ между собой явно не взаимодействуют;
+		\item расстояние между соседними частицами --- $h$.
+	\end{itemize}   
+	
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{mim.png}
+	\end{center}
+	
+\end{frame}
+
+\begin{frame}
+	Уравнения движения в смещениях $x_n$, $y_n$ для масс $m$, $m_1$ соответственно, выражаются следующим образом,
+\begin{equation}
+	\ddot{x_n}=\beta_0 (x_{n-1}-2x_n+x_{n+1})+\eta \beta_1 (y_n-x_n), 
+	\label{eq1}
+\end{equation}
+\begin{equation}
+	\ddot{y_n}=-\beta_1 (y_n-x_n).
+\end{equation}
+
+В континуальном пределе, оставляя первый ненулевой член в ряде Тейлора, уравнения принимают вид
+\begin{equation}
+	u_{tt}=\beta_0 h^2 u_{xx}+\eta \beta_1 (v-u), \label{eq3}
+\end{equation}
+\begin{equation}
+	v_{tt}=-\beta_1 (v-u). \label{eq4}
+\end{equation}
+	
+\end{frame}
+
+\begin{frame}
+	Дисперсионное соотношение системы имеет вид,
+	$$
+	\omega^4 -(\beta_1(1+\eta)+\beta_0 k^2 h^2)\omega^2+\beta_0 \beta_1 k^2 h^2=0.
+	$$
+\end{frame}
+
 \subsection{Генерация и управление гармоническими волнами}
 \subsection{Основные результаты}
 \begin{frame}[plain, noframenumbering]
